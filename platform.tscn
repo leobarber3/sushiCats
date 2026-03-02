@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d017aymabhg4f"]
+
+[ext_resource type="Script" uid="uid://g7wbt4ec7t3v" path="res://scripts/drag.gd" id="1_mi635"]
+
+[node name="platform" type="StaticBody2D" groups=["dropable"]]
+script = ExtResource("1_mi635")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
