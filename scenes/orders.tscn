@@ -968,5 +968,3 @@ position = Vector2(-20, -6)
 [node name="Node2D2" parent="." unique_id=1194077642 instance=ExtResource("3_maj78")]
 visible = false
 position = Vector2(95, 57)
-
-[node name="childTestNode" type="Node2D" parent="Node2D2" unique_id=1069439598]
