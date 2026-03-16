@@ -1,0 +1,7 @@
+extends Resource
+class_name Item
+
+
+#a Resource item will have both a name and an image
+@export var name : String
+@export var image : Texture2D

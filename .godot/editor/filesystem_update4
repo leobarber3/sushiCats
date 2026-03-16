@@ -1,3 +1,5 @@
 res://scenes/orders.tscn
 res://scenes/game.tscn
 res://scenes/fisher.tscn
+res://scripts/Item.gd
+res://scripts/Recipe.gd
