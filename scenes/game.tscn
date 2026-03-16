@@ -762,13 +762,3 @@ zoom = Vector2(3, 3)
 
 [node name="Labels" type="Node2D" parent="." unique_id=1630798146]
 position = Vector2(115, 2)
-
-[node name="Label" type="Label" parent="Labels" unique_id=1093582193]
-offset_left = 8.0
-offset_top = 32.0
-offset_right = 48.0
-offset_bottom = 62.0
-theme_override_font_sizes/font_size = 8
-text = "Catch 
-Fish
-Here"
