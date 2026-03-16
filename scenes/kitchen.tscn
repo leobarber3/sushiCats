@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdvd2tbwgnl1c"]
+[gd_scene format=3 uid="uid://bdvd2tbwgnl1c"]
 
-[ext_resource type="Texture2D" uid="uid://dmnwe4snlu2bh" path="res://assets/kitchen_v1.png" id="1_2b6py"]
+[ext_resource type="Texture2D" uid="uid://dmnwe4snlu2bh" path="res://assets/Background/kitchen_v1.png" id="1_2b6py"]
 [ext_resource type="PackedScene" uid="uid://dichp2nk6trrl" path="res://scenes/fisher.tscn" id="2_bems3"]
-[ext_resource type="FontFile" uid="uid://dd8t856yxvbll" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="3_v3ycp"]
+[ext_resource type="FontFile" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="3_v3ycp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8umn"]
 texture = ExtResource("1_2b6py")
