@@ -1,1 +1,11 @@
+Label
+TextureRect
+Panel
+ColorRect
+TileMap
+Timer
+RigidBody2D
+Node
+Button
+CanvasLayer
 Node2D

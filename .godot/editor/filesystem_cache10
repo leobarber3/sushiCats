@@ -1,16 +1,16 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1773677580
+::res://::1774377568
 icon.svg::CompressedTexture2D::3422493482733554438::1771262025::1773674382::1::::<><><>0<>0<>20fed011be8f0753fa70bdab6fbfd855<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 platform.tscn::PackedScene::8969601186503869631::1772469651::0::1::::<><><>0<>0<><>::uid://g7wbt4ec7t3v::::res://scripts/drag.gd
-::res://assets/::1773675985
-::res://assets/Background/::1773675971
-kitchen_v1.png::CompressedTexture2D::8029709554144761861::1771265674::1773675971::1::::<><><>0<>0<>7341e76aff3c381309851383af79abb5<>res://.godot/imported/kitchen_v1.png-0832fe629f67714a7545594f244b81b8.ctex::
+::res://assets/::1773678977
+::res://assets/Background/::1773678977
+kitchen_v1.png::CompressedTexture2D::8029709554144761861::1773678977::1773678977::1::::<><><>0<>0<>7341e76aff3c381309851383af79abb5<>res://.godot/imported/kitchen_v1.png-0832fe629f67714a7545594f244b81b8.ctex::
 ::res://assets/CatPackFree/::1772559762
 Box3.png::CompressedTexture2D::726513274359635357::1771266689::1772559762::1::::<><><>0<>0<>439100d88c33afba3f10f5e1a4f0acbd<>res://.godot/imported/Box3.png-1af139c145f8c720b82dfede58ab40eb.ctex::
 drculacat.png::CompressedTexture2D::6128216943206111828::1771266689::1772559762::1::::<><><>0<>0<>05027178ffcc050c8a0a5663ddfcf031<>res://.godot/imported/drculacat.png-5b23830a5f6022f16bddf2fa5114c2ed.ctex::
 Furnitures.png::CompressedTexture2D::8132922019136688363::1771266689::1772559762::1::::<><><>0<>0<>084de1e59524ab07f04a679ae4fa19ee<>res://.godot/imported/Furnitures.png-4949bdab682e298319f9300848ee827a.ctex::
 Idle.png::CompressedTexture2D::7233688299805180393::1771266689::1772559762::1::::<><><>0<>0<>0d408e6aa50978878eeef6f52d3405c7<>res://.godot/imported/Idle.png-31e386902f87c103ca78257347005e77.ctex::
-::res://assets/Fishing Game Pack/::1773675909
+::res://assets/Fishing Game Pack/::1773678977
 background copy.png::CompressedTexture2D::4465836743230563257::1771262025::1772559762::1::::<><><>0<>0<>2fa7dbde04f21e8870f4ab7a2fd6834d<>res://.godot/imported/background copy.png-affb9dd1dc0b5457fd98fa59d6ae1ac2.ctex::
 background.png::CompressedTexture2D::2737149424380141564::1771262025::1772559762::1::::<><><>0<>0<>212cbf324ec940e7e4427dc798a6d201<>res://.godot/imported/background.png-744594d2b1636cf9a509c0d6798fbabc.ctex::
 bg lg finished game.png::CompressedTexture2D::7695502737479454880::1771262025::1772559762::1::::<><><>0<>0<>3e5f2faca129877b0f9218d25875c1be<>res://.godot/imported/bg lg finished game.png-093ef608efdeb334c203435bf0ee8624.ctex::
@@ -22,26 +22,38 @@ golden fish Sheet.png::CompressedTexture2D::5762203334495535344::1771262025::177
 idle in water-Sheet.png::CompressedTexture2D::2164712829756093519::1771262025::1772559762::1::::<><><>0<>0<>6f4b45bba8d450362b7c850fd31a3a0a<>res://.godot/imported/idle in water-Sheet.png-cf79b1807c072f3716364dcb10b0755c.ctex::
 old man idle state no line-Sheet.png::CompressedTexture2D::2214472384591767868::1771262025::1772559762::1::::<><><>0<>0<>184ff17e1646c413911d5ee641694e3c<>res://.godot/imported/old man idle state no line-Sheet.png-283851a5d4bca5553c4107987e6af206.ctex::
 old man reel in action Sheet.png::CompressedTexture2D::5646813077050315753::1771262025::1772559762::1::::<><><>0<>0<>28762b1cb782b52b9e633d75c58ce53a<>res://.godot/imported/old man reel in action Sheet.png-5062fcd0b61df80245eeb9b05262f163.ctex::
-Plate Buns.png::CompressedTexture2D::3616379119418020570::1773675909::1773675909::1::::<><><>0<>0<>c55f4d6d669862f5e0d090e387ac0d29<>res://.godot/imported/Plate Buns.png-01cb3aaa305502785a5a7e641e1e4915.ctex::
-Shrimp.png::CompressedTexture2D::2420490938769713638::1773675895::1773675896::1::::<><><>0<>0<>79cf30fcd9f9c970c7507bef56c719f3<>res://.godot/imported/Shrimp.png-d05dc7f7dc0ef205796becf531e1ee1c.ctex::
-::res://assets/Foodimg/::1773678023
-Fish.png::CompressedTexture2D::8233251302668020891::1773675914::1773677452::1::::<><><>0<>0<>a7273344dbdcc765fa6a09b28daf28cd<>res://.godot/imported/Fish.png-8905f916263b3d56d6ce017535b51e01.ctex::
-Onigiri.png::CompressedTexture2D::583295878307266598::1773678023::1773678023::1::::<><><>0<>0<>0be69f920f2116f86119d7d537121d20<>res://.godot/imported/Onigiri.png-352e7b5b41a3134541f4f50238e8a59d.ctex::
-Rice.png::CompressedTexture2D::2505161935619600357::1773677427::1773677456::1::::<><><>0<>0<>15689d2a835ab9d9d9143edf2cee8328<>res://.godot/imported/Rice.png-add5d3d87b409df2b3eb460187cc2846.ctex::
-Seaweed.png::CompressedTexture2D::317810716404874075::1773677572::1773677580::1::::<><><>0<>0<>f7b60f82f1876ffa1469dd301b26161c<>res://.godot/imported/Seaweed.png-52fa5269b36213867954f54716a5cd0c.ctex::
-Sushi.png::CompressedTexture2D::4509666388927161907::1771262025::1773677478::1::::<><><>0<>0<>56fa8c3d92f7ab38356a0b149fcf3637<>res://.godot/imported/Sushi.png-ceaa6119296aa682595a75dbbdcf811f.ctex::
-SushiPlate.png::CompressedTexture2D::6657627569436240891::1773676073::1773677465::1::::<><><>0<>0<>4977dfbc6ff9ba565195bbebe9c92d10<>res://.godot/imported/SushiPlate.png-e34b59ee8bae1d9453d1e7d1646324bf.ctex::
-SushiRoll.png::CompressedTexture2D::5492847778164686776::1773675892::1773677483::1::::<><><>0<>0<>4e9707eeea7d168ed69eb0b2d60126fb<>res://.godot/imported/SushiRoll.png-1fae44bf5572367aba9e516b34fd10fe.ctex::
-::res://Resources/::1773677376
-::res://Resources/Food/::1773677338
+Plate Buns.png::CompressedTexture2D::3616379119418020570::1773678977::1773678977::1::::<><><>0<>0<>c55f4d6d669862f5e0d090e387ac0d29<>res://.godot/imported/Plate Buns.png-01cb3aaa305502785a5a7e641e1e4915.ctex::
+Shrimp.png::CompressedTexture2D::2420490938769713638::1773678977::1773678977::1::::<><><>0<>0<>79cf30fcd9f9c970c7507bef56c719f3<>res://.godot/imported/Shrimp.png-d05dc7f7dc0ef205796becf531e1ee1c.ctex::
+::res://assets/Foodimg/::1773678977
+Fish.png::CompressedTexture2D::8233251302668020891::1773678977::1773678977::1::::<><><>0<>0<>a7273344dbdcc765fa6a09b28daf28cd<>res://.godot/imported/Fish.png-8905f916263b3d56d6ce017535b51e01.ctex::
+Onigiri.png::CompressedTexture2D::583295878307266598::1773678977::1773678977::1::::<><><>0<>0<>0be69f920f2116f86119d7d537121d20<>res://.godot/imported/Onigiri.png-352e7b5b41a3134541f4f50238e8a59d.ctex::
+Rice.png::CompressedTexture2D::2505161935619600357::1773678977::1773678977::1::::<><><>0<>0<>15689d2a835ab9d9d9143edf2cee8328<>res://.godot/imported/Rice.png-add5d3d87b409df2b3eb460187cc2846.ctex::
+Seaweed.png::CompressedTexture2D::317810716404874075::1773678977::1773678977::1::::<><><>0<>0<>f7b60f82f1876ffa1469dd301b26161c<>res://.godot/imported/Seaweed.png-52fa5269b36213867954f54716a5cd0c.ctex::
+Sushi.png::CompressedTexture2D::4509666388927161907::1773678977::1773678977::1::::<><><>0<>0<>56fa8c3d92f7ab38356a0b149fcf3637<>res://.godot/imported/Sushi.png-ceaa6119296aa682595a75dbbdcf811f.ctex::
+SushiPlate.png::CompressedTexture2D::6657627569436240891::1773678977::1773678977::1::::<><><>0<>0<>4977dfbc6ff9ba565195bbebe9c92d10<>res://.godot/imported/SushiPlate.png-e34b59ee8bae1d9453d1e7d1646324bf.ctex::
+SushiRoll.png::CompressedTexture2D::5492847778164686776::1773678977::1773678977::1::::<><><>0<>0<>4e9707eeea7d168ed69eb0b2d60126fb<>res://.godot/imported/SushiRoll.png-1fae44bf5572367aba9e516b34fd10fe.ctex::
+::res://Resources/::1773679582
+::res://Resources/Food/::1773680847
+Onigiri.tres::Resource/Item::612275501495309819::1773680678::0::1::::<><><>0<>0<><>::uid://iks2emp8mwdy::::res://assets/Foodimg/Onigiri.png<>uid://dvf4ehm1g74kb::::res://scripts/Item.gd
+Sushi1.tres::Resource/Item::635219702731927044::1773680847::0::1::::<><><>0<>0<><>::uid://b5irst22j37e2::::res://assets/Foodimg/Sushi.png<>uid://dvf4ehm1g74kb::::res://scripts/Item.gd
+::res://Resources/Ingredient/::1773680783
+Fish1.tres::Resource/Item::5960297734501542731::1773680783::0::1::::<><><>0<>0<><>::uid://dpkipfwask4qx::::res://assets/Foodimg/Fish.png<>uid://dvf4ehm1g74kb::::res://scripts/Item.gd
+Rice.tres::Resource/Item::4675868386623910465::1773680717::0::1::::<><><>0<>0<><>::uid://bbxrwevxrdjld::::res://assets/Foodimg/Rice.png<>uid://dvf4ehm1g74kb::::res://scripts/Item.gd
+Seaweed.tres::Resource/Item::8173141878254017402::1773680747::0::1::::<><><>0<>0<><>::uid://er7kciujhfpb::::res://assets/Foodimg/Seaweed.png<>uid://dvf4ehm1g74kb::::res://scripts/Item.gd
 ::res://Resources/Recipes/::1773677352
-::res://scenes/::1773675971
-cat-customer.tscn::PackedScene::6938283894690414629::1771267056::0::1::::<><><>0<>0<><>::uid://otu2orsy2b0::::res://scripts/cat_customer.gd<>uid://dbcb13uix8t6h::::res://assets/CatPackFree/Idle.png
-fisher.tscn::PackedScene::7725354800259079449::1771266429::0::1::::<><><>0<>0<><>::uid://ciefffyf4dwea::::res://scripts/fisher.gd<>uid://6sybil6xm3ki::::res://assets/Fishing Game Pack/old man idle state no line-Sheet.png<>uid://cdwbpbsjogi85::::res://assets/Fishing Game Pack/cast bobbin Sheet.png<>uid://cmpmglpcakrcr::::res://assets/Fishing Game Pack/old man reel in action Sheet.png<>uid://ckx62pnydykas::::res://assets/Fishing Game Pack/fisherman.png
-game.tscn::PackedScene::5070972938264017379::1771264660::0::1::::<><><>0<>0<><>::uid://be85plqx5n3sa::::res://assets/Fishing Game Pack/background.png<>uid://dichp2nk6trrl::::res://scenes/fisher.tscn<>uid://b4vjxctnl537j::::res://assets/Fishing Game Pack/background copy.png<>uid://dd8t856yxvbll::::res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf
-kitchen.tscn::PackedScene::2640570515352764138::1773675971::0::1::::<><><>0<>0<><>::uid://dmnwe4snlu2bh::::res://assets/Background/kitchen_v1.png<>uid://dichp2nk6trrl::::res://scenes/fisher.tscn<>res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf
-orders.tscn::PackedScene::4649378686431892375::1773675971::0::1::::<><><>0<>0<><>::uid://dmnwe4snlu2bh::::res://assets/Background/kitchen_v1.png<>uid://c537r0qvwmptd::::res://scenes/cat-customer.tscn<>uid://dichp2nk6trrl::::res://scenes/fisher.tscn
-::res://scripts/::1772472880
-cat_customer.gd::GDScript::30092067852644135::1772470307::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://scenes/::1774377568
+cat-customer.tscn::PackedScene::6938283894690414629::1774373195::0::1::::<><><>0<>0<><>::uid://otu2orsy2b0::::res://scripts/cat_customer.gd<>uid://dbcb13uix8t6h::::res://assets/CatPackFree/Idle.png
+Cat.tscn::PackedScene::178552698734183763::1774377532::0::1::::<><><>0<>0<><>::uid://21nqshwy7owg::::res://scenes/Cat.gd<>uid://dbcb13uix8t6h::::res://assets/CatPackFree/Idle.png
+fisher.tscn::PackedScene::7725354800259079449::1773678977::0::1::::<><><>0<>0<><>::uid://ciefffyf4dwea::::res://scripts/fisher.gd<>uid://6sybil6xm3ki::::res://assets/Fishing Game Pack/old man idle state no line-Sheet.png<>uid://cdwbpbsjogi85::::res://assets/Fishing Game Pack/cast bobbin Sheet.png<>uid://cmpmglpcakrcr::::res://assets/Fishing Game Pack/old man reel in action Sheet.png<>uid://ckx62pnydykas::::res://assets/Fishing Game Pack/fisherman.png
+game.tscn::PackedScene::5070972938264017379::1773678977::0::1::::<><><>0<>0<><>::uid://be85plqx5n3sa::::res://assets/Fishing Game Pack/background.png<>uid://dichp2nk6trrl::::res://scenes/fisher.tscn<>uid://b4vjxctnl537j::::res://assets/Fishing Game Pack/background copy.png
+main.tscn::PackedScene::3540852092391752951::1774377573::0::1::::<><><>0<>0<><>::uid://c537r0qvwmptd::::res://scenes/cat-customer.tscn<>uid://b4elh84wwwcsn::::res://HUD.tscn
+orders.tscn::PackedScene::4649378686431892375::1774377573::0::1::::<><><>0<>0<><>::uid://dh62og4tc1v1o::::res://scripts/orders.gd<>uid://dmnwe4snlu2bh::::res://assets/Background/kitchen_v1.png<>uid://c537r0qvwmptd::::res://scenes/cat-customer.tscn<>uid://b4elh84wwwcsn::::res://HUD.tscn
+HUD.tscn::PackedScene::4430836826789773833::1774373426::0::1::::<><><>0<>0<><>::uid://bc6a8hwp2jeqh::::res://scripts/hud.gd
+::res://scripts/::1774377568
+Cat.gd::GDScript::2295559806216183079::1774377545::0::1::::<>CharacterBody2D<><>0<>0<><>::
 fisher.gd::GDScript::5342922441398188136::1771264609::0::1::::<>CharacterBody2D<><>0<>0<><>::
+hud.gd::GDScript::2590853414910999951::1774371842::0::1::::<>CanvasLayer<><>0<>0<><>::
+Item.gd::GDScript::8645317979605863785::1773679791::0::1::::Item<>Resource<><>0<>0<><>::
+orders.gd::GDScript::7716244387647167718::1774373069::0::1::::<>Node2D<><>0<>0<><>::
 player_fisher-old.gd::GDScript::378130888526408012::1772472880::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Recipe.gd::GDScript::9060884348702808875::1773680888::0::1::::Recipe<>Resource<><>0<>0<><>::

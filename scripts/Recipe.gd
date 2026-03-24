@@ -12,4 +12,4 @@ class_name Recipe
 #the recipce will make 1 of each item
 @export var recipe_amount : int = 1
 #the recipe will take __ amount of time to cook.. still tbd
-@export var recipe_time : float = 0.0
+@export var recipe_time : float = 5.0
