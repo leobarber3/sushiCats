@@ -1,3 +1,5 @@
+CanvasLayer
+GridContainer
 Label
 TextureRect
 Panel
@@ -7,5 +9,4 @@ Timer
 RigidBody2D
 Node
 Button
-CanvasLayer
 Node2D

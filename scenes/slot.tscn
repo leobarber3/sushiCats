@@ -7,12 +7,19 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_4v6ba")
 
-[node name="Item" type="TextureRect" parent="." unique_id=587738239]
+[node name="Img" type="TextureRect" parent="." unique_id=587738239]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Amount" type="Label" parent="." unique_id=1858699725]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
