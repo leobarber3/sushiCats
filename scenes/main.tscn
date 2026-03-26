@@ -967,7 +967,7 @@ grow_vertical = 2
 color = Color(0.76862746, 1, 1, 1)
 
 [node name="TileMap2" type="TileMap" parent="ColorRect" unique_id=1790876011]
-position = Vector2(575, 350)
+position = Vector2(575, 325)
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_tipki")
 format = 2
@@ -986,10 +986,10 @@ offset_bottom = 190.0
 texture = ExtResource("4_jyhfs")
 
 [node name="RecipePanel" type="Panel" parent="." unique_id=836338083]
-offset_left = 833.0
-offset_top = 64.0
-offset_right = 1072.0
-offset_bottom = 225.0
+offset_left = 843.0
+offset_top = 29.0
+offset_right = 1082.0
+offset_bottom = 190.0
 
 [node name="Label" type="Label" parent="RecipePanel" unique_id=1872943197]
 layout_mode = 1
@@ -1006,26 +1006,26 @@ text = "Recipes"
 
 [node name="slot" parent="." unique_id=2072874243 instance=ExtResource("6_tefeu")]
 offset_left = 100.0
-offset_top = 500.0
+offset_top = 475.0
 offset_right = 140.0
-offset_bottom = 540.0
+offset_bottom = 515.0
 
 [node name="slot2" parent="." unique_id=1331104009 instance=ExtResource("6_tefeu")]
 offset_left = 150.0
-offset_top = 500.0
+offset_top = 475.0
 offset_right = 190.0
-offset_bottom = 540.0
+offset_bottom = 515.0
 
 [node name="slot3" parent="." unique_id=717822510 instance=ExtResource("6_tefeu")]
 offset_left = 200.0
-offset_top = 500.0
+offset_top = 475.0
 offset_right = 240.0
-offset_bottom = 540.0
+offset_bottom = 515.0
 
 [node name="slot4" parent="." unique_id=3995446 instance=ExtResource("6_tefeu")]
 offset_left = 250.0
-offset_top = 500.0
+offset_top = 475.0
 offset_right = 290.0
-offset_bottom = 540.0
+offset_bottom = 515.0
 
 [connection signal="timeout" from="CustomerTimer" to="." method="_on_customer_timer_timeout"]
