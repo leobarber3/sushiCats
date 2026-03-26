@@ -27,5 +27,6 @@ extends Panel
 		if amount <= 0:
 			item = null
 		
+#need to futher implement drag drop mechanics
 func _can_drop_data(at_position, data):
 	return is_instance_of(data.item, Item)
