@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b7va4s1bsoqgf"]
+
+[ext_resource type="Texture2D" uid="uid://bbxrwevxrdjld" path="res://assets/Foodimg/Rice.png" id="1_odp6p"]
+[ext_resource type="Script" uid="uid://dvf4ehm1g74kb" path="res://scripts/Item.gd" id="2_7cw4h"]
+
+[resource]
+script = ExtResource("2_7cw4h")
+name = "Rice"
+image = ExtResource("1_odp6p")
+metadata/_custom_type_script = "uid://dvf4ehm1g74kb"

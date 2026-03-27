@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dichp2nk6trrl"]
+[gd_scene format=3 uid="uid://dichp2nk6trrl"]
 
 [ext_resource type="Script" uid="uid://ciefffyf4dwea" path="res://scripts/fisher.gd" id="1_jgc20"]
 [ext_resource type="Texture2D" uid="uid://6sybil6xm3ki" path="res://assets/Fishing Game Pack/old man idle state no line-Sheet.png" id="1_m8y6f"]
@@ -164,12 +164,12 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jgc20"]
 
-[node name="Node2D" type="CharacterBody2D"]
+[node name="Node2D" type="CharacterBody2D" unique_id=859911658]
 script = ExtResource("1_jgc20")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1081392650]
 sprite_frames = SubResource("SpriteFrames_jsddd")
 animation = &"nofish"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2133709872]
 shape = SubResource("CircleShape2D_jgc20")

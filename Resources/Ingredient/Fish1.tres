@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cq6hh6g8yd06r"]
+
+[ext_resource type="Texture2D" uid="uid://dpkipfwask4qx" path="res://assets/Foodimg/Fish.png" id="1_py6d0"]
+[ext_resource type="Script" uid="uid://dvf4ehm1g74kb" path="res://scripts/Item.gd" id="2_t4i6i"]
+
+[resource]
+script = ExtResource("2_t4i6i")
+name = "Fish1"
+image = ExtResource("1_py6d0")
+metadata/_custom_type_script = "uid://dvf4ehm1g74kb"

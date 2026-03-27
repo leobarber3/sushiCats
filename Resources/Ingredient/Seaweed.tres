@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dopepnh6tqvn3"]
+
+[ext_resource type="Texture2D" uid="uid://er7kciujhfpb" path="res://assets/Foodimg/Seaweed.png" id="1_v6h3r"]
+[ext_resource type="Script" uid="uid://dvf4ehm1g74kb" path="res://scripts/Item.gd" id="2_suo86"]
+
+[resource]
+script = ExtResource("2_suo86")
+name = "Seaweed"
+image = ExtResource("1_v6h3r")
+metadata/_custom_type_script = "uid://dvf4ehm1g74kb"

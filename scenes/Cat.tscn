@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://csq0b2uirryx"]
+
+[ext_resource type="Script" uid="uid://7x8sga2264fb" path="res://scripts/Cat.gd" id="2_2olvd"]
+[ext_resource type="Texture2D" uid="uid://dbcb13uix8t6h" path="res://assets/CatPackFree/Idle.png" id="2_spuq0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njr37"]
+atlas = ExtResource("2_spuq0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsshr"]
+atlas = ExtResource("2_spuq0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyj3x"]
+atlas = ExtResource("2_spuq0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17s6i"]
+atlas = ExtResource("2_spuq0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbg4g"]
+atlas = ExtResource("2_spuq0")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3kp4"]
+atlas = ExtResource("2_spuq0")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brxap"]
+atlas = ExtResource("2_spuq0")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgcju"]
+atlas = ExtResource("2_spuq0")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnkbt"]
+atlas = ExtResource("2_spuq0")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70cfy"]
+atlas = ExtResource("2_spuq0")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhqvr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njr37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsshr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyj3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17s6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbg4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3kp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brxap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgcju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnkbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70cfy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s8hph"]
+radius = 6.0466933
+
+[node name="Cat" type="RigidBody2D" unique_id=439592374]
+position = Vector2(231, 249)
+script = ExtResource("2_2olvd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=548966518]
+position = Vector2(13.000015, -6.9999847)
+scale = Vector2(2.34375, 2.40625)
+sprite_frames = SubResource("SpriteFrames_jhqvr")
+animation = &"idle"
+frame_progress = 0.2378023
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D" unique_id=1620044923]
+position = Vector2(-5.3333282, 2.2857141)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_s8hph")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://iyuc816e4u6f"]
+
+[ext_resource type="Texture2D" uid="uid://iks2emp8mwdy" path="res://assets/Foodimg/Onigiri.png" id="1_qnmvm"]
+[ext_resource type="Script" uid="uid://dvf4ehm1g74kb" path="res://scripts/Item.gd" id="2_5x0cu"]
+
+[resource]
+script = ExtResource("2_5x0cu")
+name = "Onigiri"
+image = ExtResource("1_qnmvm")
+metadata/_custom_type_script = "uid://dvf4ehm1g74kb"
