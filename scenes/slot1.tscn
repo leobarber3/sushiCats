@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cfqe50nlw6gie"]
 
-[ext_resource type="Script" uid="uid://dnhvjhst6jwjx" path="res://scripts/slot.gd" id="1_4v6ba"]
+[ext_resource type="Script" uid="uid://dnhvjhst6jwjx" path="res://scripts/slot1.gd" id="1_0si52"]
 
 [node name="slot" type="Panel" unique_id=2072874243]
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_4v6ba")
+script = ExtResource("1_0si52")
 
 [node name="Img" type="TextureRect" parent="." unique_id=587738239]
 layout_mode = 0

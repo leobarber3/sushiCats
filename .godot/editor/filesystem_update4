@@ -1,5 +1,2 @@
 res://scenes/main.tscn
-res://scenes/slot.tscn
-res://scripts/slot.gd
-res://Resources/Ingredient/Rice.tres
-res://scenes/stock_control.tscn
+res://scripts/cooking_board.gd
