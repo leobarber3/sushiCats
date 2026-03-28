@@ -31,16 +31,16 @@ func _get_drag_data(_at_position):
 		preview_image.custom_minimum_size = Vector2(32,32)
 		preview_image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
 		preview_image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		
+		# size and position of image (in relation to mouse)
 		preview_image.size = Vector2(48, 48)
 		preview_image.position = -Vector2(24, 24)
-		# size and position of image (in relation to mouse)
 		
 		
 		# Add texture to a control node and display control at mouse
 		var preview = Control.new()
 		preview.size = Vector2(48,48)
-		
+		# ensure preview displays over other UI
+		preview.z_index = 5
 		preview.add_child(preview_image)
 		set_drag_preview(preview)
 		

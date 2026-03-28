@@ -31,6 +31,8 @@ func _get_drag_data(_at_position):
 		
 		# Add texture to a control node and display control at mouse
 		var preview = Control.new()
+		# ensure preview displays over other UI
+		preview.z_index = 5
 		preview.add_child(preview_image)
 		set_drag_preview(preview)
 		
