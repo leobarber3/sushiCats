@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dxwtwv0sfigkg"]
+
+[ext_resource type="Script" uid="uid://ppcnvpx5cdlm" path="res://scripts/cooking_slot.gd" id="1_oi1qq"]
+
+[node name="CookingSlot" type="Panel" unique_id=2001362267]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_oi1qq")
+
+[node name="Image" type="TextureRect" parent="." unique_id=1454668569]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bs4winf8mqmt4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxlh2"]
+
+[node name="CustomerPanel" type="Panel" unique_id=1274626972]
+custom_minimum_size = Vector2(893, 120)
+offset_left = 386.0
+offset_top = 205.0
+offset_right = 1279.0
+offset_bottom = 325.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jxlh2")
+
+[node name="CustomerSlots" type="HBoxContainer" parent="." unique_id=673830939]
+custom_minimum_size = Vector2(893, 120)
+layout_mode = 0
+offset_right = 516.0
+offset_bottom = 120.0
+theme_override_constants/separation = 90
+
+[node name="CatPanel0" type="Panel" parent="CustomerSlots" unique_id=642818530]
+custom_minimum_size = Vector2(100, 120)
+layout_mode = 2
+
+[node name="CatPanel1" type="Panel" parent="CustomerSlots" unique_id=1850207097]
+custom_minimum_size = Vector2(100, 120)
+layout_mode = 2
+
+[node name="CatPanel2" type="Panel" parent="CustomerSlots" unique_id=1674048795]
+custom_minimum_size = Vector2(100, 120)
+layout_mode = 2
+
+[node name="CatPanel3" type="Panel" parent="CustomerSlots" unique_id=1317617970]
+custom_minimum_size = Vector2(100, 120)
+layout_mode = 2
+
+[node name="CatPanel4" type="Panel" parent="CustomerSlots" unique_id=1394735192]
+custom_minimum_size = Vector2(100, 120)
+layout_mode = 2

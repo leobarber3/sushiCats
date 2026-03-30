@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dh62og4tc1v1o" path="res://scripts/orders.gd" id="1_maj78"]
 [ext_resource type="Texture2D" uid="uid://dmnwe4snlu2bh" path="res://assets/Background/kitchen_v1.png" id="1_qrxw8"]
-[ext_resource type="PackedScene" uid="uid://csq0b2uirryx" path="res://scenes/Cat.tscn" id="3_maj78"]
-[ext_resource type="PackedScene" uid="uid://b4elh84wwwcsn" path="res://scenes/HUD.tscn" id="4_maj78"]
+[ext_resource type="PackedScene" uid="uid://csq0b2uirryx" path="res://scenes/cat2.tscn" id="3_maj78"]
+[ext_resource type="PackedScene" path="res://scenes/HUD.tscn" id="4_maj78"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_maj78"]
 texture = ExtResource("1_qrxw8")

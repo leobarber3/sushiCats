@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://c5wygsjnghfn4"]
+
+[ext_resource type="Texture2D" uid="uid://iks2emp8mwdy" path="res://assets/Foodimg/Onigiri.png" id="1_4kcoe"]
+[ext_resource type="Script" uid="uid://dvf4ehm1g74kb" path="res://scripts/Item.gd" id="2_r2yrd"]
+[ext_resource type="Resource" uid="uid://b7va4s1bsoqgf" path="res://Resources/Ingredient/Rice.tres" id="3_x48hy"]
+[ext_resource type="Resource" uid="uid://dopepnh6tqvn3" path="res://Resources/Ingredient/Seaweed.tres" id="4_88o08"]
+[ext_resource type="Resource" uid="uid://iyuc816e4u6f" path="res://Resources/Food/Onigiri.tres" id="5_i4tuy"]
+[ext_resource type="Script" uid="uid://d2dfpajh5rait" path="res://scripts/Recipe.gd" id="6_8radw"]
+
+[resource]
+script = ExtResource("6_8radw")
+name = "OnigiriRecipe"
+image = ExtResource("1_4kcoe")
+ingredients = Dictionary[int, ExtResource("2_r2yrd")]({
+0: ExtResource("3_x48hy"),
+1: ExtResource("4_88o08"),
+2: ExtResource("3_x48hy")
+})
+product = ExtResource("5_i4tuy")
+metadata/_custom_type_script = "uid://d2dfpajh5rait"
