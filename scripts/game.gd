@@ -35,7 +35,7 @@ func spawn_cat():
 func on_order_complete(happy : bool):
 	if happy:
 		score += 10
-		$"../HUD".update_score(score) #null instance error
+		$"../HUD".update_score(score) 
 	else:
 		score -= 5
 		$"../HUD".update_score(score) 
