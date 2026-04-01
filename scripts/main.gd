@@ -21,7 +21,7 @@ func _on_customer_timer_timeout() -> void:
 func new_game():
 	score = 0
 	$HUD.update_score(score)
-	$HUD.show_text("Get ready!")
+	$HUD.show_text("Start!")
 
 	
 	

@@ -4,7 +4,8 @@ extends Node
 @onready var customer_slots : HBoxContainer = get_node("../UI/CustomerPanel/CustomerSlots")
 @export var food_list : Array[Item]
 
-var score : int = 0
+
+@export var score : int = 0
 var spawn_timer : Timer
 
 
@@ -34,16 +35,18 @@ func spawn_cat():
 func on_order_complete(happy : bool):
 	if happy:
 		score += 10
-		#$HUD.update_score(score)
+		$"../HUD".update_score(score) #null instance error
 	else:
 		score -= 5
-		#$HUD.update_score(score) #null instance error
+		$"../HUD".update_score(score) 
 	print ("score: ", score)
+	#if score == 30:
+		#HUD.show_game_over()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-			# immediately spawn a cat, want to wait till start button is pressed
-	spawn_cat()
+	# immediately spawn a cat, want to wait till start button is pressed
+	#spawn_cat()
 	# create a new timer to spawn more cats sequentially
 	spawn_timer = Timer.new()
 	spawn_timer.wait_time = 10.0 # spawn a cat every 10 seconds

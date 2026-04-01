@@ -57,12 +57,12 @@ offset_left = -639.5
 offset_right = 639.5
 offset_bottom = 179.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.12951802, 1.3616358e-05, 0.13126387, 1)
 theme_override_font_sizes/font_size = 64
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="textTimer" type="Timer" parent="." unique_id=1722719690]
-wait_time = 2.0
 one_shot = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
