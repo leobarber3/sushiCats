@@ -8,13 +8,6 @@ var score : int = 0
 var spawn_timer : Timer
 
 
-
-
-
-
-
-
-
 # Function to spawn a cat customer
 func spawn_cat():
 	# get all slots and switch order before checking to add randomness in spawning
@@ -41,13 +34,15 @@ func spawn_cat():
 func on_order_complete(happy : bool):
 	if happy:
 		score += 10
+		#$HUD.update_score(score)
 	else:
 		score -= 5
+		#$HUD.update_score(score) #null instance error
 	print ("score: ", score)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# immediately spawn a cat
+			# immediately spawn a cat, want to wait till start button is pressed
 	spawn_cat()
 	# create a new timer to spawn more cats sequentially
 	spawn_timer = Timer.new()
