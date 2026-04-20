@@ -10,8 +10,6 @@ func show_text(text):
 	
 func show_game_over():
 	show_text("Round Over")
-	#wait for text timer to timeout then display text for new round
-	await $textTimer.timeout()
 	
 	$TitleText.text = "Welcome to Sushi Fish!"
 	$TitleText.show()

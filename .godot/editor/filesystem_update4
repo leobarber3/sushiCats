@@ -1,9 +1,10 @@
-res://scenes/HUD.tscn
-res://scripts/hud.gd
-res://scenes/main.tscn
-res://scripts/main.gd
-res://scripts/game.gd
-res://scripts/orders.gd
-res://scripts/player_fisher-old.gd
 res://scenes/Cat.tscn
 res://scripts/Cat.gd
+res://scripts/game.gd
+res://scripts/hud.gd
+res://scripts/main.gd
+res://scripts/orders.gd
+res://scripts/player_fisher-old.gd
+res://scenes/game.tscn
+res://scenes/main.tscn
+res://scenes/HUD.tscn
