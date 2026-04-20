@@ -43,15 +43,14 @@ func on_order_complete(happy : bool):
 	print ("score: ", score)
 	if score > 10 :
 		$"../HUD".show_game_over()
-	#	game_over = true
+		game_overBool = true
+		spawn_timer.stop() #stops cats from spawning
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 func start_game():
-	if game_overBool:
-		game_over()
 	# immediately spawn a cat, want to wait till start button is pressed
 	spawn_cat()
 	# create a new timer to spawn more cats sequentially
@@ -62,8 +61,10 @@ func start_game():
 	spawn_timer.timeout.connect(spawn_cat)
 	add_child(spawn_timer)
 	spawn_timer.start()
+	print(game_overBool)
 	
 func game_over():
+	#hadle hud?
 	pass
 
 	
@@ -71,4 +72,6 @@ func game_over():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	##check for gaem timer over and if score is 
+	#what it needs to be
 	pass

@@ -11,7 +11,6 @@ func show_text(text):
 func show_game_over():
 	$ColorRect.show()
 	show_text("Game Over")
-	show_text("welcome to Sushi Fish!")
 	$StartButton.show()
 	update_score(0)
 	$ScoreLabel.hide()
