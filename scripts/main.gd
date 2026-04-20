@@ -16,6 +16,7 @@ func game_over():
 #the time requirement for order to be met
 #gaem over if timeout
 func _on_customer_timer_timeout() -> void:
+	game_over()
 	pass # Replace with function body.
 
 func new_game():

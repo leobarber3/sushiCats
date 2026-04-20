@@ -40,8 +40,9 @@ func on_order_complete(happy : bool):
 		score -= 5
 		$"../HUD".update_score(score) 
 	print ("score: ", score)
-	if score > 10:
-		$"../HUD".show_game_over()
+	#if score > 10:
+	#	$"../HUD".show_game_over()
+	#	game_over = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -58,6 +59,9 @@ func start_game():
 	spawn_timer.timeout.connect(spawn_cat)
 	add_child(spawn_timer)
 	spawn_timer.start()
+	#if game_over()	 (create bool value at top set) exit function = stop spawning?
+	#or call game over func which will handle logic
+	
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
