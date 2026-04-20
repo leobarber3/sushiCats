@@ -13,7 +13,7 @@ func show_game_over():
 	show_text("Game Over")
 	$StartButton.show()
 	update_score(0)
-	$ScoreLabel.hide()
+	#$ScoreLabel.hide()
 
  
 	#need to add logc to stop cats from spawning?s

@@ -1,7 +1,5 @@
-res://scenes/HUD.tscn
-res://scripts/main.gd
 res://scenes/main.tscn
-res://scripts/Cat.gd
-res://scripts/hud.gd
 res://scripts/game.gd
 res://scenes/Cat.tscn
+res://scripts/main.gd
+res://scripts/hud.gd

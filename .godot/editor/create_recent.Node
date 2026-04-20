@@ -1,8 +1,8 @@
+ProgressBar
+Timer
 AudioStreamPlayer2D
 ColorRect
-Timer
 Label
-ProgressBar
 Node
 Panel
 HBoxContainer
