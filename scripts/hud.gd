@@ -14,7 +14,7 @@ func show_game_over():
 	$StartButton.show()
 	update_score(0)
 	#$ScoreLabel.hide()
-
+	$"../Game".game_overBool = false
  
 	#need to add logc to stop cats from spawning?s
 	#could use group logic like in 2d tutorial?

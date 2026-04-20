@@ -1003,7 +1003,7 @@ one_shot = true
 offset_right = 1280.0
 offset_bottom = 27.0
 step = 1.0
-value = 100.0
+value = 60.0
 show_percentage = false
 
 [node name="HUD" parent="." unique_id=675159572 instance=ExtResource("11_ya4ey")]

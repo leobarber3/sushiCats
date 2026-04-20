@@ -8,6 +8,7 @@ extends Node
 #@export var game_progress : ProgressBar
 @export var score : int = 0
 var spawn_timer : Timer
+var game_overBool : bool = false
 
 @onready var game_timer = $GameTimer
 @onready var game_progress = $GameProgress
@@ -43,10 +44,11 @@ func on_order_complete(happy : bool):
 		score -= 5
 		$"../HUD".update_score(score) 
 	print ("score: ", score)
-	#if score > 10 :
-		#$"../HUD".show_game_over()
-		#game_overBool = true
-		#spawn_timer.stop() #stops cats from spawning
+	if score > 10:
+		game_overBool = true
+		if(game_overBool):
+			spawn_timer.stop() #stops cats from spawning
+			game_over()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -71,7 +73,8 @@ func start_game():
 	spawn_timer.start()
 	
 func game_over():
-	#hadle hud?
+	$"../HUD".show_game_over()
+	score = 0
 	pass
 
 
@@ -82,21 +85,23 @@ func game_over():
 func _process(delta: float) -> void:
 	#check for game timer over and if score is 
 	#what it needs to be
-	print(score)
-	if score > 10 || game_timer.is_stopped():
-		$"../HUD".show_game_over()
-		print(score)
+	#print(score)
+	#if score > 10 || game_timer.is_stopped():
+		#$"../HUD".show_game_over()
+		#print(score)
 		# Must stop cats from spawning here
 		
-		return
+		#return
 		## stop running the game, ran out of time
 	
 	
 	
 	# update the progress bar
-	print("progress bar: ", game_progress.value)
+
 	print("game time left: ", game_timer.time_left)
-	game_progress.value = game_timer.time_left / 60
+	
+	game_progress.value = 60 - game_timer.time_left 
+	print("progress bar: ", game_progress.value)
 	# change color with modulate property of ProgressBar
 	if game_timer.time_left <= 10 :
 		game_progress.modulate = Color.RED
@@ -104,13 +109,13 @@ func _process(delta: float) -> void:
 		game_progress.modulate = Color.YELLOW
 	else:
 		game_progress.modulate = Color.GREEN
-	
-	
-	
-	
 	return
+
 
 # Game timer times out : game over
 func _on_game_timer_timeout() -> void:
-	
+	game_overBool = true
+	game_over()
+	#this will show the end scree when the timer timesout
+	#but we still need to figure out how to clear the cats from the slots
 	pass # Replace with function body.
