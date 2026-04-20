@@ -63,9 +63,6 @@ func leave(happy : bool):
 	queue_free()
 
 
-
-
-
 # Connected to Timer timeout()
 func _on_wait_timer_timeout() -> void:
 	# function is called when timer runs out, meaning customer never got food:

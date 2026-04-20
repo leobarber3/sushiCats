@@ -7,6 +7,7 @@ extends Node
 
 @export var score : int = 0
 var spawn_timer : Timer
+var game_overBool : bool = false
 
 
 # Function to spawn a cat customer
@@ -40,8 +41,8 @@ func on_order_complete(happy : bool):
 		score -= 5
 		$"../HUD".update_score(score) 
 	print ("score: ", score)
-	#if score > 10:
-	#	$"../HUD".show_game_over()
+	if score > 10 :
+		$"../HUD".show_game_over()
 	#	game_over = true
 
 # Called when the node enters the scene tree for the first time.
@@ -49,6 +50,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func start_game():
+	if game_overBool:
+		game_over()
 	# immediately spawn a cat, want to wait till start button is pressed
 	spawn_cat()
 	# create a new timer to spawn more cats sequentially
@@ -59,8 +62,10 @@ func start_game():
 	spawn_timer.timeout.connect(spawn_cat)
 	add_child(spawn_timer)
 	spawn_timer.start()
-	#if game_over()	 (create bool value at top set) exit function = stop spawning?
-	#or call game over func which will handle logic
+	
+func game_over():
+	pass
+
 	
 	
 	

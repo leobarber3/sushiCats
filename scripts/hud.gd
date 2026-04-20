@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 signal start_game #once start game is ready 
-
+@export var round : int = 0
 
 func show_text(text):
 	$TitleText.text = text
@@ -10,11 +10,13 @@ func show_text(text):
 	
 func show_game_over():
 	$ColorRect.show()
-	show_text("Round Over")
-	$TitleText.text = "Welcome to Sushi Fish!"
-	$TitleText.show()
+	show_text("Game Over")
+	show_text("welcome to Sushi Fish!")
 	$StartButton.show()
-	
+	update_score(0)
+	$ScoreLabel.hide()
+
+ 
 	#need to add logc to stop cats from spawning?s
 	#could use group logic like in 2d tutorial?
 	
