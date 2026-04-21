@@ -55,7 +55,7 @@ func on_order_complete(happy : bool):
 		score -= 5
 		$"../HUD".update_score(score) 
 	print ("score: ", score)
-	if score > 50:
+	if score > 40:
 		game_overBool = true
 		if(game_overBool):
 			spawn_timer.stop() #stops cats from spawning
