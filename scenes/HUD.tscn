@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b4elh84wwwcsn"]
 
 [ext_resource type="Script" uid="uid://bc6a8hwp2jeqh" path="res://scripts/hud.gd" id="1_k5de2"]
+[ext_resource type="AudioStream" uid="uid://bptjq11htv21s" path="res://assets/audio/BackgroundMusic.exe.wav" id="2_fls4u"]
 
 [node name="HUD" type="CanvasLayer" unique_id=675159572]
 script = ExtResource("1_k5de2")
@@ -64,6 +65,9 @@ vertical_alignment = 1
 
 [node name="textTimer" type="Timer" parent="." unique_id=1722719690]
 one_shot = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=2049295799]
+stream = ExtResource("2_fls4u")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="textTimer" to="." method="_on_text_timer_timeout"]

@@ -14,6 +14,7 @@ func show_game_over():
 	$StartButton.show()
 	update_score(0)
 	#$ScoreLabel.hide()
+	$BackgroundMusic.stop()	
 	$"../Game".game_overBool = false
  
 	#need to add logc to stop cats from spawning?s
@@ -26,6 +27,7 @@ func _on_button_pressed() -> void:
 	$StartButton.hide()
 	start_game.emit()
 	$ColorRect.hide()
+	$BackgroundMusic.play()	
 	
 func _on_text_timer_timeout() -> void:
 	$TitleText.hide()
