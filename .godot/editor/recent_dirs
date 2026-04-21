@@ -1,4 +1,5 @@
 res://Resources/Recipes/
+res://Resources/Ingredient/
 res://Resources/Food/
 res://assets/audio/
 res://scenes/
@@ -6,4 +7,3 @@ res://scripts/
 res://assets/CatPackFree/
 res://assets/Foodimg/
 res://
-res://Resources/Ingredient/

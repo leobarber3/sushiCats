@@ -2,3 +2,8 @@ res://scenes/cooking_board.tscn
 res://Resources/Food/Onigiri.tres
 res://Resources/Recipes/Sushi2.tres
 res://scenes/main.tscn
+res://scripts/game.gd
+res://scripts/hud.gd
+res://Resources/Recipes/Sushi3.tres
+res://Resources/Food/Sushi3.tres
+res://scenes/HUD.tscn

@@ -6,6 +6,8 @@ extends Node
 #
 #@export var game_timer : Timer
 #@export var game_progress : ProgressBar
+#variable level to keep track of how far to index through the recipe array
+@export var level : int = 1
 @export var score : int = 0
 var spawn_timer : Timer
 var game_overBool : bool = false
@@ -25,7 +27,16 @@ func spawn_cat():
 			var cat = cat_scene.instantiate()
 			# add cat to empty slot
 			customer_slot.add_child(cat)
-			var food = food_list[randi() % food_list.size()]
+			
+			#var food = food_list[randi() % food_list.size()]
+			#this will cause index out of bounds error eventually.
+			#if level > food size game won??
+			#if level is = to food list size then you beat the game!
+			if level >= food_list.size():
+				var food =  food_list[randi() % food_list.size()]
+				
+		
+			var food = food_list[randi() % level]
 			cat.setup(food)
 			# Connect order_complete signal (from cat.gd) to on_order_complete function
 			cat.order_complete.connect(on_order_complete)
@@ -44,7 +55,7 @@ func on_order_complete(happy : bool):
 		score -= 5
 		$"../HUD".update_score(score) 
 	print ("score: ", score)
-	if score > 10:
+	if score > 50:
 		game_overBool = true
 		if(game_overBool):
 			spawn_timer.stop() #stops cats from spawning
@@ -75,6 +86,7 @@ func start_game():
 func game_over():
 	$"../HUD".show_game_over()
 	score = 0
+	level += 1
 	pass
 
 
