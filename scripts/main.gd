@@ -1,5 +1,6 @@
 extends Node
 
+#is this variable causing problems with the game score?? 
 var score
 
 func game_over():

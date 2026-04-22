@@ -1,2 +1,7 @@
-res://scenes/HUD.tscn
 res://scripts/game.gd
+res://scripts/hud.gd
+res://scripts/main.gd
+res://scripts/orders.gd
+res://scripts/player_fisher-old.gd
+res://scenes/main.tscn
+res://scenes/HUD.tscn

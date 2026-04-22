@@ -29,13 +29,16 @@ func spawn_cat():
 			customer_slot.add_child(cat)
 			
 			#var food = food_list[randi() % food_list.size()]
+	
 			#this will cause index out of bounds error eventually.
-			#if level > food size game won??
+			#if level == food_list.size() || level == 0 :
+				#spawn_timer.stop()  
+				#start_over()
 			#if level is = to food list size then you beat the game!
 			if level >= food_list.size():
 				var food =  food_list[randi() % food_list.size()]
-				
 		
+			#this line is where the errors coming from
 			var food = food_list[randi() % level]
 			cat.setup(food)
 			# Connect order_complete signal (from cat.gd) to on_order_complete function
@@ -55,6 +58,11 @@ func on_order_complete(happy : bool):
 		score -= 5
 		$"../HUD".update_score(score) 
 	print ("score: ", score)
+	#if score < 0:
+		#game_overBool = true
+		#if(game_overBool):
+			#spawn_timer.stop()
+			#start_over()			
 	if score > 40:
 		game_overBool = true
 		if(game_overBool):
@@ -66,6 +74,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func start_game():
+	$"../HUD".update_level(level)
 	# immediately spawn a cat, want to wait till start button is pressed
 	spawn_cat()
 	
@@ -87,11 +96,19 @@ func game_over():
 	$"../HUD".show_game_over()
 	score = 0
 	level += 1
+	$"../HUD".update_level(level)
+	game_overBool = false
+	game_timer.stop()
 	pass
-
-
 	
-	
+func start_over():
+	$"../HUD".show_game_over()
+	score = 0
+	level = 1
+	$"../HUD".update_level(level)
+	game_overBool = false
+	game_timer.stop()
+	pass
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -126,8 +143,11 @@ func _process(delta: float) -> void:
 
 # Game timer times out : game over
 func _on_game_timer_timeout() -> void:
+	
+	#if the timer runs out you go back to the very start... for now
+	#this still doesnt clear the cats from prev round
 	game_overBool = true
-	game_over()
+	start_over()
 	#this will show the end scree when the timer timesout
 	#but we still need to figure out how to clear the cats from the slots
 	pass # Replace with function body.
