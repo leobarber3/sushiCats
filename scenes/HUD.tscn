@@ -1,12 +1,19 @@
 [gd_scene format=3 uid="uid://b4elh84wwwcsn"]
 
 [ext_resource type="Script" uid="uid://bc6a8hwp2jeqh" path="res://scripts/hud.gd" id="1_k5de2"]
+[ext_resource type="Texture2D" uid="uid://d0idvcfo65d8n" path="res://assets/Background/back.png" id="2_1etfg"]
 [ext_resource type="AudioStream" uid="uid://bptjq11htv21s" path="res://assets/audio/BackgroundMusic.exe.wav" id="2_fls4u"]
 
 [node name="HUD" type="CanvasLayer" unique_id=675159572]
 script = ExtResource("1_k5de2")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1469104359]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_1etfg")
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=122180472]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
