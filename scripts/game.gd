@@ -58,11 +58,10 @@ func on_order_complete(happy : bool):
 		score -= 5
 		$"../HUD".update_score(score) 
 	print ("score: ", score)
-	#if score < 0:
-		#game_overBool = true
-		#if(game_overBool):
-			#spawn_timer.stop()
-			#start_over()			
+	if score < 0:
+		game_overBool = true
+		spawn_timer.stop()
+		start_over()			
 	if score > 40:
 		game_overBool = true
 		if(game_overBool):
@@ -104,7 +103,7 @@ func game_over():
 func start_over():
 	$"../HUD".show_game_over()
 	score = 0
-	level = 1
+	level = level
 	$"../HUD".update_level(level)
 	game_overBool = false
 	game_timer.stop()
