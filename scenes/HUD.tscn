@@ -5,34 +5,43 @@
 [ext_resource type="AudioStream" uid="uid://bptjq11htv21s" path="res://assets/audio/BackgroundMusic.exe.wav" id="2_fls4u"]
 [ext_resource type="FontFile" uid="uid://dcogmc7hjr77y" path="res://assets/fonts/mago1.ttf" id="3_7hsmw"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hsmw"]
+
 [node name="HUD" type="CanvasLayer" unique_id=675159572]
 script = ExtResource("1_k5de2")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1469104359]
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=2049295799]
+stream = ExtResource("2_fls4u")
+
+[node name="ScreenManager" type="Control" parent="." unique_id=1002559215]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="HomeScreen" type="Control" parent="ScreenManager" unique_id=487187303]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="ScreenManager/HomeScreen" unique_id=1469104359]
+layout_mode = 0
+offset_right = 1305.0
+offset_bottom = 843.0
 texture = ExtResource("2_1etfg")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=122180472]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.6627451, 1, 1, 0.99215686)
-
-[node name="TitleText" type="Label" parent="." unique_id=240466603]
+[node name="TitleText" type="Label" parent="ScreenManager/HomeScreen" unique_id=240466603]
 z_index = 1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -636.0
-offset_top = -354.0
-offset_right = 636.0
-offset_bottom = 354.0
+offset_left = -16.0
+offset_top = -14.0
+offset_right = 1256.0
+offset_bottom = 694.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.05858072, 0.058580704, 1)
@@ -43,31 +52,49 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="StartButton" type="Button" parent="." unique_id=1803917949]
+[node name="StartButton" type="Button" parent="ScreenManager/HomeScreen" unique_id=1803917949]
 z_index = 1
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -193.0
-offset_right = 98.0
-offset_bottom = -92.0
+offset_left = 313.0
+offset_top = 419.0
+offset_right = 517.0
+offset_bottom = 520.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
-text = "Start"
+text = "🍣Start"
 
-[node name="ScoreLabel" type="Label" parent="." unique_id=748332445]
+[node name="HowToPlayButton" type="Button" parent="ScreenManager/HomeScreen" unique_id=1908320010]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 459.0
+offset_right = 986.0
+offset_bottom = 560.0
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+text = "🎣How to Play"
+
+[node name="GameplayScreen" type="Control" parent="ScreenManager" unique_id=107928834]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="ScreenManager/GameplayScreen" unique_id=748332445]
 z_index = 1
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -639.5
-offset_right = 639.5
+offset_left = -19.5
+offset_right = 1259.5
 offset_bottom = 179.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.12951802, 1.3616358e-05, 0.13126387, 1)
@@ -75,32 +102,202 @@ theme_override_font_sizes/font_size = 64
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelLabel" type="Label" parent="." unique_id=1619717552]
+[node name="LevelLabel" type="Label" parent="ScreenManager/GameplayScreen" unique_id=1619717552]
 z_index = 1
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -635.0
+offset_left = -15.0
 offset_top = 69.0
-offset_right = -385.0
+offset_right = 235.0
 offset_bottom = 153.0
 grow_horizontal = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.12951802, 1.3616358e-05, 0.13126387, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 32
+text = "Level"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="textTimer" type="Timer" parent="." unique_id=1722719690]
+[node name="ProgressBar" type="ProgressBar" parent="ScreenManager/GameplayScreen" unique_id=498929407]
+layout_mode = 0
+offset_right = 1276.0
+offset_bottom = 27.0
+show_percentage = false
+
+[node name="QuickLabel" type="Label" parent="ScreenManager/GameplayScreen" unique_id=658505693]
+layout_mode = 0
+offset_left = 981.0
+offset_top = 69.0
+offset_right = 1046.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+text = "Start!"
+
+[node name="textTimer" type="Timer" parent="ScreenManager/GameplayScreen" unique_id=1722719690]
 one_shot = true
 
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=2049295799]
-stream = ExtResource("2_fls4u")
-
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=1019141425]
+[node name="LevelCompleteScreen" type="Control" parent="ScreenManager" unique_id=1754780134]
+visible = false
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
-[connection signal="timeout" from="textTimer" to="." method="_on_text_timer_timeout"]
+[node name="TextureRect2" type="TextureRect" parent="ScreenManager/LevelCompleteScreen" unique_id=274865622]
+layout_mode = 0
+offset_right = 1305.0
+offset_bottom = 843.0
+texture = ExtResource("2_1etfg")
+
+[node name="TitleText" type="Label" parent="ScreenManager/LevelCompleteScreen" unique_id=406325736]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -14.0
+offset_right = 1256.0
+offset_bottom = 694.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.05858072, 0.058580704, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 72
+text = "Level 1 Complete!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HomeButton" type="Button" parent="ScreenManager/LevelCompleteScreen" unique_id=274358830]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 459.0
+offset_right = 533.0
+offset_bottom = 560.0
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+text = "🏚️Home"
+
+[node name="NextLevelButton" type="Button" parent="ScreenManager/LevelCompleteScreen" unique_id=1886339267]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 459.0
+offset_right = 978.0
+offset_bottom = 560.0
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+text = "➡️ Next Level"
+
+[node name="GameOverScreen" type="Control" parent="ScreenManager" unique_id=1190245051]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect3" type="TextureRect" parent="ScreenManager/GameOverScreen" unique_id=1272128486]
+layout_mode = 0
+offset_right = 1305.0
+offset_bottom = 843.0
+texture = ExtResource("2_1etfg")
+
+[node name="TitleText" type="Label" parent="ScreenManager/GameOverScreen" unique_id=1252676206]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -14.0
+offset_right = 1256.0
+offset_bottom = 694.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.05858072, 0.058580704, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 72
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="GameText" type="Label" parent="ScreenManager/GameOverScreen" unique_id=1472852379]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 394.0
+offset_right = 1019.0
+offset_bottom = 452.0
+theme_override_colors/font_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7hsmw")
+text = "Ran out of time!"
+horizontal_alignment = 1
+
+[node name="HomeButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=556932636]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 459.0
+offset_right = 533.0
+offset_bottom = 560.0
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+text = "🏚️Home"
+
+[node name="TryAgainButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=205033158]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 459.0
+offset_right = 978.0
+offset_bottom = 560.0
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+text = "🔄️ Try Again"
+
+[node name="NextLevelScreen" type="Control" parent="ScreenManager" unique_id=827267135]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect4" type="TextureRect" parent="ScreenManager/NextLevelScreen" unique_id=1984923294]
+layout_mode = 0
+offset_right = 1305.0
+offset_bottom = 843.0
+texture = ExtResource("2_1etfg")
+
+[node name="TitleText2" type="Label" parent="ScreenManager/NextLevelScreen" unique_id=435558988]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -14.0
+offset_right = 1256.0
+offset_bottom = 694.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.05858072, 0.058580704, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 72
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="ScreenManager/HomeScreen/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="ScreenManager/GameplayScreen/textTimer" to="." method="_on_text_timer_timeout"]
+[connection signal="pressed" from="ScreenManager/LevelCompleteScreen/HomeButton" to="." method="_on_home_button1_pressed"]
+[connection signal="pressed" from="ScreenManager/LevelCompleteScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="ScreenManager/GameOverScreen/HomeButton" to="." method="_on_home_button2_pressed"]
+[connection signal="pressed" from="ScreenManager/GameOverScreen/TryAgainButton" to="." method="_on_try_again_button_pressed"]
