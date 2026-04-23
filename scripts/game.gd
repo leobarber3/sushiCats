@@ -3,7 +3,7 @@ extends Node
 @export var cat_scene : PackedScene
 @onready var customer_slots : HBoxContainer = get_node("../UI/CustomerPanel/CustomerSlots")
 @export var food_list : Array[Item]
-#
+
 #@export var game_timer : Timer
 #@export var game_progress : ProgressBar
 #variable level to keep track of how far to index through the recipe array
@@ -18,9 +18,9 @@ var game_overBool : bool = false
 # Function to spawn a cat customer
 func spawn_cat():
 	# get all slots and switch order before checking to add randomness in spawning
-	var customer_slots = customer_slots.get_children()
-	customer_slots.shuffle()
-	for customer_slot in customer_slots:
+	var slots = customer_slots.get_children()
+	slots.shuffle()
+	for customer_slot in slots:
 		# No child means no cat in the slot
 		if customer_slot.get_child_count() == 0:
 			# Instantiate a new cat scene
@@ -50,6 +50,13 @@ func spawn_cat():
 	# No empty slots for cats to spawn in
 	print("no empty slots to spawn cats in")
 
+func clear_cats():
+	for slot in customer_slots.get_children():
+		for cat in slot.get_children():
+			cat.queue_free()
+
+
+
 func on_order_complete(happy : bool):
 	if happy:
 		score += 10
@@ -73,8 +80,12 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func start_game():
+	$"../HUD".update_score(score)
+	$"../HUD".show_text("Start!", true)
+	
 	$"../HUD".update_level(level)
 	# immediately spawn a cat, want to wait till start button is pressed
+	clear_cats()
 	spawn_cat()
 	
 	# Start game timer and progress bar
@@ -93,6 +104,7 @@ func start_game():
 	
 func game_over():
 	$"../HUD".show_game_over()
+	clear_cats()
 	score = 0
 	level += 1
 	$"../HUD".update_level(level)
@@ -111,24 +123,14 @@ func start_over():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#check for game timer over and if score is 
-	#what it needs to be
-	#print(score)
-	#if score > 10 || game_timer.is_stopped():
-		#$"../HUD".show_game_over()
-		#print(score)
-		# Must stop cats from spawning here
-		
-		#return
-		## stop running the game, ran out of time
-	
-	
+	if game_timer.is_stopped():
+		clear_cats()
+		return
 	
 	# update the progress bar
-
 	print("game time left: ", game_timer.time_left)
-	
-	game_progress.value = 60 - game_timer.time_left 
+	game_progress.value = game_timer.time_left 
+	#game_progress.value = (game_timer.time_left / game_timer.wait_time) * 100.0
 	print("progress bar: ", game_progress.value)
 	# change color with modulate property of ProgressBar
 	if game_timer.time_left <= 10 :
@@ -142,7 +144,7 @@ func _process(delta: float) -> void:
 
 # Game timer times out : game over
 func _on_game_timer_timeout() -> void:
-	
+	spawn_timer.stop()
 	#if the timer runs out you go back to the very start... for now
 	#this still doesnt clear the cats from prev round
 	game_overBool = true
