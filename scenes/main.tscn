@@ -10,6 +10,9 @@
 [ext_resource type="Script" uid="uid://dvf4ehm1g74kb" path="res://scripts/Item.gd" id="7_tipki"]
 [ext_resource type="Resource" uid="uid://iyuc816e4u6f" path="res://Resources/Food/Onigiri.tres" id="8_85g3d"]
 [ext_resource type="Resource" uid="uid://jbx8f52ls8r5" path="res://Resources/Food/Sushi1.tres" id="10_choun"]
+[ext_resource type="Resource" uid="uid://ch6ikbc0khygy" path="res://Resources/Food/Sushi2.tres" id="11_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://b4elh84wwwcsn" path="res://scenes/HUD.tscn" id="11_ya4ey"]
+[ext_resource type="Resource" uid="uid://cfdxqce6345mu" path="res://Resources/Food/Sushi3.tres" id="12_trceg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6xl0"]
 texture = ExtResource("5_tbgi4")
@@ -992,4 +995,21 @@ layer_0/tile_data = PackedInt32Array(-262153, 1966080, 33, -196617, 1966080, 34,
 [node name="Game" type="Node" parent="." unique_id=851654230]
 script = ExtResource("6_tefeu")
 cat_scene = ExtResource("7_o6xl0")
-food_list = Array[ExtResource("7_tipki")]([ExtResource("8_85g3d"), ExtResource("10_choun")])
+food_list = Array[ExtResource("7_tipki")]([ExtResource("8_85g3d"), ExtResource("10_choun"), ExtResource("11_eb6dy"), ExtResource("12_trceg")])
+
+[node name="GameTimer" type="Timer" parent="Game" unique_id=1754236206]
+wait_time = 60.0
+one_shot = true
+
+[node name="GameProgress" type="ProgressBar" parent="Game" unique_id=236016058]
+offset_right = 1280.0
+offset_bottom = 27.0
+max_value = 60.0
+step = 1.0
+value = 60.0
+show_percentage = false
+
+[node name="HUD" parent="." unique_id=675159572 instance=ExtResource("11_ya4ey")]
+
+[connection signal="timeout" from="Game/GameTimer" to="Game" method="_on_game_timer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]

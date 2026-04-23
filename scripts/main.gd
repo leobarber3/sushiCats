@@ -1,18 +1,25 @@
 extends Node
 
-#func game_over():
-#HUD can have func to hanldle text on screen
-#display a game over text then back to orig start screen
-#on start have to talk with cat to get order
-#some user interaction to create recipe
-#some bool maybe to say orders done?
-#need to have an inventory of some kind?
-
-#func new_game():
+#is this variable causing problems with the game score?? 
+#var score
 #
-
-
-#the time requirement for order to be met
-#gaem over if timeout
-func _on_customer_timer_timeout() -> void:
-	pass # Replace with function body.
+## This function is never actually used yet
+#func game_over():
+	#$HUD.show_game_over()
+#
+#
+#
+#
+#func new_game():
+	#score = 0
+	#$HUD.update_score(score)
+	#$HUD.show_text("Start!")
+	#$Game.start_game()
+#
+#
+	#
+	#
+	#
+# Connecting HUDS start game signal to Games start_game logic
+func _ready():
+	$HUD.start_game.connect($Game.start_game)

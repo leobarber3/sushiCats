@@ -1,40 +1,106 @@
 [gd_scene format=3 uid="uid://b4elh84wwwcsn"]
 
 [ext_resource type="Script" uid="uid://bc6a8hwp2jeqh" path="res://scripts/hud.gd" id="1_k5de2"]
+[ext_resource type="Texture2D" uid="uid://d0idvcfo65d8n" path="res://assets/Background/back.png" id="2_1etfg"]
+[ext_resource type="AudioStream" uid="uid://bptjq11htv21s" path="res://assets/audio/BackgroundMusic.exe.wav" id="2_fls4u"]
+[ext_resource type="FontFile" uid="uid://dcogmc7hjr77y" path="res://assets/fonts/mago1.ttf" id="3_7hsmw"]
 
 [node name="HUD" type="CanvasLayer" unique_id=675159572]
 script = ExtResource("1_k5de2")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1469104359]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_1etfg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=122180472]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6627451, 1, 1, 0.99215686)
+
 [node name="TitleText" type="Label" parent="." unique_id=240466603]
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -573.5
-offset_top = -319.5
-offset_right = 573.5
-offset_bottom = 319.5
+offset_left = -636.0
+offset_top = -354.0
+offset_right = 636.0
+offset_bottom = 354.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.05858072, 0.058580704, 1)
-theme_override_font_sizes/font_size = 64
-text = "Sushi Fish"
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 72
+text = "Welcome to Sushi Fish!"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="StartButton" type="Button" parent="." unique_id=1803917949]
+z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -99.0
-offset_top = -101.0
-offset_right = 99.0
+offset_left = -100.0
+offset_top = -193.0
+offset_right = 98.0
+offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 32
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
 text = "Start"
 
+[node name="ScoreLabel" type="Label" parent="." unique_id=748332445]
+z_index = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -639.5
+offset_right = 639.5
+offset_bottom = 179.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.12951802, 1.3616358e-05, 0.13126387, 1)
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="." unique_id=1619717552]
+z_index = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -635.0
+offset_top = 69.0
+offset_right = -385.0
+offset_bottom = 153.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.12951802, 1.3616358e-05, 0.13126387, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="textTimer" type="Timer" parent="." unique_id=1722719690]
+one_shot = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=2049295799]
+stream = ExtResource("2_fls4u")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1019141425]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="textTimer" to="." method="_on_text_timer_timeout"]

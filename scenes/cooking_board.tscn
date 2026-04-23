@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://d2dfpajh5rait" path="res://scripts/Recipe.gd" id="2_t5677"]
 [ext_resource type="Resource" uid="uid://c5wygsjnghfn4" path="res://Resources/Recipes/OnigiriRecipe.tres" id="3_f3iwk"]
 [ext_resource type="Resource" uid="uid://buh8hwxvilkbi" path="res://Resources/Recipes/Sushi1Recipe.tres" id="4_f3iwk"]
+[ext_resource type="Resource" uid="uid://dbmf3etlw6igu" path="res://Resources/Recipes/Sushi2.tres" id="5_s3h0k"]
+[ext_resource type="Resource" uid="uid://b3kxg0nuwo1s0" path="res://Resources/Recipes/Sushi3.tres" id="6_b2xcf"]
+[ext_resource type="FontFile" uid="uid://dcogmc7hjr77y" path="res://assets/fonts/mago1.ttf" id="8_cqage"]
 
 [node name="CookingBoard" type="Panel" unique_id=500804475 node_paths=PackedStringArray("product_slot")]
 custom_minimum_size = Vector2(500, 300)
@@ -21,7 +24,7 @@ offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_lr0fj")
-recipes = Array[ExtResource("2_t5677")]([ExtResource("3_f3iwk"), ExtResource("4_f3iwk")])
+recipes = Array[ExtResource("2_t5677")]([ExtResource("3_f3iwk"), ExtResource("4_f3iwk"), ExtResource("5_s3h0k"), ExtResource("6_b2xcf")])
 product_slot = NodePath("product_slot")
 
 [node name="CookingIngredients" type="HBoxContainer" parent="." unique_id=1431684348]
@@ -30,9 +33,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -200.0
-offset_top = 25.0
+offset_top = 50.0
 offset_right = 200.0
-offset_bottom = 213.0
+offset_bottom = 200.0
 grow_horizontal = 2
 theme_override_constants/separation = 50
 
@@ -56,6 +59,8 @@ offset_top = -19.0
 offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("8_cqage")
+theme_override_font_sizes/font_size = 32
 text = "COOK"
 metadata/_edit_use_anchors_ = true
 

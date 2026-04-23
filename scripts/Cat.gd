@@ -52,16 +52,15 @@ func leave(happy : bool):
 	# Customer is happy:
 	if happy:
 		print("happy cat!")
+		$HappySound.play()
 	else:
 		print("unhappy cat")
+		$UnhappySound.play()
 	# Fire signal with happiness variable
 	order_complete.emit(happy)
 	# wait 1.5 seconds, then remove cat
 	await get_tree().create_timer(1.5).timeout
 	queue_free()
-
-
-
 
 
 # Connected to Timer timeout()
