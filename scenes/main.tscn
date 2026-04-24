@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://dg25gj8pac3n5" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bdlqf8mjiehsm" path="res://scenes/cooking_board.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://ce2xbw3gv16yr" path="res://scenes/ingredient_board.tscn" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://duifihq82wto7" path="res://scripts/ingredient_board.gd" id="5_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://dmnwe4snlu2bh" path="res://assets/Background/kitchen_v1.png" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bs4winf8mqmt4" path="res://scenes/customer_panel.tscn" id="5_tefeu"]
+[ext_resource type="PackedScene" uid="uid://23hos0d31o1n" path="res://scenes/ingredient_slot.tscn" id="6_jkv2x"]
 [ext_resource type="Script" uid="uid://3bu8xmlg7so0" path="res://scripts/game.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://csq0b2uirryx" path="res://scenes/Cat.tscn" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://dvf4ehm1g74kb" path="res://scripts/Item.gd" id="7_tipki"]
@@ -989,6 +991,9 @@ layer_0/tile_data = PackedInt32Array(-262153, 1966080, 33, -196617, 1966080, 34,
 [node name="CookingBoard" parent="UI" unique_id=500804475 instance=ExtResource("3_sugp2")]
 
 [node name="IngredientBoard" parent="UI" unique_id=991800047 instance=ExtResource("4_jyhfs")]
+localize_numeral_system = false
+script = ExtResource("5_a8y0u")
+ingredient_slot_scene = ExtResource("6_jkv2x")
 
 [node name="CustomerPanel" parent="UI" unique_id=1274626972 instance=ExtResource("5_tefeu")]
 

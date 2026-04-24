@@ -3,7 +3,11 @@ extends Node
 @export var cat_scene : PackedScene
 @onready var customer_slots : HBoxContainer = get_node("../UI/CustomerPanel/CustomerSlots")
 @export var food_list : Array[Item]
-
+# Implementing ingredient_list to instantiate ingredients as needed
+#@onready var ingredient_board = $"../UI/IngredientBoard/ScrollContainer/VBoxContainer"
+@onready var ingredient_board = $"../UI/IngredientBoard"
+@onready var cooking_board = $"../UI/CookingBoard"
+@export var ingredient_list : Array[Item]
 #@export var game_timer : Timer
 #@export var game_progress : ProgressBar
 #variable level to keep track of how far to index through the recipe array
@@ -13,7 +17,6 @@ var spawn_timer : Timer
 var game_overBool : bool = false
 
 @onready var game_timer = $GameTimer
-#OLD MOVED THIS PROGRESS BAR : @onready var game_progress = $GameProgress 
 
 @onready var hud = $"../HUD"
 
@@ -79,11 +82,26 @@ func on_order_complete(happy : bool):
 func _ready() -> void:
 	pass # Replace with function body.
 
+func update_cooking_recipes():
+	var unlocked_recipes : Array[Recipe] = []
+	var unlocked_foods = food_list.slice(0, min(level, food_list.size()))
+	for food in unlocked_foods:
+		for recipe in cooking_board.recipes:
+			if recipe.product == food:
+				unlocked_recipes.append(recipe)
+	cooking_board.unlocked_recipes = unlocked_recipes
+
 func start_game():
 	score = 0
 	hud.update_score(score)
 	hud.update_level(level)
 	hud.quick_show_text("Start!")
+
+	# Set up ingredients
+	var unlocked_ingredients = get_available_ingredients()
+	ingredient_board.set_ingredients(unlocked_ingredients)
+	# Update unlocked recipes
+	update_cooking_recipes()
 
 	# Clear any existing cats, spawn an initial cat
 	clear_cats()
@@ -102,16 +120,6 @@ func start_game():
 	add_child(spawn_timer)
 	spawn_timer.start()
 	
-# OLD : 
-#func game_over():
-	#hud.show_game_over()
-	#clear_cats()
-	#score = 0
-	#level += 1
-	#hud.update_level(level)
-	#game_overBool = false
-	#game_timer.stop()
-	#pass
 
 func game_over(reason : String):
 	game_timer.stop()
@@ -132,6 +140,22 @@ func try_again():
 func reset_level():
 	score = 0
 	level = 1
+
+# Obtains available ingredients for creating unlocked food items
+func get_available_ingredients() -> Array[Item]:
+	var available : Array[Item] = []
+	var unlocked_recipes = food_list.slice(0, min(level, food_list.size()))
+	# Search list of unlocked recipes to find available ingredients
+	for food in unlocked_recipes:
+		for recipe in cooking_board.recipes:
+			if recipe.product == food:
+				# add ingredients if they are not in the list
+				for i in recipe.ingredients:
+					var ingredient = recipe.ingredients[i]
+					if ingredient not in available:
+						available.append(ingredient)
+	return available
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

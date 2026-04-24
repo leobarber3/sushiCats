@@ -6,11 +6,14 @@ extends Panel
 @export var product_slot : Panel
 # var holding cooking slots
 @onready var cooking_slots = $CookingIngredients
+# unlocked recipes for cooking (updated by start_game)
+@export var unlocked_recipes : Array[Recipe] = []
+
 
 # Function to check if ingredient selection matches recipes!
 func check_recipe():
 	# loop through recipes in array and check for a match
-	for recipe in recipes:
+	for recipe in unlocked_recipes:
 		# variable for checking
 		var recipe_match = true
 		# loop through each ingredient

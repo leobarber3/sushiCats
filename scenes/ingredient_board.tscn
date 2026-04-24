@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://ce2xbw3gv16yr"]
 
 [ext_resource type="PackedScene" uid="uid://23hos0d31o1n" path="res://scenes/ingredient_slot.tscn" id="1_02dxq"]
-[ext_resource type="Resource" uid="uid://b7va4s1bsoqgf" path="res://Resources/Ingredient/Rice.tres" id="2_m161d"]
-[ext_resource type="Resource" uid="uid://dopepnh6tqvn3" path="res://Resources/Ingredient/Seaweed.tres" id="3_ih86a"]
-[ext_resource type="Resource" uid="uid://cq6hh6g8yd06r" path="res://Resources/Ingredient/Fish1.tres" id="4_87sxl"]
 
 [node name="IngredientBoard" type="Panel" unique_id=991800047]
 custom_minimum_size = Vector2(250, 400)
@@ -38,15 +35,12 @@ size_flags_horizontal = 6
 
 [node name="IngredientSlot" parent="ScrollContainer/VBoxContainer" unique_id=897650127 instance=ExtResource("1_02dxq")]
 layout_mode = 2
-item = ExtResource("2_m161d")
 
 [node name="IngredientSlot2" parent="ScrollContainer/VBoxContainer" unique_id=1676200202 instance=ExtResource("1_02dxq")]
 layout_mode = 2
-item = ExtResource("3_ih86a")
 
 [node name="IngredientSlot3" parent="ScrollContainer/VBoxContainer" unique_id=1810906253 instance=ExtResource("1_02dxq")]
 layout_mode = 2
-item = ExtResource("4_87sxl")
 
 [node name="IngredientSlot4" parent="ScrollContainer/VBoxContainer" unique_id=1957096936 instance=ExtResource("1_02dxq")]
 layout_mode = 2
