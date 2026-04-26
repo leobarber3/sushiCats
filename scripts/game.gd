@@ -95,7 +95,6 @@ func obtain_new_recipe():
 	unlocked_recipe.append(new_recipe.ingredients[2])
 	unlocked_recipe.append(unlocked_food)
 	return unlocked_recipe
-	print("unlocked_recipe", unlocked_recipe)
 
 
 

@@ -51,7 +51,7 @@ func show_gameplay():
 func show_level_complete(level : int, new_recipe : Array[Item], optional : String):
 	level_title.text = "Level " + str(level) + " complete!"
 	# Hide the next level button if it's the last level, display if not
-	optional_text = optional
+	optional_text.text = optional
 	display_unlocked_recipe(level, new_recipe)
 	home_screen.hide()
 	gameplay_screen.hide()
