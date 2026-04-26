@@ -11,7 +11,7 @@ signal reset_level # reset level back to first
 @onready var gameplay_screen = $ScreenManager/GameplayScreen
 @onready var level_complete_screen = $ScreenManager/LevelCompleteScreen
 @onready var game_over_screen = $ScreenManager/GameOverScreen
-
+@onready var last_level_screen = $ScreenManager/LastLevelScreen
 # Nodes in Home Screen
 @onready var home_title = $ScreenManager/HomeScreen/TitleText
 
@@ -24,7 +24,11 @@ signal reset_level # reset level back to first
 
 # Nodes in LevelComplete Screen
 @onready var level_title = $ScreenManager/LevelCompleteScreen/TitleText
-
+# optional text in case we want to speed up cat spawn timers or something!
+# or even change game timer!
+@onready var optional_text = $ScreenManager/LevelCompleteScreen/OptionalText
+@onready var unlocked_ingredients_container = $ScreenManager/LevelCompleteScreen/NewRecipeBoard/IngredientsUnlocked
+@onready var food_unlocked = $ScreenManager/LevelCompleteScreen/FoodUnlocked
 # Nodes in GameOver Screen
 @onready var game_text = $ScreenManager/GameOverScreen/GameText
 
@@ -33,6 +37,7 @@ func show_home():
 	gameplay_screen.hide()
 	level_complete_screen.hide()
 	game_over_screen.hide()
+	last_level_screen.hide()
 	$BackgroundMusic.stop()
 	
 func show_gameplay():
@@ -40,20 +45,19 @@ func show_gameplay():
 	gameplay_screen.show()
 	level_complete_screen.hide()
 	game_over_screen.hide()
+	last_level_screen.hide()
 	$BackgroundMusic.play()
 
-func show_level_complete(level : int, is_last_level : bool):
-	if is_last_level:
-		level_title.text = "You finished the last level! Congrats!"
-	else:
-		level_title.text = "Level " + str(level) + " complete!"
+func show_level_complete(level : int, new_recipe : Array[Item], optional : String):
+	level_title.text = "Level " + str(level) + " complete!"
 	# Hide the next level button if it's the last level, display if not
-	$ScreenManager/LevelCompleteScreen/NextLevelButton.visible = !is_last_level
-	
+	optional_text = optional
+	display_unlocked_recipe(level, new_recipe)
 	home_screen.hide()
 	gameplay_screen.hide()
 	level_complete_screen.show()
 	game_over_screen.hide()
+	last_level_screen.hide()
 	$BackgroundMusic.stop()
 
 func show_gameover(reason : String):
@@ -62,10 +66,21 @@ func show_gameover(reason : String):
 	gameplay_screen.hide()
 	level_complete_screen.hide()
 	game_over_screen.show()
+	last_level_screen.hide()
 	$BackgroundMusic.stop()
-	
-	
-	
+
+
+func show_last_level():
+	#add code here
+	home_screen.hide()
+	gameplay_screen.hide()
+	level_complete_screen.hide()
+	game_over_screen.hide()
+	last_level_screen.show()
+	$BackgroundMusic.stop()
+	pass
+
+
 
 #func show_text(text):
 	#$TitleText.text = text
@@ -95,28 +110,23 @@ func quick_show_text(text : String):
 	quick_label.show()
 	text_timer.start()
 
+# Displayed unlocked recipe between levels
+func display_unlocked_recipe(level : int, new_recipe : Array[Item]):
+	var ingredient = 0
+	# Three slots
+	for slot in unlocked_ingredients_container.get_children():
+		print("ingredient: ", new_recipe[ingredient])
+		slot.item = new_recipe[ingredient]
+		ingredient = ingredient + 1
+	food_unlocked.item = new_recipe[3]
+	print("food_unlocked.item: ", food_unlocked.item)
 
-# OLD : Display game over screen.
-#func show_game_over():
-	#$TextureRect.show()
-	##show_text("Level Over")
-	#$StartButton.show()
-	#update_score(0)
-	##$ScoreLabel.hide()
-	#$BackgroundMusic.stop()	
-	#$ScoreLabel.hide()
 
-# OLD : Start button is pressed, run this function
-#func _on_start_pressed() -> void:
-	#$StartButton.hide()
-	#start_game.emit()
-	#$TextureRect.hide()
-	#$BackgroundMusic.play()	
-	#$LevelLabel.show()
-	#$ScoreLabel.show()
+
 # Initial screen is the home screen
 func _ready():
 	show_home()
+
 # Buttons and signals
 # Run this function when Home Screen Start pressed
 func _on_start_button_pressed() -> void:
@@ -133,6 +143,11 @@ func _on_home_button2_pressed() -> void:
 	reset_level.emit()
 	show_home()
 
+# Run this function when Last Level Home Button pressed
+func _on_home_button3_pressed() -> void:
+	reset_level.emit()
+	show_home()
+
 # Run this function when Level Complete Next Level Button pressed
 func _on_next_level_button_pressed() -> void:
 	show_gameplay()
@@ -146,4 +161,3 @@ func _on_try_again_button_pressed() -> void:
 # Hide quick label text when title text timer runs out
 func _on_text_timer_timeout() -> void:
 	quick_label.hide()
-	

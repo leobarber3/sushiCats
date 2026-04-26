@@ -1,11 +1,11 @@
-Button
+TextureRect
 Panel
+Button
 HBoxContainer
 Control
 Label
 Timer
 ProgressBar
-TextureRect
 AudioStreamPlayer2D
 ColorRect
 Node

@@ -82,6 +82,25 @@ func on_order_complete(happy : bool):
 func _ready() -> void:
 	pass # Replace with function body.
 
+func obtain_new_recipe():
+	# test function for obtaining most recently added recipe
+	var unlocked_recipe : Array[Item] = []
+	var unlocked_food = food_list[level]
+	# when completing level one, this will grab second recipe
+	var new_recipe = cooking_board.recipes[level]
+	print("new recipe", new_recipe)
+	# Add the 3 new ingredients and new food product to unlocked_recipe list
+	unlocked_recipe.append(new_recipe.ingredients[0])
+	unlocked_recipe.append(new_recipe.ingredients[1])
+	unlocked_recipe.append(new_recipe.ingredients[2])
+	unlocked_recipe.append(unlocked_food)
+	return unlocked_recipe
+	print("unlocked_recipe", unlocked_recipe)
+
+
+
+
+
 func update_cooking_recipes():
 	var unlocked_recipes : Array[Recipe] = []
 	var unlocked_foods = food_list.slice(0, min(level, food_list.size()))
@@ -130,7 +149,13 @@ func level_complete():
 	game_timer.stop()
 	clear_cats()
 	var is_last = level >= food_list.size()
-	hud.show_level_complete(level, is_last)
+	if (is_last):
+		hud.show_last_level()
+	else:
+		
+		var new_recipe = obtain_new_recipe()
+		# Passing "" for now, optional message disaplyed between levels
+		hud.show_level_complete(level, new_recipe, "")
 	level += 1
 
 func try_again():

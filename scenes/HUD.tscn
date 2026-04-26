@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d0idvcfo65d8n" path="res://assets/Background/back.png" id="2_1etfg"]
 [ext_resource type="AudioStream" uid="uid://bptjq11htv21s" path="res://assets/audio/BackgroundMusic.exe.wav" id="2_fls4u"]
 [ext_resource type="FontFile" uid="uid://dcogmc7hjr77y" path="res://assets/fonts/mago1.ttf" id="3_7hsmw"]
+[ext_resource type="PackedScene" uid="uid://b6oblbqwo7e7y" path="res://scenes/unlocked_slot.tscn" id="5_nysna"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hsmw"]
 
@@ -152,7 +153,6 @@ theme_override_font_sizes/font_size = 64
 text = "📖"
 
 [node name="LevelCompleteScreen" type="Control" parent="ScreenManager" unique_id=1754780134]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -220,33 +220,21 @@ offset_left = 255.0
 offset_top = 290.0
 offset_right = 655.0
 offset_bottom = 390.0
-metadata/_edit_group_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard" unique_id=342109880]
+[node name="IngredientsUnlocked" type="HBoxContainer" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard" unique_id=342109880]
 layout_mode = 0
 offset_right = 400.0
 offset_bottom = 100.0
 theme_override_constants/separation = 50
 
-[node name="Ingredient1" type="Panel" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/HBoxContainer" unique_id=243617589]
-custom_minimum_size = Vector2(100, 100)
+[node name="UnlockedSlot1" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/IngredientsUnlocked" unique_id=427878747 instance=ExtResource("5_nysna")]
 layout_mode = 2
 
-[node name="Ingredient2" type="Panel" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/HBoxContainer" unique_id=1500484030]
-custom_minimum_size = Vector2(100, 100)
+[node name="UnlockedSlot2" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/IngredientsUnlocked" unique_id=790107655 instance=ExtResource("5_nysna")]
 layout_mode = 2
 
-[node name="Ingredient3" type="Panel" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/HBoxContainer" unique_id=1319153252]
-custom_minimum_size = Vector2(100, 100)
+[node name="UnlockedSlot3" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/IngredientsUnlocked" unique_id=1439253091 instance=ExtResource("5_nysna")]
 layout_mode = 2
-
-[node name="NewFood" type="Panel" parent="ScreenManager/LevelCompleteScreen" unique_id=1160873138]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 0
-offset_left = 870.0
-offset_top = 290.0
-offset_right = 970.0
-offset_bottom = 390.0
 
 [node name="UpgradesText" type="Label" parent="ScreenManager/LevelCompleteScreen" unique_id=1627272196]
 layout_mode = 0
@@ -275,6 +263,13 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_7hsmw")
 text = "Optional message"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="FoodUnlocked" parent="ScreenManager/LevelCompleteScreen" unique_id=70720521 instance=ExtResource("5_nysna")]
+layout_mode = 0
+offset_left = 870.0
+offset_top = 290.0
+offset_right = 970.0
+offset_bottom = 390.0
 
 [node name="GameOverScreen" type="Control" parent="ScreenManager" unique_id=1190245051]
 visible = false
@@ -353,6 +348,7 @@ theme_override_font_sizes/font_size = 64
 text = "📖"
 
 [node name="LastLevelScreen" type="Control" parent="ScreenManager" unique_id=827267135]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -401,3 +397,4 @@ text = "🏚️Home"
 [connection signal="pressed" from="ScreenManager/LevelCompleteScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]
 [connection signal="pressed" from="ScreenManager/GameOverScreen/HomeButton" to="." method="_on_home_button2_pressed"]
 [connection signal="pressed" from="ScreenManager/GameOverScreen/TryAgainButton" to="." method="_on_try_again_button_pressed"]
+[connection signal="pressed" from="ScreenManager/LastLevelScreen/HomeButton" to="." method="_on_home_button3_pressed"]
