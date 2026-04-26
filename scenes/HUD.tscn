@@ -20,6 +20,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HomeScreen" type="Control" parent="ScreenManager" unique_id=487187303]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -141,6 +142,15 @@ text = "Start!"
 [node name="textTimer" type="Timer" parent="ScreenManager/GameplayScreen" unique_id=1722719690]
 one_shot = true
 
+[node name="RecipeBookButton" type="Button" parent="ScreenManager/GameplayScreen" unique_id=1666423446]
+layout_mode = 0
+offset_left = 923.0
+offset_top = 549.0
+offset_right = 1120.0
+offset_bottom = 664.0
+theme_override_font_sizes/font_size = 64
+text = "📖"
+
 [node name="LevelCompleteScreen" type="Control" parent="ScreenManager" unique_id=1754780134]
 visible = false
 anchors_preset = 0
@@ -164,7 +174,7 @@ anchor_bottom = 0.5
 offset_left = -16.0
 offset_top = -14.0
 offset_right = 1256.0
-offset_bottom = 694.0
+offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.05858072, 0.058580704, 1)
@@ -177,23 +187,94 @@ autowrap_mode = 2
 
 [node name="HomeButton" type="Button" parent="ScreenManager/LevelCompleteScreen" unique_id=274358830]
 layout_mode = 0
-offset_left = 333.0
-offset_top = 459.0
-offset_right = 533.0
-offset_bottom = 560.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 240.0
+offset_bottom = 141.0
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
 text = "🏚️Home"
 
 [node name="NextLevelButton" type="Button" parent="ScreenManager/LevelCompleteScreen" unique_id=1886339267]
 layout_mode = 0
-offset_left = 646.0
-offset_top = 459.0
-offset_right = 978.0
-offset_bottom = 560.0
+offset_left = 477.0
+offset_top = 472.0
+offset_right = 809.0
+offset_bottom = 573.0
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
 text = "➡️ Next Level"
+
+[node name="RecipeBookButton" type="Button" parent="ScreenManager/LevelCompleteScreen" unique_id=1896096179]
+layout_mode = 0
+offset_left = 537.0
+offset_top = 588.0
+offset_right = 734.0
+offset_bottom = 703.0
+theme_override_font_sizes/font_size = 64
+text = "📖"
+
+[node name="NewRecipeBoard" type="Panel" parent="ScreenManager/LevelCompleteScreen" unique_id=380495120]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 290.0
+offset_right = 655.0
+offset_bottom = 390.0
+metadata/_edit_group_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard" unique_id=342109880]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+theme_override_constants/separation = 50
+
+[node name="Ingredient1" type="Panel" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/HBoxContainer" unique_id=243617589]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Ingredient2" type="Panel" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/HBoxContainer" unique_id=1500484030]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Ingredient3" type="Panel" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/HBoxContainer" unique_id=1319153252]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="NewFood" type="Panel" parent="ScreenManager/LevelCompleteScreen" unique_id=1160873138]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 870.0
+offset_top = 290.0
+offset_right = 970.0
+offset_bottom = 390.0
+
+[node name="UpgradesText" type="Label" parent="ScreenManager/LevelCompleteScreen" unique_id=1627272196]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 248.0
+offset_right = 1019.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7hsmw")
+text = "You unlocked a new Recipe!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionalText" type="Label" parent="ScreenManager/LevelCompleteScreen" unique_id=1655461033]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 394.0
+offset_right = 1019.0
+offset_bottom = 462.0
+theme_override_colors/font_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7hsmw")
+text = "Optional message"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="GameOverScreen" type="Control" parent="ScreenManager" unique_id=1190245051]
 visible = false
@@ -244,37 +325,45 @@ horizontal_alignment = 1
 
 [node name="HomeButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=556932636]
 layout_mode = 0
-offset_left = 333.0
-offset_top = 459.0
-offset_right = 533.0
-offset_bottom = 560.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 240.0
+offset_bottom = 141.0
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
 text = "🏚️Home"
 
 [node name="TryAgainButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=205033158]
 layout_mode = 0
-offset_left = 646.0
-offset_top = 459.0
-offset_right = 978.0
-offset_bottom = 560.0
+offset_left = 477.0
+offset_top = 472.0
+offset_right = 809.0
+offset_bottom = 573.0
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
 text = "🔄️ Try Again"
 
-[node name="NextLevelScreen" type="Control" parent="ScreenManager" unique_id=827267135]
-visible = false
+[node name="RecipeBookButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=1096807328]
+layout_mode = 0
+offset_left = 537.0
+offset_top = 588.0
+offset_right = 734.0
+offset_bottom = 703.0
+theme_override_font_sizes/font_size = 64
+text = "📖"
+
+[node name="LastLevelScreen" type="Control" parent="ScreenManager" unique_id=827267135]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect4" type="TextureRect" parent="ScreenManager/NextLevelScreen" unique_id=1984923294]
+[node name="TextureRect4" type="TextureRect" parent="ScreenManager/LastLevelScreen" unique_id=1984923294]
 layout_mode = 0
 offset_right = 1305.0
 offset_bottom = 843.0
 texture = ExtResource("2_1etfg")
 
-[node name="TitleText2" type="Label" parent="ScreenManager/NextLevelScreen" unique_id=435558988]
+[node name="TitleText2" type="Label" parent="ScreenManager/LastLevelScreen" unique_id=435558988]
 z_index = 1
 layout_mode = 1
 anchors_preset = 8
@@ -291,10 +380,20 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.05858072, 0.058580704, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 72
-text = "Game Over!"
+text = "You finished the last level! Congrats!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="HomeButton" type="Button" parent="ScreenManager/LastLevelScreen" unique_id=980635899]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 459.0
+offset_right = 755.0
+offset_bottom = 560.0
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+text = "🏚️Home"
 
 [connection signal="pressed" from="ScreenManager/HomeScreen/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="ScreenManager/GameplayScreen/textTimer" to="." method="_on_text_timer_timeout"]
