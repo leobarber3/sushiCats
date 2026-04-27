@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://dg25gj8pac3n5" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bdlqf8mjiehsm" path="res://scenes/cooking_board.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://ce2xbw3gv16yr" path="res://scenes/ingredient_board.tscn" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://duifihq82wto7" path="res://scripts/ingredient_board.gd" id="5_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://dmnwe4snlu2bh" path="res://assets/Background/kitchen_v1.png" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bs4winf8mqmt4" path="res://scenes/customer_panel.tscn" id="5_tefeu"]
+[ext_resource type="PackedScene" uid="uid://23hos0d31o1n" path="res://scenes/ingredient_slot.tscn" id="6_jkv2x"]
 [ext_resource type="Script" uid="uid://3bu8xmlg7so0" path="res://scripts/game.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://csq0b2uirryx" path="res://scenes/Cat.tscn" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://dvf4ehm1g74kb" path="res://scripts/Item.gd" id="7_tipki"]
@@ -989,8 +991,19 @@ layer_0/tile_data = PackedInt32Array(-262153, 1966080, 33, -196617, 1966080, 34,
 [node name="CookingBoard" parent="UI" unique_id=500804475 instance=ExtResource("3_sugp2")]
 
 [node name="IngredientBoard" parent="UI" unique_id=991800047 instance=ExtResource("4_jyhfs")]
+localize_numeral_system = false
+script = ExtResource("5_a8y0u")
+ingredient_slot_scene = ExtResource("6_jkv2x")
 
 [node name="CustomerPanel" parent="UI" unique_id=1274626972 instance=ExtResource("5_tefeu")]
+
+[node name="Button" type="Button" parent="UI" unique_id=1820729700]
+offset_left = 923.0
+offset_top = 549.0
+offset_right = 1120.0
+offset_bottom = 664.0
+theme_override_font_sizes/font_size = 64
+text = "📖"
 
 [node name="Game" type="Node" parent="." unique_id=851654230]
 script = ExtResource("6_tefeu")
@@ -1001,15 +1014,6 @@ food_list = Array[ExtResource("7_tipki")]([ExtResource("8_85g3d"), ExtResource("
 wait_time = 60.0
 one_shot = true
 
-[node name="GameProgress" type="ProgressBar" parent="Game" unique_id=236016058]
-offset_right = 1280.0
-offset_bottom = 27.0
-max_value = 60.0
-step = 1.0
-value = 60.0
-show_percentage = false
-
 [node name="HUD" parent="." unique_id=675159572 instance=ExtResource("11_ya4ey")]
 
 [connection signal="timeout" from="Game/GameTimer" to="Game" method="_on_game_timer_timeout"]
-[connection signal="start_game" from="HUD" to="." method="new_game"]

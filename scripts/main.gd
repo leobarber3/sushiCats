@@ -23,3 +23,6 @@ extends Node
 # Connecting HUDS start game signal to Games start_game logic
 func _ready():
 	$HUD.start_game.connect($Game.start_game)
+	$HUD.next_level.connect($Game.start_game)
+	$HUD.try_again.connect($Game.try_again)
+	$HUD.reset_level.connect($Game.reset_level)

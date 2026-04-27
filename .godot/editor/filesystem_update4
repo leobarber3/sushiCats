@@ -1,6 +1,8 @@
-res://scenes/main.tscn
-res://scripts/game.gd
-res://scripts/main.gd
 res://scenes/HUD.tscn
+res://scenes/main.tscn
 res://scripts/hud.gd
+res://scripts/game.gd
 res://scenes/cooking_board.tscn
+res://scenes/unlocked_slot.tscn
+res://unlocked_slot.gd
+res://scripts/ingredient_board.gd
