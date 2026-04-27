@@ -1,9 +1,10 @@
-TextureRect
+Label
+VBoxContainer
 Panel
+TextureRect
 Button
 HBoxContainer
 Control
-Label
 Timer
 ProgressBar
 AudioStreamPlayer2D
@@ -11,4 +12,3 @@ ColorRect
 Node
 AnimatedSprite2D
 CollisionShape2D
-StaticBody2D
