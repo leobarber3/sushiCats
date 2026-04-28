@@ -2,6 +2,16 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxlh2"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fkhdu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nw0x2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4guh4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q44mf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwjvh"]
+
 [node name="CustomerPanel" type="Panel" unique_id=1274626972]
 custom_minimum_size = Vector2(893, 120)
 offset_left = 386.0
@@ -20,19 +30,24 @@ theme_override_constants/separation = 90
 [node name="CatPanel0" type="Panel" parent="CustomerSlots" unique_id=642818530]
 custom_minimum_size = Vector2(100, 120)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fkhdu")
 
 [node name="CatPanel1" type="Panel" parent="CustomerSlots" unique_id=1850207097]
 custom_minimum_size = Vector2(100, 120)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nw0x2")
 
 [node name="CatPanel2" type="Panel" parent="CustomerSlots" unique_id=1674048795]
 custom_minimum_size = Vector2(100, 120)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4guh4")
 
 [node name="CatPanel3" type="Panel" parent="CustomerSlots" unique_id=1317617970]
 custom_minimum_size = Vector2(100, 120)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_q44mf")
 
 [node name="CatPanel4" type="Panel" parent="CustomerSlots" unique_id=1394735192]
 custom_minimum_size = Vector2(100, 120)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xwjvh")

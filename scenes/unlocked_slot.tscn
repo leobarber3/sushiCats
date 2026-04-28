@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b6oblbqwo7e7y"]
 
-[ext_resource type="Script" uid="uid://c3pnjjtrax5tr" path="res://unlocked_slot.gd" id="1_6rwwn"]
+[ext_resource type="Script" uid="uid://c3pnjjtrax5tr" path="res://scripts/unlocked_slot.gd" id="1_6rwwn"]
 
 [node name="UnlockedSlot" type="Panel" unique_id=427878747]
 custom_minimum_size = Vector2(100, 100)

@@ -997,14 +997,6 @@ ingredient_slot_scene = ExtResource("6_jkv2x")
 
 [node name="CustomerPanel" parent="UI" unique_id=1274626972 instance=ExtResource("5_tefeu")]
 
-[node name="Button" type="Button" parent="UI" unique_id=1820729700]
-offset_left = 923.0
-offset_top = 549.0
-offset_right = 1120.0
-offset_bottom = 664.0
-theme_override_font_sizes/font_size = 64
-text = "📖"
-
 [node name="Game" type="Node" parent="." unique_id=851654230]
 script = ExtResource("6_tefeu")
 cat_scene = ExtResource("7_o6xl0")
