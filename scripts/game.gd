@@ -32,18 +32,6 @@ func spawn_cat():
 			var cat = cat_scene.instantiate()
 			# add cat to empty slot
 			customer_slot.add_child(cat)
-			
-			#var food = food_list[randi() % food_list.size()]
-	
-			#this will cause index out of bounds error eventually.
-			#if level == food_list.size() || level == 0 :
-				#spawn_timer.stop()  
-				#start_over()
-			# if level is = to food list size then you beat the game!
-			# OLD: 
-			#if level >= food_list.size():
-				#var food =  food_list[randi() % food_list.size()]
-
 			# Chooses between food_list size and level to avoid out of bounds index
 			var food = food_list[randi() % min(level, food_list.size())]
 			cat.setup(food)
@@ -74,7 +62,7 @@ func on_order_complete(happy : bool):
 		spawn_timer.stop()
 		game_over("Your score went into the negatives!")
 		# OLD : start_over()
-	elif score > 40:
+	elif score >= 50:
 			spawn_timer.stop()
 			level_complete()
 
@@ -115,13 +103,6 @@ func obtain_recipe_book(is_next_level : bool):
 		recipe_book.append(recipe_list[i].product)
 	return recipe_book
 	
-		
-		
-	
-
-
-
-
 
 func update_cooking_recipes():
 	var unlocked_recipes : Array[Recipe] = []
@@ -158,7 +139,7 @@ func start_game():
 	
 	# Create a new timer to spawn more cats sequentially
 	spawn_timer = Timer.new()
-	spawn_timer.wait_time = 10.0 # spawn a cat every 10 seconds
+	spawn_timer.wait_time = 8.0 # spawn a cat every 10 seconds
 	# Connect the spawn_timers timeout() signal to cat
 	# so a cat will spawn each 15 second timeout
 	spawn_timer.timeout.connect(spawn_cat)

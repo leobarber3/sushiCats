@@ -13,6 +13,78 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twldb"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8u3o"]
+bg_color = Color(0.21176471, 0.7647059, 0.8039216, 0.54901963)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pn61u"]
+bg_color = Color(0.19371587, 0.85757273, 0.8757692, 0.54901963)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvumk"]
+bg_color = Color(0.19215687, 0.85882354, 0.8745098, 0.54901963)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rq3sv"]
+bg_color = Color(0.21176471, 0.7647059, 0.8039216, 0.54901963)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5cq1"]
+bg_color = Color(0.19215687, 0.85882354, 0.8745098, 0.54901963)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5eteg"]
+bg_color = Color(0.19215687, 0.85882354, 0.8745098, 0.54901963)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4w17"]
 bg_color = Color(0.71212894, 0.71212953, 0.71212924, 1)
 border_width_left = 5
@@ -184,6 +256,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HowToPlayScreen" type="Control" parent="ScreenManager" unique_id=876507751]
+visible = false
 anchors_preset = 0
 offset_right = 926.0
 offset_bottom = 858.0
@@ -259,6 +332,7 @@ text = "* 60 seconds per round
 * Unlock new Recipes
 * don't give them the wrong recipe
 * don't let them run out of patience
+* get score >= 50 to advance to next level
 "
 
 [node name="HomeButton" type="Button" parent="ScreenManager/HowToPlayScreen" unique_id=1247055201]
@@ -276,15 +350,22 @@ expand_icon = true
 
 [node name="PageTwoButton" type="Button" parent="ScreenManager/HowToPlayScreen" unique_id=702412792]
 layout_mode = 0
-offset_left = 920.0
-offset_top = 635.0
-offset_right = 1097.0
-offset_bottom = 704.0
+offset_left = 1020.0
+offset_top = 626.0
+offset_right = 1197.0
+offset_bottom = 695.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_t8u3o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pn61u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rvumk")
 text = "Page 2"
 
 [node name="HowToPlayScreen2" type="Control" parent="ScreenManager" unique_id=2095212888]
+visible = false
 anchors_preset = 0
 offset_right = 926.0
 offset_bottom = 858.0
@@ -363,12 +444,18 @@ expand_icon = true
 
 [node name="PageOneButton" type="Button" parent="ScreenManager/HowToPlayScreen2" unique_id=107379645]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 617.0
-offset_right = 337.0
-offset_bottom = 686.0
+offset_left = 100.0
+offset_top = 626.0
+offset_right = 277.0
+offset_bottom = 695.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_rq3sv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u5cq1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5eteg")
 text = "Page 1"
 
 [node name="RecipeBookScreen" type="Control" parent="ScreenManager" unique_id=1890513879]
@@ -457,7 +544,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="HomeScreen" type="Control" parent="ScreenManager" unique_id=487187303]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
