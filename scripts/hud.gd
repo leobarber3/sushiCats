@@ -13,6 +13,7 @@ signal reset_level # reset level back to first
 @onready var game_over_screen = $ScreenManager/GameOverScreen
 @onready var last_level_screen = $ScreenManager/LastLevelScreen
 @onready var recipe_book_screen = $ScreenManager/RecipeBookScreen
+@onready var how_to_play_screen = $ScreenManager/HowToPlayScreen
 # Nodes in Home Screen
 @onready var home_title = $ScreenManager/HomeScreen/TitleText
 
@@ -141,11 +142,11 @@ func update_recipe_book(recipe_book : Array[Item]):
 	for i in range(0, recipe_count):
 		var slot = recipe_book_slot.instantiate()
 		recipe_container.add_child(slot)
-		#for j in range(0, 4):
-			#var unlocked_slot_index = "/Panel/HBoxContainer/UnlockedSlot" + str(j)
-			#var unlocked_slot = slot.get_node(unlocked_slot_index)
-			##i + j depending on which recipe we making
-			#unlocked_slot.get_node(unlocked_slot).item = recipe_book[i+j]
+		for j in range(0, 4):
+			var unlocked_slot_index = "HBoxContainer/UnlockedSlot" + str(j)
+			var unlocked_slot = slot.get_node(unlocked_slot_index)
+			#i + j depending on which recipe we making
+			unlocked_slot.item = recipe_book[(i*4)+j]
 			
 			
 		

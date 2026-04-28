@@ -1,14 +1,14 @@
+Label
+ColorRect
+Control
 Button
 TextureRect
 HBoxContainer
 Panel
 VBoxContainer
 ScrollContainer
-Label
-Control
 Timer
 ProgressBar
 AudioStreamPlayer2D
-ColorRect
 Node
 AnimatedSprite2D
