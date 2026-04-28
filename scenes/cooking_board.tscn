@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://d2dfpajh5rait" path="res://scripts/Recipe.gd" id="2_t5677"]
 [ext_resource type="Resource" uid="uid://c5wygsjnghfn4" path="res://Resources/Recipes/OnigiriRecipe.tres" id="3_f3iwk"]
 [ext_resource type="Resource" uid="uid://buh8hwxvilkbi" path="res://Resources/Recipes/Sushi1Recipe.tres" id="4_f3iwk"]
-[ext_resource type="Resource" uid="uid://dbmf3etlw6igu" path="res://Resources/Recipes/Sushi2.tres" id="5_s3h0k"]
-[ext_resource type="Resource" uid="uid://b3kxg0nuwo1s0" path="res://Resources/Recipes/Sushi3.tres" id="6_b2xcf"]
+[ext_resource type="Resource" uid="uid://dbmf3etlw6igu" path="res://Resources/Recipes/Sushi2Recipe.tres" id="5_s3h0k"]
+[ext_resource type="Resource" uid="uid://b3kxg0nuwo1s0" path="res://Resources/Recipes/Sushi3Recipe.tres" id="6_b2xcf"]
 [ext_resource type="FontFile" uid="uid://dcogmc7hjr77y" path="res://assets/fonts/mago1.ttf" id="8_cqage"]
 
 [node name="CookingBoard" type="Panel" unique_id=500804475 node_paths=PackedStringArray("product_slot")]
