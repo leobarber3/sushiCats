@@ -14,6 +14,7 @@ signal reset_level # reset level back to first
 @onready var last_level_screen = $ScreenManager/LastLevelScreen
 @onready var recipe_book_screen = $ScreenManager/RecipeBookScreen
 @onready var how_to_play_screen = $ScreenManager/HowToPlayScreen
+@onready var how_to_play_screen_two = $ScreenManager/HowToPlayScreen2
 # Nodes in Home Screen
 @onready var home_title = $ScreenManager/HomeScreen/TitleText
 
@@ -149,12 +150,6 @@ func update_recipe_book(recipe_book : Array[Item]):
 			var unlocked_slot = slot.get_node(unlocked_slot_index)
 			#i + j depending on which recipe we making
 			unlocked_slot.item = recipe_book[(i*4)+j]
-			
-			
-		
-		
-	
-	pass
 	
 # Initial screen is the home screen
 func _ready():
@@ -215,9 +210,22 @@ func _on_close_recipe_button_pressed() -> void:
 
 func _on_how_to_play_button_pressed() -> void:
 	home_screen.hide()
+	how_to_play_screen_two.hide()
 	how_to_play_screen.show()
 
 # Run this function when How to play Home Button pressed
 func _on_home_button4_pressed() -> void:
 	how_to_play_screen.hide()
 	home_screen.show()
+
+
+func _on_page_two_button_pressed() -> void:
+	how_to_play_screen.hide()
+	home_screen.hide()
+	how_to_play_screen_two.show()
+
+
+func _on_page_one_button_pressed() -> void:
+	how_to_play_screen.show()
+	home_screen.hide()
+	how_to_play_screen_two.hide()

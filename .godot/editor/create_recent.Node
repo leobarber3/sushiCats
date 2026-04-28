@@ -1,9 +1,9 @@
+TextureRect
 Label
 Timer
 ColorRect
 Button
 Control
-TextureRect
 HBoxContainer
 Panel
 VBoxContainer
