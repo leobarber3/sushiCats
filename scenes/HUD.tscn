@@ -4,12 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://d0idvcfo65d8n" path="res://assets/Background/back.png" id="2_1etfg"]
 [ext_resource type="AudioStream" uid="uid://bptjq11htv21s" path="res://assets/audio/BackgroundMusic.exe.wav" id="2_fls4u"]
 [ext_resource type="FontFile" uid="uid://dcogmc7hjr77y" path="res://assets/fonts/mago1.ttf" id="3_7hsmw"]
+[ext_resource type="PackedScene" uid="uid://jl613d5wvwld" path="res://scenes/recipe_book_slots.tscn" id="4_f6qnu"]
 [ext_resource type="PackedScene" uid="uid://b6oblbqwo7e7y" path="res://scenes/unlocked_slot.tscn" id="5_nysna"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hsmw"]
 
 [node name="HUD" type="CanvasLayer" unique_id=675159572]
 script = ExtResource("1_k5de2")
+recipe_book_slot = ExtResource("4_f6qnu")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=2049295799]
 stream = ExtResource("2_fls4u")
@@ -19,6 +21,90 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="RecipeBookScreen" type="Control" parent="ScreenManager" unique_id=1890513879]
+z_index = 5
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RecipeBookPanel" type="Panel" parent="ScreenManager/RecipeBookScreen" unique_id=981631198]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 206.0
+offset_top = 82.0
+offset_right = 977.0
+offset_bottom = 623.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ScreenManager/RecipeBookScreen/RecipeBookPanel" unique_id=872313303]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -384.5
+offset_right = 384.5
+offset_bottom = 158.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+text = "Recipes"
+horizontal_alignment = 1
+
+[node name="RecipeBookScroll" type="ScrollContainer" parent="ScreenManager/RecipeBookScreen/RecipeBookPanel" unique_id=411004574]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -278.0
+offset_top = -199.0
+offset_right = 278.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="RecipeBookContainer" type="VBoxContainer" parent="ScreenManager/RecipeBookScreen/RecipeBookPanel/RecipeBookScroll" unique_id=443849982]
+layout_mode = 2
+
+[node name="Recipe1" parent="ScreenManager/RecipeBookScreen/RecipeBookPanel/RecipeBookScroll/RecipeBookContainer" unique_id=815421134 instance=ExtResource("4_f6qnu")]
+layout_mode = 2
+
+[node name="Recipe2" parent="ScreenManager/RecipeBookScreen/RecipeBookPanel/RecipeBookScroll/RecipeBookContainer" unique_id=1754234690 instance=ExtResource("4_f6qnu")]
+layout_mode = 2
+
+[node name="Recipe3" parent="ScreenManager/RecipeBookScreen/RecipeBookPanel/RecipeBookScroll/RecipeBookContainer" unique_id=1364753588 instance=ExtResource("4_f6qnu")]
+layout_mode = 2
+
+[node name="Recipe4" parent="ScreenManager/RecipeBookScreen/RecipeBookPanel/RecipeBookScroll/RecipeBookContainer" unique_id=1068853335 instance=ExtResource("4_f6qnu")]
+layout_mode = 2
+
+[node name="Recipe5" parent="ScreenManager/RecipeBookScreen/RecipeBookPanel/RecipeBookScroll/RecipeBookContainer" unique_id=260882300 instance=ExtResource("4_f6qnu")]
+layout_mode = 2
+
+[node name="Recipe6" parent="ScreenManager/RecipeBookScreen/RecipeBookPanel/RecipeBookScroll/RecipeBookContainer" unique_id=1342368544 instance=ExtResource("4_f6qnu")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScreenManager/RecipeBookScreen/RecipeBookPanel" unique_id=1019159295]
+layout_mode = 0
+offset_right = 771.0
+offset_bottom = 541.0
+
+[node name="CloseRecipeButton" type="Button" parent="ScreenManager/RecipeBookScreen" unique_id=708723371]
+z_index = 5
+layout_mode = 0
+offset_left = 918.0
+offset_top = 114.0
+offset_right = 978.0
+offset_bottom = 161.0
+text = "close"
 
 [node name="HomeScreen" type="Control" parent="ScreenManager" unique_id=487187303]
 visible = false
@@ -161,6 +247,7 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 1305.0
 offset_bottom = 843.0
+mouse_filter = 2
 texture = ExtResource("2_1etfg")
 
 [node name="TitleText" type="Label" parent="ScreenManager/LevelCompleteScreen" unique_id=406325736]
@@ -227,7 +314,7 @@ offset_right = 400.0
 offset_bottom = 100.0
 theme_override_constants/separation = 50
 
-[node name="UnlockedSlot1" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/IngredientsUnlocked" unique_id=427878747 instance=ExtResource("5_nysna")]
+[node name="UnlockedSlot1" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/IngredientsUnlocked" unique_id=1223146531 instance=ExtResource("5_nysna")]
 layout_mode = 2
 
 [node name="UnlockedSlot2" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/IngredientsUnlocked" unique_id=790107655 instance=ExtResource("5_nysna")]
@@ -281,6 +368,7 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 1305.0
 offset_bottom = 843.0
+mouse_filter = 2
 texture = ExtResource("2_1etfg")
 
 [node name="TitleText" type="Label" parent="ScreenManager/GameOverScreen" unique_id=1252676206]
@@ -391,10 +479,14 @@ theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
 text = "🏚️Home"
 
+[connection signal="pressed" from="ScreenManager/RecipeBookScreen/CloseRecipeButton" to="." method="_on_close_recipe_button_pressed"]
 [connection signal="pressed" from="ScreenManager/HomeScreen/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="ScreenManager/GameplayScreen/textTimer" to="." method="_on_text_timer_timeout"]
+[connection signal="pressed" from="ScreenManager/GameplayScreen/RecipeBookButton" to="." method="_on_recipe_book_button1_pressed"]
 [connection signal="pressed" from="ScreenManager/LevelCompleteScreen/HomeButton" to="." method="_on_home_button1_pressed"]
 [connection signal="pressed" from="ScreenManager/LevelCompleteScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="ScreenManager/LevelCompleteScreen/RecipeBookButton" to="." method="_on_recipe_book_button2_pressed"]
 [connection signal="pressed" from="ScreenManager/GameOverScreen/HomeButton" to="." method="_on_home_button2_pressed"]
 [connection signal="pressed" from="ScreenManager/GameOverScreen/TryAgainButton" to="." method="_on_try_again_button_pressed"]
+[connection signal="pressed" from="ScreenManager/GameOverScreen/RecipeBookButton" to="." method="_on_recipe_book_button3_pressed"]
 [connection signal="pressed" from="ScreenManager/LastLevelScreen/HomeButton" to="." method="_on_home_button3_pressed"]

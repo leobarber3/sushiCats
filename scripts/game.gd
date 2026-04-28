@@ -96,6 +96,29 @@ func obtain_new_recipe():
 	unlocked_recipe.append(unlocked_food)
 	return unlocked_recipe
 
+# Obtain recipes for the recipe book display
+func obtain_recipe_book(is_next_level : bool):
+	# Level index
+	var recipe_index = level
+	# If in the next level screen / "level complete", increment recipe_index to include next level's "unlocked" recipe
+	if (is_next_level):
+		recipe_index += 1
+	var recipe_book : Array[Item] = []
+	var recipe_list = cooking_board.recipes
+	for i in range(0, recipe_index):
+		print("recipe index ", recipe_index)
+		print("is next level? ", is_next_level)
+		#the three ingredients in said recipe
+		recipe_book.append(recipe_list[i].ingredients[0])
+		recipe_book.append(recipe_list[i].ingredients[1])
+		recipe_book.append(recipe_list[i].ingredients[2])
+		recipe_book.append(recipe_list[i].product)
+	return recipe_book
+	
+		
+		
+	
+
 
 
 
@@ -120,7 +143,8 @@ func start_game():
 	ingredient_board.set_ingredients(unlocked_ingredients)
 	# Update unlocked recipes
 	update_cooking_recipes()
-
+	hud.update_recipe_book(obtain_recipe_book(false))
+	
 	# Clear any existing cats, spawn an initial cat
 	clear_cats()
 	spawn_cat()
@@ -153,8 +177,10 @@ func level_complete():
 	else:
 		
 		var new_recipe = obtain_new_recipe()
+		hud.update_recipe_book(obtain_recipe_book(true))
 		# Passing "" for now, optional message disaplyed between levels
 		hud.show_level_complete(level, new_recipe, "")
+		
 	level += 1
 
 func try_again():

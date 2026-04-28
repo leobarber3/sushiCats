@@ -1,3 +1,10 @@
 res://scenes/main.tscn
 res://scenes/unlocked_slot.tscn
 res://scenes/cooking_board.tscn
+res://Resources/Recipes/Sushi2Recipe.tres
+res://Resources/Recipes/Sushi3Recipe.tres
+res://scenes/HUD.tscn
+res://scenes/RecipeBookSlots.tscn
+res://scripts/hud.gd
+res://scripts/game.gd
+res://scenes/recipe_book_slots.tscn
