@@ -8,3 +8,5 @@ res://scenes/RecipeBookSlots.tscn
 res://scripts/hud.gd
 res://scripts/game.gd
 res://scenes/recipe_book_slots.tscn
+res://scenes/Cat.tscn
+res://scripts/Cat.gd

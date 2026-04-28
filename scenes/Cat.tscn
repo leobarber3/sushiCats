@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dbcb13uix8t6h" path="res://assets/CatPackFree/Idle.png" id="2_spuq0"]
 [ext_resource type="AudioStream" uid="uid://dfk2ucpqgffpr" path="res://assets/audio/collect_2.wav" id="3_limvi"]
 [ext_resource type="AudioStream" uid="uid://cdsuydr3iqvti" path="res://assets/audio/disappear.wav" id="3_spuq0"]
+[ext_resource type="FontFile" uid="uid://dcogmc7hjr77y" path="res://assets/fonts/mago1.ttf" id="5_p3r2k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_myi5k"]
 atlas = ExtResource("2_spuq0")
@@ -122,4 +123,17 @@ stream = ExtResource("3_limvi")
 [node name="UnhappySound" type="AudioStreamPlayer2D" parent="." unique_id=1199524560]
 stream = ExtResource("3_spuq0")
 
+[node name="ScoreText" type="Label" parent="." unique_id=1121426218]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 54.0
+offset_right = 94.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("5_p3r2k")
+theme_override_font_sizes/font_size = 24
+
+[node name="ScoreTextTimer" type="Timer" parent="." unique_id=253374073]
+one_shot = true
+
 [connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]
+[connection signal="timeout" from="ScoreTextTimer" to="." method="_on_score_text_timer_timeout"]

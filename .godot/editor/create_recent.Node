@@ -1,13 +1,13 @@
 Label
+Timer
 ColorRect
-Control
 Button
+Control
 TextureRect
 HBoxContainer
 Panel
 VBoxContainer
 ScrollContainer
-Timer
 ProgressBar
 AudioStreamPlayer2D
 Node

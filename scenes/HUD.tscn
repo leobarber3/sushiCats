@@ -5,7 +5,20 @@
 [ext_resource type="AudioStream" uid="uid://bptjq11htv21s" path="res://assets/audio/BackgroundMusic.exe.wav" id="2_fls4u"]
 [ext_resource type="FontFile" uid="uid://dcogmc7hjr77y" path="res://assets/fonts/mago1.ttf" id="3_7hsmw"]
 [ext_resource type="PackedScene" uid="uid://jl613d5wvwld" path="res://scenes/recipe_book_slots.tscn" id="4_f6qnu"]
+[ext_resource type="Texture2D" uid="uid://btqqnn5flmpox" path="res://assets/Icons/home.png" id="5_k4w17"]
 [ext_resource type="PackedScene" uid="uid://b6oblbqwo7e7y" path="res://scenes/unlocked_slot.tscn" id="5_nysna"]
+[ext_resource type="Texture2D" uid="uid://g2dbkcjv75jc" path="res://assets/Icons/close.png" id="6_twldb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twldb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4w17"]
+bg_color = Color(0.75398386, 0.75398386, 0.75398374, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8cuoo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hsmw"]
 
@@ -15,6 +28,7 @@ recipe_book_slot = ExtResource("4_f6qnu")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=2049295799]
 stream = ExtResource("2_fls4u")
+volume_db = -14.0
 
 [node name="ScreenManager" type="Control" parent="." unique_id=1002559215]
 layout_mode = 3
@@ -23,9 +37,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HowToPlayScreen" type="Control" parent="ScreenManager" unique_id=876507751]
+visible = false
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 926.0
+offset_bottom = 858.0
 
 [node name="ColorRect" type="ColorRect" parent="ScreenManager/HowToPlayScreen" unique_id=905741144]
 layout_mode = 0
@@ -48,18 +63,80 @@ theme_override_font_sizes/font_size = 64
 text = "Welcome to Sushi Cats"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=690193807]
+[node name="GameDescription" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=690193807]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -632.0
+offset_top = -273.0
+offset_right = 628.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+text = "* Game Description
+Born on an island filled with starving cats, you've decided to open a restaurantso you dont become their next meal.
+These cats are HANGRY and impatient. Theres only one solution... SUSHI!!!!!
+
+
+"
+
+[node name="HowToPlayTitle" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=1439861644]
 layout_mode = 0
-offset_left = 693.0
-offset_top = 94.0
-offset_right = 1181.0
-offset_bottom = 508.0
+offset_left = 11.0
+offset_top = 198.0
+offset_right = 1281.0
+offset_bottom = 249.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
-text = "* bullet points 
-* rule
+text = "How to play!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HowToPlayText" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=1502581332]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 281.0
+offset_right = 1168.0
+offset_bottom = 662.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+text = "* 60 seconds per round
+* Recipes are slot specific
+* Unlock new Recipes
+* don't give them the wrong recipe
+* don't let them run out of patience
 "
+
+[node name="HomeButton" type="Button" parent="ScreenManager/HowToPlayScreen" unique_id=1247055201]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 14.0
+offset_right = 97.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_twldb")
+icon = ExtResource("5_k4w17")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button" type="Button" parent="ScreenManager/HowToPlayScreen" unique_id=702412792]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 635.0
+offset_right = 1097.0
+offset_bottom = 704.0
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+text = "Page 2"
 
 [node name="RecipeBookScreen" type="Control" parent="ScreenManager" unique_id=1890513879]
 visible = false
@@ -81,6 +158,7 @@ offset_right = 977.0
 offset_bottom = 623.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k4w17")
 
 [node name="Label" type="Label" parent="ScreenManager/RecipeBookScreen/RecipeBookPanel" unique_id=872313303]
 layout_mode = 1
@@ -91,6 +169,7 @@ offset_left = -384.5
 offset_right = 384.5
 offset_bottom = 158.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
 text = "Recipes"
@@ -132,19 +211,17 @@ layout_mode = 2
 [node name="Recipe6" parent="ScreenManager/RecipeBookScreen/RecipeBookPanel/RecipeBookScroll/RecipeBookContainer" unique_id=1342368544 instance=ExtResource("4_f6qnu")]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="ScreenManager/RecipeBookScreen/RecipeBookPanel" unique_id=1019159295]
-layout_mode = 0
-offset_right = 771.0
-offset_bottom = 541.0
-
 [node name="CloseRecipeButton" type="Button" parent="ScreenManager/RecipeBookScreen" unique_id=708723371]
 z_index = 5
 layout_mode = 0
-offset_left = 918.0
-offset_top = 114.0
-offset_right = 978.0
-offset_bottom = 161.0
-text = "close"
+offset_left = 912.0
+offset_top = 123.0
+offset_right = 972.0
+offset_bottom = 170.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8cuoo")
+icon = ExtResource("6_twldb")
+icon_alignment = 1
+expand_icon = true
 
 [node name="HomeScreen" type="Control" parent="ScreenManager" unique_id=487187303]
 visible = false
@@ -210,7 +287,6 @@ theme_override_font_sizes/font_size = 64
 text = "🎣How to Play"
 
 [node name="GameplayScreen" type="Control" parent="ScreenManager" unique_id=107928834]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -257,14 +333,24 @@ max_value = 60.0
 show_percentage = false
 
 [node name="QuickLabel" type="Label" parent="ScreenManager/GameplayScreen" unique_id=658505693]
-layout_mode = 0
-offset_left = 981.0
-offset_top = 69.0
-offset_right = 1046.0
-offset_bottom = 98.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = 235.0
+offset_right = 1261.0
+offset_bottom = 417.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 100
 text = "Start!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="textTimer" type="Timer" parent="ScreenManager/GameplayScreen" unique_id=1722719690]
 one_shot = true
@@ -313,15 +399,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="HomeButton" type="Button" parent="ScreenManager/LevelCompleteScreen" unique_id=274358830]
+[node name="HomeButton" type="Button" parent="ScreenManager/LevelCompleteScreen" unique_id=250756991]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 240.0
-offset_bottom = 141.0
+offset_left = 59.0
+offset_top = 54.0
+offset_right = 137.0
+offset_bottom = 128.0
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
-text = "🏚️Home"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_twldb")
+icon = ExtResource("5_k4w17")
+icon_alignment = 1
+expand_icon = true
 
 [node name="NextLevelButton" type="Button" parent="ScreenManager/LevelCompleteScreen" unique_id=1886339267]
 layout_mode = 0
@@ -447,15 +536,18 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_7hsmw")
 text = "Ran out of time!"
 horizontal_alignment = 1
 
-[node name="HomeButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=556932636]
+[node name="HomeButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=189249761]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 240.0
-offset_bottom = 141.0
+offset_left = 99.0
+offset_top = 94.0
+offset_right = 177.0
+offset_bottom = 168.0
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
-text = "🏚️Home"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_twldb")
+icon = ExtResource("5_k4w17")
+icon_alignment = 1
+expand_icon = true
 
 [node name="TryAgainButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=205033158]
 layout_mode = 0
@@ -510,18 +602,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="HomeButton" type="Button" parent="ScreenManager/LastLevelScreen" unique_id=980635899]
+[node name="HomeButton" type="Button" parent="ScreenManager/LastLevelScreen" unique_id=888227503]
 layout_mode = 0
-offset_left = 555.0
-offset_top = 459.0
-offset_right = 755.0
-offset_bottom = 560.0
+offset_left = 595.0
+offset_top = 476.0
+offset_right = 673.0
+offset_bottom = 550.0
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
-text = "🏚️Home"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_twldb")
+icon = ExtResource("5_k4w17")
+icon_alignment = 1
+expand_icon = true
 
+[connection signal="pressed" from="ScreenManager/HowToPlayScreen/HomeButton" to="." method="_on_home_button4_pressed"]
 [connection signal="pressed" from="ScreenManager/RecipeBookScreen/CloseRecipeButton" to="." method="_on_close_recipe_button_pressed"]
 [connection signal="pressed" from="ScreenManager/HomeScreen/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ScreenManager/HomeScreen/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
 [connection signal="timeout" from="ScreenManager/GameplayScreen/textTimer" to="." method="_on_text_timer_timeout"]
 [connection signal="pressed" from="ScreenManager/GameplayScreen/RecipeBookButton" to="." method="_on_recipe_book_button1_pressed"]
 [connection signal="pressed" from="ScreenManager/LevelCompleteScreen/HomeButton" to="." method="_on_home_button1_pressed"]

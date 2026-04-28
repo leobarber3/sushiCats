@@ -45,6 +45,7 @@ func show_home():
 	game_over_screen.hide()
 	last_level_screen.hide()
 	recipe_book_screen.hide()
+	how_to_play_screen.hide()
 	$BackgroundMusic.stop()
 	
 func show_gameplay():
@@ -93,6 +94,7 @@ func show_last_level():
 
 func show_recipe_book(recipe_list : Array[Item]):
 	recipe_book_screen.show()
+	
 
 #func show_text(text):
 	#$TitleText.text = text
@@ -209,3 +211,13 @@ func _on_recipe_book_button3_pressed() -> void:
 
 func _on_close_recipe_button_pressed() -> void:
 	recipe_book_screen.hide() 
+
+
+func _on_how_to_play_button_pressed() -> void:
+	home_screen.hide()
+	how_to_play_screen.show()
+
+# Run this function when How to play Home Button pressed
+func _on_home_button4_pressed() -> void:
+	how_to_play_screen.hide()
+	home_screen.show()

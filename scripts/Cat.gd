@@ -4,6 +4,10 @@ signal order_complete(happy : bool)
 
 @onready var cat = $Cat
 @onready var order = $Order
+
+@onready var score_text = $ScoreText
+@onready var score_text_timer = $ScoreTextTimer
+
 @onready var wait_timer = $WaitTimer
 @onready var wait_progress = $WaitProgress
 var patience : float = 0.0
@@ -52,9 +56,13 @@ func leave(happy : bool):
 	# Customer is happy:
 	if happy:
 		print("happy cat!")
+		score_text.text = "+10"
+		score_text_timer.start()
 		$HappySound.play()
 	else:
 		print("unhappy cat")
+		score_text.text = "-5"
+		score_text_timer.start()
 		$UnhappySound.play()
 	# Fire signal with happiness variable
 	order_complete.emit(happy)
@@ -88,3 +96,7 @@ func _process(delta: float) -> void:
 		wait_progress.modulate = Color.YELLOW
 	else:
 		wait_progress.modulate = Color.GREEN
+
+
+func _on_score_text_timer_timeout() -> void:
+	score_text.text=""
