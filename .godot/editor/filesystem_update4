@@ -10,3 +10,7 @@ res://scripts/game.gd
 res://scenes/recipe_book_slots.tscn
 res://scenes/Cat.tscn
 res://scripts/Cat.gd
+res://scenes/customer_panel.tscn
+res://scenes/ingredient_board.tscn
+res://scenes/ingredient_slot.tscn
+res://scripts/cooking_board.gd

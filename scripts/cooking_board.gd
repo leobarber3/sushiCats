@@ -49,6 +49,10 @@ func _on_cook_pressed() -> void:
 func empty_slots():
 	for cooking_slot in cooking_slots.get_children():
 		cooking_slot.item = null
+		
+# function to empy product
+func empty_product():
+	product_slot.item = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

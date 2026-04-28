@@ -2,6 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://23hos0d31o1n" path="res://scenes/ingredient_slot.tscn" id="1_02dxq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02dxq"]
+bg_color = Color(0.8006914, 0.89969057, 0.9604723, 0.64705884)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="IngredientBoard" type="Panel" unique_id=991800047]
 custom_minimum_size = Vector2(250, 400)
 anchors_preset = 2
@@ -12,6 +24,7 @@ offset_top = -495.0
 offset_right = 320.0
 offset_bottom = -45.0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_02dxq")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=973112528]
 layout_mode = 1

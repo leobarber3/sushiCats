@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://cdsuydr3iqvti" path="res://assets/audio/disappear.wav" id="3_spuq0"]
 [ext_resource type="FontFile" uid="uid://dcogmc7hjr77y" path="res://assets/fonts/mago1.ttf" id="5_p3r2k"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3r2k"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_myi5k"]
 atlas = ExtResource("2_spuq0")
 region = Rect2(0, 0, 32, 32)
@@ -88,21 +90,22 @@ animations = [{
 custom_minimum_size = Vector2(100, 120)
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p3r2k")
 script = ExtResource("1_se5fe")
 
 [node name="Cat" type="AnimatedSprite2D" parent="." unique_id=2134870483]
-position = Vector2(39, 79.5)
-scale = Vector2(1.91, 2)
+position = Vector2(54.220005, 68.75)
+scale = Vector2(2.8612502, 2.671875)
 sprite_frames = SubResource("SpriteFrames_v4p53")
 animation = &"idle"
 frame_progress = 0.57939744
 
 [node name="Order" type="TextureRect" parent="." unique_id=476962276]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 9.0
-offset_right = 92.0
-offset_bottom = 49.0
+offset_left = 59.0
+offset_top = 2.0
+offset_right = 99.0
+offset_bottom = 42.0
 expand_mode = 1
 
 [node name="WaitTimer" type="Timer" parent="." unique_id=646181867]
@@ -110,8 +113,11 @@ wait_time = 10.0
 
 [node name="WaitProgress" type="ProgressBar" parent="." unique_id=436924096]
 layout_mode = 0
-offset_right = 100.0
-offset_bottom = 8.0
+offset_left = 1.0
+offset_top = 111.0
+offset_right = 109.46712
+offset_bottom = 119.0
+rotation = 4.712389
 max_value = 1.0
 step = 0.0
 value = 1.0
@@ -125,10 +131,11 @@ stream = ExtResource("3_spuq0")
 
 [node name="ScoreText" type="Label" parent="." unique_id=1121426218]
 layout_mode = 0
-offset_left = 54.0
-offset_top = 54.0
-offset_right = 94.0
-offset_bottom = 77.0
+offset_left = 65.0
+offset_top = 49.0
+offset_right = 100.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_p3r2k")
 theme_override_font_sizes/font_size = 24
 

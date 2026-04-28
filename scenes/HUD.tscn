@@ -8,17 +8,163 @@
 [ext_resource type="Texture2D" uid="uid://btqqnn5flmpox" path="res://assets/Icons/home.png" id="5_k4w17"]
 [ext_resource type="PackedScene" uid="uid://b6oblbqwo7e7y" path="res://scenes/unlocked_slot.tscn" id="5_nysna"]
 [ext_resource type="Texture2D" uid="uid://g2dbkcjv75jc" path="res://assets/Icons/close.png" id="6_twldb"]
+[ext_resource type="Texture2D" uid="uid://dk1d3hs3v81ag" path="res://assets/Icons/UIBook.png" id="8_8cuoo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twldb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4w17"]
-bg_color = Color(0.75398386, 0.75398386, 0.75398374, 1)
+bg_color = Color(0.71212894, 0.71212953, 0.71212924, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8cuoo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cuoo"]
+bg_color = Color(0.5334395, 0.90806776, 0.8674197, 0.6156863)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_meimr"]
+bg_color = Color(0.21176471, 0.7647059, 0.8039216, 0.54901963)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cf6ij"]
+bg_color = Color(0.21179172, 0.7629102, 0.80235076, 0.54901963)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rve7n"]
+bg_color = Color(0.53333336, 0.9098039, 0.8666667, 0.6156863)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljw04"]
+bg_color = Color(0.21176471, 0.7647059, 0.8039216, 0.54901963)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_467v5"]
+bg_color = Color(0.21176471, 0.7647059, 0.8039216, 0.54901963)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8cuoo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cf6ij"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_meimr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rve7n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_natmc"]
+bg_color = Color(0.53333336, 0.9098039, 0.8666667, 0.6156863)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p625d"]
+bg_color = Color(0.21176471, 0.7647059, 0.8039216, 0.54901963)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi42t"]
+bg_color = Color(0.21176471, 0.7647059, 0.8039216, 0.54901963)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02dxq"]
+bg_color = Color(0.8006914, 0.89969057, 0.9604723, 0.64705884)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mm047"]
+bg_color = Color(0.6, 0.6, 0.6, 0.5294118)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hsmw"]
 
@@ -138,6 +284,108 @@ theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
 text = "Page 2"
 
+[node name="HowToPlayScreen2" type="Control" parent="ScreenManager" unique_id=2095212888]
+visible = false
+anchors_preset = 0
+offset_right = 926.0
+offset_bottom = 858.0
+
+[node name="ColorRect" type="ColorRect" parent="ScreenManager/HowToPlayScreen2" unique_id=1216916200]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 718.0
+color = Color(0.76862746, 1, 1, 1)
+
+[node name="TitleLabel" type="Label" parent="ScreenManager/HowToPlayScreen2/ColorRect" unique_id=1909251024]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = 640.0
+offset_bottom = 153.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+text = "Welcome to Sushi Cats"
+horizontal_alignment = 1
+
+[node name="GameDescription" type="Label" parent="ScreenManager/HowToPlayScreen2/ColorRect" unique_id=1090081995]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -632.0
+offset_top = -273.0
+offset_right = 628.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+text = "* Game Description
+Born on an island filled with starving cats, you've decided to open a restaurantso you dont become their next meal.
+These cats are HANGRY and impatient. Theres only one solution... SUSHI!!!!!
+
+
+"
+
+[node name="HowToPlayTitle" type="Label" parent="ScreenManager/HowToPlayScreen2/ColorRect" unique_id=561690780]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 198.0
+offset_right = 1281.0
+offset_bottom = 249.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+text = "How to play!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HowToPlayText" type="Label" parent="ScreenManager/HowToPlayScreen2/ColorRect" unique_id=1598671513]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 281.0
+offset_right = 1168.0
+offset_bottom = 662.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+text = "* 60 seconds per round
+* Recipes are slot specific
+* Unlock new Recipes
+* don't give them the wrong recipe
+* don't let them run out of patience
+"
+
+[node name="HomeButton" type="Button" parent="ScreenManager/HowToPlayScreen2" unique_id=911156954]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 14.0
+offset_right = 97.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_twldb")
+icon = ExtResource("5_k4w17")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button" type="Button" parent="ScreenManager/HowToPlayScreen2" unique_id=107379645]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 635.0
+offset_right = 1097.0
+offset_bottom = 704.0
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+text = "Page 2"
+
 [node name="RecipeBookScreen" type="Control" parent="ScreenManager" unique_id=1890513879]
 visible = false
 z_index = 5
@@ -182,9 +430,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -278.0
+offset_left = -282.0
 offset_top = -199.0
-offset_right = 278.0
+offset_right = 282.0
 offset_bottom = 199.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -251,8 +499,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.05858072, 0.058580704, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
-theme_override_font_sizes/font_size = 72
-text = "Welcome to Sushi Fish!"
+theme_override_font_sizes/font_size = 132
+text = "Sushi Cats!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -272,9 +520,15 @@ offset_bottom = 520.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
-text = "🍣Start"
+theme_override_styles/normal = SubResource("StyleBoxFlat_8cuoo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_meimr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cf6ij")
+text = "Play"
+icon_alignment = 2
+expand_icon = true
 
 [node name="HowToPlayButton" type="Button" parent="ScreenManager/HomeScreen" unique_id=1908320010]
 layout_mode = 0
@@ -282,9 +536,13 @@ offset_left = 646.0
 offset_top = 459.0
 offset_right = 986.0
 offset_bottom = 560.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
-text = "🎣How to Play"
+theme_override_styles/normal = SubResource("StyleBoxFlat_rve7n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ljw04")
+theme_override_styles/hover = SubResource("StyleBoxFlat_467v5")
+text = "How to Play"
 
 [node name="GameplayScreen" type="Control" parent="ScreenManager" unique_id=107928834]
 anchors_preset = 0
@@ -298,11 +556,14 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -19.5
+offset_top = 45.0
 offset_right = 1259.5
 offset_bottom = 179.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.12951802, 1.3616358e-05, 0.13126387, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
+text = "Score: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -312,16 +573,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -15.0
+offset_left = 35.0
 offset_top = 69.0
-offset_right = 235.0
+offset_right = 285.0
 offset_bottom = 153.0
 grow_horizontal = 2
 size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.12951802, 1.3616358e-05, 0.13126387, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
-theme_override_font_sizes/font_size = 32
-text = "Level"
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_8cuoo")
+text = "  Level"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -355,14 +617,24 @@ vertical_alignment = 1
 [node name="textTimer" type="Timer" parent="ScreenManager/GameplayScreen" unique_id=1722719690]
 one_shot = true
 
-[node name="RecipeBookButton" type="Button" parent="ScreenManager/GameplayScreen" unique_id=1666423446]
+[node name="RecipeBookButton" type="Button" parent="ScreenManager/GameplayScreen" unique_id=786630065]
 layout_mode = 0
-offset_left = 923.0
-offset_top = 549.0
-offset_right = 1120.0
-offset_bottom = 664.0
-theme_override_font_sizes/font_size = 64
-text = "📖"
+offset_left = 920.0
+offset_top = 524.0
+offset_right = 1117.0
+offset_bottom = 639.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cf6ij")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_meimr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rve7n")
+text = "Recipe   Book
+                        "
+icon = ExtResource("8_8cuoo")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="LevelCompleteScreen" type="Control" parent="ScreenManager" unique_id=1754780134]
 visible = false
@@ -399,37 +671,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="HomeButton" type="Button" parent="ScreenManager/LevelCompleteScreen" unique_id=250756991]
-layout_mode = 0
-offset_left = 59.0
-offset_top = 54.0
-offset_right = 137.0
-offset_bottom = 128.0
-theme_override_fonts/font = ExtResource("3_7hsmw")
-theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_twldb")
-icon = ExtResource("5_k4w17")
-icon_alignment = 1
-expand_icon = true
-
 [node name="NextLevelButton" type="Button" parent="ScreenManager/LevelCompleteScreen" unique_id=1886339267]
 layout_mode = 0
 offset_left = 477.0
 offset_top = 472.0
 offset_right = 809.0
 offset_bottom = 573.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
-text = "➡️ Next Level"
-
-[node name="RecipeBookButton" type="Button" parent="ScreenManager/LevelCompleteScreen" unique_id=1896096179]
-layout_mode = 0
-offset_left = 537.0
-offset_top = 588.0
-offset_right = 734.0
-offset_bottom = 703.0
-theme_override_font_sizes/font_size = 64
-text = "📖"
+theme_override_styles/normal = SubResource("StyleBoxFlat_natmc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p625d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wi42t")
+text = "Next Level"
 
 [node name="NewRecipeBoard" type="Panel" parent="ScreenManager/LevelCompleteScreen" unique_id=380495120]
 layout_mode = 0
@@ -437,6 +691,7 @@ offset_left = 255.0
 offset_top = 290.0
 offset_right = 655.0
 offset_bottom = 390.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_02dxq")
 
 [node name="IngredientsUnlocked" type="HBoxContainer" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard" unique_id=342109880]
 layout_mode = 0
@@ -446,12 +701,54 @@ theme_override_constants/separation = 50
 
 [node name="UnlockedSlot1" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/IngredientsUnlocked" unique_id=1223146531 instance=ExtResource("5_nysna")]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mm047")
 
 [node name="UnlockedSlot2" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/IngredientsUnlocked" unique_id=790107655 instance=ExtResource("5_nysna")]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mm047")
 
 [node name="UnlockedSlot3" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard/IngredientsUnlocked" unique_id=1439253091 instance=ExtResource("5_nysna")]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mm047")
+
+[node name="PlusLabel2" type="Label" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard" unique_id=1561517666]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 1.0
+offset_right = 300.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EqualsLabel" type="Label" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard" unique_id=1422577592]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 10.0
+offset_right = 615.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 40
+text = "--------->"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusLabel" type="Label" parent="ScreenManager/LevelCompleteScreen/NewRecipeBoard" unique_id=1897777489]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 1.0
+offset_right = 151.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="UpgradesText" type="Label" parent="ScreenManager/LevelCompleteScreen" unique_id=1627272196]
 layout_mode = 0
@@ -487,6 +784,39 @@ offset_left = 870.0
 offset_top = 290.0
 offset_right = 970.0
 offset_bottom = 390.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mm047")
+
+[node name="RecipeBookButton" type="Button" parent="ScreenManager/LevelCompleteScreen" unique_id=274663955]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 524.0
+offset_right = 1117.0
+offset_bottom = 639.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cf6ij")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_meimr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rve7n")
+text = "Recipe   Book
+                        "
+icon = ExtResource("8_8cuoo")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HomeButton" type="Button" parent="ScreenManager/LevelCompleteScreen" unique_id=1602020601]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 14.0
+offset_right = 97.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_twldb")
+icon = ExtResource("5_k4w17")
+icon_alignment = 1
+expand_icon = true
 
 [node name="GameOverScreen" type="Control" parent="ScreenManager" unique_id=1190245051]
 visible = false
@@ -536,37 +866,51 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_7hsmw")
 text = "Ran out of time!"
 horizontal_alignment = 1
 
-[node name="HomeButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=189249761]
+[node name="TryAgainButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=205033158]
 layout_mode = 0
-offset_left = 99.0
-offset_top = 94.0
-offset_right = 177.0
-offset_bottom = 168.0
+offset_left = 475.0
+offset_top = 448.0
+offset_right = 807.0
+offset_bottom = 549.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_natmc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_meimr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_meimr")
+text = "Try Again"
+
+[node name="RecipeBookButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=1788438457]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 524.0
+offset_right = 1117.0
+offset_bottom = 639.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cf6ij")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_meimr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rve7n")
+text = "Recipe   Book
+                        "
+icon = ExtResource("8_8cuoo")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HomeButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=408221482]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 14.0
+offset_right = 97.0
+offset_bottom = 88.0
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_twldb")
 icon = ExtResource("5_k4w17")
 icon_alignment = 1
 expand_icon = true
-
-[node name="TryAgainButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=205033158]
-layout_mode = 0
-offset_left = 477.0
-offset_top = 472.0
-offset_right = 809.0
-offset_bottom = 573.0
-theme_override_fonts/font = ExtResource("3_7hsmw")
-theme_override_font_sizes/font_size = 64
-text = "🔄️ Try Again"
-
-[node name="RecipeBookButton" type="Button" parent="ScreenManager/GameOverScreen" unique_id=1096807328]
-layout_mode = 0
-offset_left = 537.0
-offset_top = 588.0
-offset_right = 734.0
-offset_bottom = 703.0
-theme_override_font_sizes/font_size = 64
-text = "📖"
 
 [node name="LastLevelScreen" type="Control" parent="ScreenManager" unique_id=827267135]
 visible = false
@@ -616,15 +960,16 @@ icon_alignment = 1
 expand_icon = true
 
 [connection signal="pressed" from="ScreenManager/HowToPlayScreen/HomeButton" to="." method="_on_home_button4_pressed"]
+[connection signal="pressed" from="ScreenManager/HowToPlayScreen2/HomeButton" to="." method="_on_home_button4_pressed"]
 [connection signal="pressed" from="ScreenManager/RecipeBookScreen/CloseRecipeButton" to="." method="_on_close_recipe_button_pressed"]
 [connection signal="pressed" from="ScreenManager/HomeScreen/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ScreenManager/HomeScreen/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
 [connection signal="timeout" from="ScreenManager/GameplayScreen/textTimer" to="." method="_on_text_timer_timeout"]
 [connection signal="pressed" from="ScreenManager/GameplayScreen/RecipeBookButton" to="." method="_on_recipe_book_button1_pressed"]
-[connection signal="pressed" from="ScreenManager/LevelCompleteScreen/HomeButton" to="." method="_on_home_button1_pressed"]
 [connection signal="pressed" from="ScreenManager/LevelCompleteScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]
 [connection signal="pressed" from="ScreenManager/LevelCompleteScreen/RecipeBookButton" to="." method="_on_recipe_book_button2_pressed"]
-[connection signal="pressed" from="ScreenManager/GameOverScreen/HomeButton" to="." method="_on_home_button2_pressed"]
+[connection signal="pressed" from="ScreenManager/LevelCompleteScreen/HomeButton" to="." method="_on_home_button1_pressed"]
 [connection signal="pressed" from="ScreenManager/GameOverScreen/TryAgainButton" to="." method="_on_try_again_button_pressed"]
 [connection signal="pressed" from="ScreenManager/GameOverScreen/RecipeBookButton" to="." method="_on_recipe_book_button3_pressed"]
+[connection signal="pressed" from="ScreenManager/GameOverScreen/HomeButton" to="." method="_on_home_button2_pressed"]
 [connection signal="pressed" from="ScreenManager/LastLevelScreen/HomeButton" to="." method="_on_home_button3_pressed"]

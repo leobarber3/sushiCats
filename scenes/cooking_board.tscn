@@ -10,6 +10,102 @@
 [ext_resource type="Resource" uid="uid://b3kxg0nuwo1s0" path="res://Resources/Recipes/Sushi3Recipe.tres" id="6_b2xcf"]
 [ext_resource type="FontFile" uid="uid://dcogmc7hjr77y" path="res://assets/fonts/mago1.ttf" id="8_cqage"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqage"]
+bg_color = Color(0.8, 0.8980392, 0.9607843, 0.64705884)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0pyb"]
+bg_color = Color(0.6, 0.6, 0.6, 0.5294118)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddq1t"]
+bg_color = Color(0.6, 0.6, 0.6, 0.5294118)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cem3"]
+bg_color = Color(0.6, 0.6, 0.6, 0.5294118)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcurr"]
+bg_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w08mo"]
+bg_color = Color(0.54901963, 0.54901963, 0.54901963, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4ulx"]
+bg_color = Color(0.54901963, 0.54901963, 0.54901963, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruo50"]
+bg_color = Color(0.8, 0.8980392, 0.9607843, 0.64705884)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="CookingBoard" type="Panel" unique_id=500804475 node_paths=PackedStringArray("product_slot")]
 custom_minimum_size = Vector2(500, 300)
 anchors_preset = 7
@@ -23,6 +119,7 @@ offset_right = 250.0
 offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cqage")
 script = ExtResource("1_lr0fj")
 recipes = Array[ExtResource("2_t5677")]([ExtResource("3_f3iwk"), ExtResource("4_f3iwk"), ExtResource("5_s3h0k"), ExtResource("6_b2xcf")])
 product_slot = NodePath("product_slot")
@@ -41,28 +138,36 @@ theme_override_constants/separation = 50
 
 [node name="CookingSlot1" parent="CookingIngredients" unique_id=2001362267 instance=ExtResource("1_jf1y5")]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w0pyb")
 
 [node name="CookingSlot2" parent="CookingIngredients" unique_id=1624984027 instance=ExtResource("1_jf1y5")]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ddq1t")
 
 [node name="CookingSlot3" parent="CookingIngredients" unique_id=860385655 instance=ExtResource("1_jf1y5")]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7cem3")
 
 [node name="Cook" type="Button" parent="." unique_id=889533656]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.443
-anchor_top = 0.89666665
-anchor_right = 0.557
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -19.0
-offset_bottom = -19.0
+offset_left = -32.5
+offset_top = -75.0
+offset_right = 32.5
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_cqage")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_hcurr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w08mo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d4ulx")
 text = "COOK"
-metadata/_edit_use_anchors_ = true
 
 [node name="product_slot" parent="." unique_id=782860329 instance=ExtResource("2_mfywa")]
 layout_mode = 0
@@ -70,5 +175,6 @@ offset_left = 647.0
 offset_top = 22.0
 offset_right = 747.0
 offset_bottom = 122.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ruo50")
 
 [connection signal="pressed" from="Cook" to="." method="_on_cook_pressed"]

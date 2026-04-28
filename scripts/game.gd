@@ -148,6 +148,9 @@ func start_game():
 	# Clear any existing cats, spawn an initial cat
 	clear_cats()
 	spawn_cat()
+	# Clear cooking boad and product slot
+	cooking_board.empty_slots()
+	cooking_board.empty_product()
 
 	# Start game timer
 	game_timer.wait_time = 60

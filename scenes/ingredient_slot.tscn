@@ -2,10 +2,23 @@
 
 [ext_resource type="Script" uid="uid://d0413ii1p864e" path="res://scripts/ingredient_slot.gd" id="1_mm047"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mm047"]
+bg_color = Color(0.6, 0.6, 0.6, 0.5294118)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="IngredientSlot" type="Panel" unique_id=897650127]
 custom_minimum_size = Vector2(100, 100)
 offset_right = 100.0
 offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mm047")
 script = ExtResource("1_mm047")
 
 [node name="Image" type="TextureRect" parent="." unique_id=1185945507]

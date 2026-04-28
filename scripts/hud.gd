@@ -103,7 +103,7 @@ func show_recipe_book(recipe_list : Array[Item]):
 	
 # Update score
 func update_score(score):
-	score_label.text = str(score)
+	score_label.text = "Score: " + str(score)
 
 # Update level text display
 func update_level(level):
