@@ -3,110 +3,18 @@ extends Node
 @export var cat_scene : PackedScene
 @onready var customer_slots : HBoxContainer = get_node("../UI/CustomerPanel/CustomerSlots")
 @export var food_list : Array[Item]
+@onready var game_timer = $GameTimer
+@onready var hud = $"../HUD"
 # Implementing ingredient_list to instantiate ingredients as needed
 @onready var ingredient_board = $"../UI/IngredientBoard"
 @onready var cooking_board = $"../UI/CookingBoard"
 @export var ingredient_list : Array[Item]
-
 #variable level to keep track of how far to index through the recipe array
 @export var level : int = 1
 @export var score : int = 0
+
 var spawn_timer : Timer
 var game_overBool : bool = false
-
-@onready var game_timer = $GameTimer
-
-@onready var hud = $"../HUD"
-
-# Function to spawn a cat customer
-func spawn_cat():
-	# get all slots and switch order before checking to add randomness in spawning
-	var slots = customer_slots.get_children()
-	slots.shuffle()
-	for customer_slot in slots:
-		# No child means no cat in the slot
-		if customer_slot.get_child_count() == 0:
-			# Instantiate a new cat scene
-			var cat = cat_scene.instantiate()
-			# add cat to empty slot
-			customer_slot.add_child(cat)
-			# Chooses between food_list size and level to avoid out of bounds index
-			var food = food_list[randi() % min(level, food_list.size())]
-			cat.setup(food)
-			# Connect order_complete signal (from cat.gd) to on_order_complete function
-			cat.order_complete.connect(on_order_complete)
-			
-			# print for testing
-			print("cat spawned in slot ", customer_slot.name)
-			return
-	# No empty slots for cats to spawn in
-	print("no empty slots to spawn cats in")
-
-# Call this function to clear cats and timers that spawn more cats
-func clear_cats():
-	for slot in customer_slots.get_children():
-		for cat in slot.get_children():
-			cat.queue_free()
-
-# Called when cats orders are completed or when cat wait_timer ends
-func on_order_complete(happy : bool):
-	if happy:
-		score += 10
-	else:
-		score -= 5
-	hud.update_score(score)
-	print ("score: ", score)
-	if score < 0:
-		spawn_timer.stop()
-		game_over("Your score went into the negatives!")
-		# OLD : start_over()
-	elif score >= 50:
-			spawn_timer.stop()
-			level_complete()
-
-# Obtain new recipe for passing to next level display
-func obtain_new_recipe():
-	# test function for obtaining most recently added recipe
-	var unlocked_recipe : Array[Item] = []
-	var unlocked_food = food_list[level]
-	# when completing level one, this will grab second recipe
-	var new_recipe = cooking_board.recipes[level]
-	print("new recipe", new_recipe)
-	# Add the 3 new ingredients and new food product to unlocked_recipe list
-	unlocked_recipe.append(new_recipe.ingredients[0])
-	unlocked_recipe.append(new_recipe.ingredients[1])
-	unlocked_recipe.append(new_recipe.ingredients[2])
-	unlocked_recipe.append(unlocked_food)
-	return unlocked_recipe
-
-# Obtain recipes for the recipe book display
-func obtain_recipe_book(is_next_level : bool):
-	# Level index
-	var recipe_index = level
-	# If in the next level screen / "level complete", increment recipe_index to include next level's "unlocked" recipe
-	if (is_next_level):
-		recipe_index += 1
-	var recipe_book : Array[Item] = []
-	var recipe_list = cooking_board.recipes
-	for i in range(0, recipe_index):
-		print("recipe index ", recipe_index)
-		print("is next level? ", is_next_level)
-		#the three ingredients in said recipe
-		recipe_book.append(recipe_list[i].ingredients[0])
-		recipe_book.append(recipe_list[i].ingredients[1])
-		recipe_book.append(recipe_list[i].ingredients[2])
-		recipe_book.append(recipe_list[i].product)
-	return recipe_book
-
-# Update allowed recipes for the player.
-func update_cooking_recipes():
-	var unlocked_recipes : Array[Recipe] = []
-	var unlocked_foods = food_list.slice(0, min(level, food_list.size()))
-	for food in unlocked_foods:
-		for recipe in cooking_board.recipes:
-			if recipe.product == food:
-				unlocked_recipes.append(recipe)
-	cooking_board.unlocked_recipes = unlocked_recipes
 
 # On function call or HUD emitting start_game emit signal, run start_game function
 func start_game():
@@ -174,6 +82,53 @@ func reset_level():
 	score = 0
 	level = 1
 
+# Function to spawn a cat customer
+func spawn_cat():
+	# get all slots and switch order before checking to add randomness in spawning
+	var slots = customer_slots.get_children()
+	slots.shuffle()
+	for customer_slot in slots:
+		# No child means no cat in the slot
+		if customer_slot.get_child_count() == 0:
+			# Instantiate a new cat scene
+			var cat = cat_scene.instantiate()
+			# add cat to empty slot
+			customer_slot.add_child(cat)
+			# Chooses between food_list size and level to avoid out of bounds index
+			var food = food_list[randi() % min(level, food_list.size())]
+			cat.setup(food)
+			# Connect order_complete signal (from cat.gd) to on_order_complete function
+			cat.order_complete.connect(on_order_complete)
+			
+			# print for testing
+			print("cat spawned in slot ", customer_slot.name)
+			return
+	# No empty slots for cats to spawn in
+	print("no empty slots to spawn cats in")
+
+# Call this function to clear cats and timers that spawn more cats
+func clear_cats():
+	for slot in customer_slots.get_children():
+		for cat in slot.get_children():
+			cat.queue_free()
+
+# Called when cats orders are completed or when cat wait_timer ends
+func on_order_complete(happy : bool):
+	if happy:
+		score += 10
+	else:
+		score -= 5
+	hud.update_score(score)
+	print ("score: ", score)
+	if score < 0:
+		spawn_timer.stop()
+		game_over("Your score went into the negatives!")
+		# OLD : start_over()
+	# when score 50 or more user moves to next level, stop spawning cats
+	elif score >= 50:
+			spawn_timer.stop()
+			level_complete()
+
 # Obtains available ingredients for creating unlocked food items
 func get_available_ingredients() -> Array[Item]:
 	var available : Array[Item] = []
@@ -189,6 +144,50 @@ func get_available_ingredients() -> Array[Item]:
 						available.append(ingredient)
 	return available
 
+# Obtain new recipe for passing to next level display
+func obtain_new_recipe():
+	# test function for obtaining most recently added recipe
+	var unlocked_recipe : Array[Item] = []
+	var unlocked_food = food_list[level]
+	# when completing level one, this will grab second recipe
+	var new_recipe = cooking_board.recipes[level]
+	print("new recipe", new_recipe)
+	# Add the 3 new ingredients and new food product to unlocked_recipe list
+	unlocked_recipe.append(new_recipe.ingredients[0])
+	unlocked_recipe.append(new_recipe.ingredients[1])
+	unlocked_recipe.append(new_recipe.ingredients[2])
+	unlocked_recipe.append(unlocked_food)
+	return unlocked_recipe
+
+# Obtain recipes for the recipe book display
+func obtain_recipe_book(is_next_level : bool):
+	# Level index
+	var recipe_index = level
+	# If in the next level screen / "level complete", increment recipe_index to include next level's "unlocked" recipe
+	if (is_next_level):
+		recipe_index += 1
+	var recipe_book : Array[Item] = []
+	var recipe_list = cooking_board.recipes
+	for i in range(0, recipe_index):
+		print("recipe index ", recipe_index)
+		print("is next level? ", is_next_level)
+		#the three ingredients in said recipe
+		recipe_book.append(recipe_list[i].ingredients[0])
+		recipe_book.append(recipe_list[i].ingredients[1])
+		recipe_book.append(recipe_list[i].ingredients[2])
+		recipe_book.append(recipe_list[i].product)
+	return recipe_book
+
+# Update allowed recipes for the player.
+func update_cooking_recipes():
+	var unlocked_recipes : Array[Recipe] = []
+	var unlocked_foods = food_list.slice(0, min(level, food_list.size()))
+	for food in unlocked_foods:
+		for recipe in cooking_board.recipes:
+			if recipe.product == food:
+				unlocked_recipes.append(recipe)
+	cooking_board.unlocked_recipes = unlocked_recipes
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if game_timer.is_stopped():
@@ -198,7 +197,7 @@ func _process(delta: float) -> void:
 	hud.update_timer_label(int(game_timer.time_left))
 	return
 
-# Game timer times out : game over
+# Game timer times out : game over. Connected to game Timer
 func _on_game_timer_timeout() -> void:
 	spawn_timer.stop()
 	game_over("You ran out of time!")

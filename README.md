@@ -59,5 +59,3 @@ https://torneberge.itch.io/pen-pal-kitchen-2d
 
 Cats - (idle animation)
 https://toffeecraft.itch.io/cat-pack
-
-

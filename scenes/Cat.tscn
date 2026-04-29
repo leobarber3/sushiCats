@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://csq0b2uirryx"]
 
-[ext_resource type="Script" uid="uid://deokbf0a71eie" path="res://scripts/Cat.gd" id="1_se5fe"]
+[ext_resource type="Script" uid="uid://vdny6tffr6rn" path="res://scripts/Cat.gd" id="1_se5fe"]
 [ext_resource type="Texture2D" uid="uid://dbcb13uix8t6h" path="res://assets/CatPackFree/Idle.png" id="2_spuq0"]
 [ext_resource type="AudioStream" uid="uid://dfk2ucpqgffpr" path="res://assets/audio/collect_2.wav" id="3_limvi"]
 [ext_resource type="AudioStream" uid="uid://cdsuydr3iqvti" path="res://assets/audio/disappear.wav" id="3_spuq0"]

@@ -33,7 +33,9 @@ func setup(food : Item):
 	wait_timer.start()
 	# play animation
 	cat.play("idle")
-
+	
+# Note: 
+# _can_drop_data, and _drop_data, are built-in functions responsible for drag & drop of any control nodes
 func _can_drop_data(_at_position, data):
 	# Can drop food items here for the customer
 	if "item" in data:

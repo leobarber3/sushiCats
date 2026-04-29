@@ -5,17 +5,14 @@ extends Panel
 	# runs whenever the variable is changed
 	set(value):
 		item = value
-		
 		if value == null:
 			$Image.texture = null
 			#$Name.text= ""
 			return
-		
 		$Image.texture = value.image
 
 # Note: 
 # _can_drop_data, _drop_data, and _get_drag_data are built-in functions responsible for drag & drop of any control nodes
-
 func _can_drop_data(_at_position, data):
 	# check for variable item in data
 	if "item" in data:

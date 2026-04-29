@@ -4,7 +4,6 @@ signal start_game # once start game is ready
 signal next_level # go to next level
 signal try_again # try the level again
 signal reset_level # reset level back to first
-#@export var round : int = 0 not even using this variable??
 
 # Different Screens
 @onready var home_screen = $ScreenManager/HomeScreen
@@ -15,6 +14,7 @@ signal reset_level # reset level back to first
 @onready var recipe_book_screen = $ScreenManager/RecipeBookScreen
 @onready var how_to_play_screen = $ScreenManager/HowToPlayScreen
 @onready var how_to_play_screen_two = $ScreenManager/HowToPlayScreen2
+
 # Nodes in Home Screen
 @onready var home_title = $ScreenManager/HomeScreen/TitleText
 
@@ -33,6 +33,7 @@ signal reset_level # reset level back to first
 @onready var optional_text = $ScreenManager/LevelCompleteScreen/OptionalText
 @onready var unlocked_ingredients_container = $ScreenManager/LevelCompleteScreen/NewRecipeBoard/IngredientsUnlocked
 @onready var food_unlocked = $ScreenManager/LevelCompleteScreen/FoodUnlocked
+
 # Nodes in GameOver Screen
 @onready var game_text = $ScreenManager/GameOverScreen/GameText
 
@@ -40,6 +41,11 @@ signal reset_level # reset level back to first
 @onready var recipe_container = $ScreenManager/RecipeBookScreen/RecipeBookPanel/RecipeBookScroll/RecipeBookContainer
 @export var recipe_book_slot : PackedScene
 
+# Initial screen is the home screen
+func _ready():
+	show_home()
+
+# Showing the main home page of the game, hide the rest of the screens
 func show_home():	
 	home_screen.show()
 	gameplay_screen.hide()
@@ -51,6 +57,7 @@ func show_home():
 	how_to_play_screen_two.hide()
 	$BackgroundMusic.stop()
 	
+# Connected to start button, Showing the features that will be present during game, score label, etc
 func show_gameplay():
 	home_screen.hide()
 	gameplay_screen.show()
@@ -62,6 +69,28 @@ func show_gameplay():
 	how_to_play_screen_two.hide()
 	$BackgroundMusic.play()
 
+# Called in game.gd game_over(), Show when the user fails the round and the reason for failing
+func show_gameover(reason : String):
+	game_text.text = reason
+	home_screen.hide()
+	gameplay_screen.hide()
+	level_complete_screen.hide()
+	game_over_screen.show()
+	last_level_screen.hide()
+	recipe_book_screen.hide()
+	$BackgroundMusic.stop()
+
+# Called in game.gd Show when the user has beaten the game
+func show_last_level():
+	home_screen.hide()
+	gameplay_screen.hide()
+	level_complete_screen.hide()
+	game_over_screen.hide()
+	last_level_screen.show()
+	recipe_book_screen.hide()
+	$BackgroundMusic.stop()
+
+# Show screen when level is completed (called by game), will display new unlocked recipe
 func show_level_complete(level : int, new_recipe : Array[Item], optional : String):
 	level_title.text = "Level " + str(level) + " complete!"
 	# Hide the next level button if it's the last level, display if not
@@ -76,30 +105,28 @@ func show_level_complete(level : int, new_recipe : Array[Item], optional : Strin
 	recipe_book_screen.hide()
 	$BackgroundMusic.stop()
 
-func show_gameover(reason : String):
-	game_text.text = reason
-	home_screen.hide()
-	gameplay_screen.hide()
-	level_complete_screen.hide()
-	game_over_screen.show()
-	last_level_screen.hide()
-	recipe_book_screen.hide()
-	$BackgroundMusic.stop()
-
-
-func show_last_level():
-	#add code here
-	home_screen.hide()
-	gameplay_screen.hide()
-	level_complete_screen.hide()
-	game_over_screen.hide()
-	last_level_screen.show()
-	recipe_book_screen.hide()
-	$BackgroundMusic.stop()
-
+# Make the recipe book screen visible, connected to recipe book button
 func show_recipe_book(recipe_list : Array[Item]):
+	# console says recipe_list isnt used so can delete from param??
 	recipe_book_screen.show()
 
+# Flash the Start! message on the screen at beginning of the round
+func quick_show_text(text : String):
+	quick_label.text = text
+	quick_label.show()
+	text_timer.start()
+
+# Displayed unlocked recipe between levels
+func display_unlocked_recipe(level : int, new_recipe : Array[Item]):
+	#level param not being used??
+	var ingredient = 0
+	# Three slots
+	for slot in unlocked_ingredients_container.get_children():
+		print("ingredient: ", new_recipe[ingredient])
+		slot.item = new_recipe[ingredient]
+		ingredient = ingredient + 1
+	food_unlocked.item = new_recipe[3]
+	print("food_unlocked.item: ", food_unlocked.item)
 
 # Update score
 func update_score(score):
@@ -109,9 +136,10 @@ func update_score(score):
 func update_level(level):
 	level_label.text = "Level " + str(level)
 
+# Update the progres bar to appropriate time left
 func update_progressbar(time_left : float):
 	progress_bar.value = time_left
-	
+	#change colors of progress bar depending on time left
 	if time_left <= 10 :
 		progress_bar.modulate = Color.RED
 	elif time_left > 10 && time_left < 25:
@@ -122,23 +150,6 @@ func update_progressbar(time_left : float):
 # Update Timer label
 func update_timer_label(time):
 	timer_label.text = "Time Left: " + str(time)
-
-# Flash the Start! message on the screen at beginning of the round
-func quick_show_text(text : String):
-	quick_label.text = text
-	quick_label.show()
-	text_timer.start()
-
-# Displayed unlocked recipe between levels
-func display_unlocked_recipe(level : int, new_recipe : Array[Item]):
-	var ingredient = 0
-	# Three slots
-	for slot in unlocked_ingredients_container.get_children():
-		print("ingredient: ", new_recipe[ingredient])
-		slot.item = new_recipe[ingredient]
-		ingredient = ingredient + 1
-	food_unlocked.item = new_recipe[3]
-	print("food_unlocked.item: ", food_unlocked.item)
 
 # Updates the recipe book display with obtain_recipe_book(true or false) from Game used as it's param
 func update_recipe_book(recipe_book : Array[Item]):
@@ -154,12 +165,8 @@ func update_recipe_book(recipe_book : Array[Item]):
 			var unlocked_slot = slot.get_node(unlocked_slot_index)
 			#i + j depending on which recipe we making
 			unlocked_slot.item = recipe_book[(i*4)+j]
-	
-# Initial screen is the home screen
-func _ready():
-	show_home()
 
-# Buttons and signals
+# Buttons and signals connected
 # Run this function when Home Screen Start pressed
 func _on_start_button_pressed() -> void:
 	show_gameplay()
@@ -180,6 +187,11 @@ func _on_home_button3_pressed() -> void:
 	reset_level.emit()
 	show_home()
 
+# Run this function when How to play Home Button pressed
+func _on_home_button4_pressed() -> void:
+	how_to_play_screen.hide()
+	home_screen.show()
+
 # Run this function when Level Complete Next Level Button pressed
 func _on_next_level_button_pressed() -> void:
 	show_gameplay()
@@ -194,7 +206,6 @@ func _on_try_again_button_pressed() -> void:
 func _on_text_timer_timeout() -> void:
 	quick_label.hide()
 
-
 # Run this function when Recipe Book pressed from Gameplay
 func _on_recipe_book_button1_pressed() -> void:
 	recipe_book_screen.show() 
@@ -207,7 +218,6 @@ func _on_recipe_book_button2_pressed() -> void:
 func _on_recipe_book_button3_pressed() -> void:
 	recipe_book_screen.show() 
 
-
 func _on_close_recipe_button_pressed() -> void:
 	recipe_book_screen.hide() 
 
@@ -216,16 +226,10 @@ func _on_how_to_play_button_pressed() -> void:
 	how_to_play_screen_two.hide()
 	how_to_play_screen.show()
 
-# Run this function when How to play Home Button pressed
-func _on_home_button4_pressed() -> void:
-	how_to_play_screen.hide()
-	home_screen.show()
-
 func _on_page_two_button_pressed() -> void:
 	how_to_play_screen.hide()
 	home_screen.hide()
 	how_to_play_screen_two.show()
-
 
 func _on_page_one_button_pressed() -> void:
 	how_to_play_screen.show()
