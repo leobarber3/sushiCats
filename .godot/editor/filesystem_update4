@@ -4,3 +4,4 @@ res://Resources/Recipes/Sushi3Recipe.tres
 res://scripts/ingredient_slot.gd
 res://scenes/cooking_board.tscn
 res://scripts/cooking_slot.gd
+res://scenes/HUD.tscn

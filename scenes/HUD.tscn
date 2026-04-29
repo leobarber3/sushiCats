@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dcogmc7hjr77y" path="res://assets/fonts/mago1.ttf" id="3_7hsmw"]
 [ext_resource type="PackedScene" uid="uid://jl613d5wvwld" path="res://scenes/recipe_book_slots.tscn" id="4_f6qnu"]
 [ext_resource type="Texture2D" uid="uid://btqqnn5flmpox" path="res://assets/Icons/home.png" id="5_k4w17"]
+[ext_resource type="Texture2D" uid="uid://b0x3h3u188aj0" path="res://assets/Icons/onigiriCook.png" id="5_meimr"]
 [ext_resource type="PackedScene" uid="uid://b6oblbqwo7e7y" path="res://scenes/unlocked_slot.tscn" id="5_nysna"]
 [ext_resource type="Texture2D" uid="uid://b6idwtapwqg68" path="res://assets/Icons/gameplay1.png" id="6_cf6ij"]
 [ext_resource type="Texture2D" uid="uid://g2dbkcjv75jc" path="res://assets/Icons/close.png" id="6_twldb"]
@@ -256,7 +257,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HowToPlayScreen" type="Control" parent="ScreenManager" unique_id=876507751]
-visible = false
 anchors_preset = 0
 offset_right = 926.0
 offset_bottom = 858.0
@@ -273,6 +273,7 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -640.0
+offset_top = 44.0
 offset_right = 640.0
 offset_bottom = 153.0
 grow_horizontal = 2
@@ -298,8 +299,9 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 32
-text = "* Game Description
-Born on an island filled with starving cats, you've decided to open a restaurantso you dont become their next meal.
+text = "
+* Game Description
+Born on an island filled with starving cats, you've decided to open a restaurant so you dont become their next meal.
 These cats are HANGRY and impatient. Theres only one solution... SUSHI!!!!!
 
 
@@ -308,12 +310,12 @@ These cats are HANGRY and impatient. Theres only one solution... SUSHI!!!!!
 [node name="HowToPlayTitle" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=1439861644]
 layout_mode = 0
 offset_left = 11.0
-offset_top = 198.0
+offset_top = 210.0
 offset_right = 1281.0
-offset_bottom = 249.0
+offset_bottom = 261.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 58
 text = "How to play!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -327,13 +329,52 @@ offset_bottom = 662.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 32
-text = "* 60 seconds per round
-* Recipes are slot specific
-* Unlock new Recipes
-* don't give them the wrong recipe
-* don't let them run out of patience
-* get score >= 50 to advance to next level
+text = "* The game begins when you press play! You will have 60 seconds each level to satisfy your cat customers,
+                                              or it's game over for you...
+     As you appease the cats, you will learn new recipes from them in order to further satiate them.
+
+
+
 "
+
+[node name="HowToPlayText2" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=736835872]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 383.0
+offset_right = 1247.0
+offset_bottom = 620.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+text = "Each level involves the same steps!
+You begin with one starter recipe: onigiri
+To cook onigiri you need to place ingredients into the cooking
+slots in the proper order: rice first, then seaweed, then rice.
+After pressed cook, you can drag the cooked food to the customer
+requesting it.
+Each cat will display their order above their head and leave either:
+         * Happy: +10 points or     * Unhappy: -5 points"
+
+[node name="HowToPlayText3" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=853317010]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 630.0
+offset_right = 1004.0
+offset_bottom = 717.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+text = "Each cat will request a specific food and will only be so patient!
+Give enough cats their food within the 60 second time limit to reach 50 points and you
+can live to see another day with the cats."
+
+[node name="TextureRect" type="TextureRect" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=1992980687]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 381.0
+offset_right = 506.0
+offset_bottom = 632.0
+texture = ExtResource("5_meimr")
 
 [node name="HomeButton" type="Button" parent="ScreenManager/HowToPlayScreen" unique_id=1247055201]
 layout_mode = 0
@@ -365,7 +406,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rvumk")
 text = "Page 2"
 
 [node name="HowToPlayScreen2" type="Control" parent="ScreenManager" unique_id=2095212888]
-visible = false
 anchors_preset = 0
 offset_right = 926.0
 offset_bottom = 858.0
@@ -544,6 +584,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="HomeScreen" type="Control" parent="ScreenManager" unique_id=487187303]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
