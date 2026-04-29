@@ -263,6 +263,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HowToPlayScreen" type="Control" parent="ScreenManager" unique_id=876507751]
+visible = false
 anchors_preset = 0
 offset_right = 926.0
 offset_bottom = 858.0
@@ -600,7 +601,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="HomeScreen" type="Control" parent="ScreenManager" unique_id=487187303]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

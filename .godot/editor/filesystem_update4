@@ -9,3 +9,4 @@ res://scripts/hud.gd
 res://scripts/ingredient_board.gd
 res://scripts/ingredient_slot.gd
 res://scripts/Item.gd
+res://scenes/main.tscn

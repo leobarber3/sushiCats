@@ -4,7 +4,6 @@ extends Node
 @onready var customer_slots : HBoxContainer = get_node("../UI/CustomerPanel/CustomerSlots")
 @export var food_list : Array[Item]
 # Implementing ingredient_list to instantiate ingredients as needed
-#@onready var ingredient_board = $"../UI/IngredientBoard/ScrollContainer/VBoxContainer"
 @onready var ingredient_board = $"../UI/IngredientBoard"
 @onready var cooking_board = $"../UI/CookingBoard"
 @export var ingredient_list : Array[Item]
@@ -203,6 +202,3 @@ func _process(delta: float) -> void:
 func _on_game_timer_timeout() -> void:
 	spawn_timer.stop()
 	game_over("You ran out of time!")
-	#this will show the end scree when the timer timesout
-	#but we still need to figure out how to clear the cats from the slots
-	pass # Replace with function body.
