@@ -47,6 +47,7 @@ func show_home():
 	last_level_screen.hide()
 	recipe_book_screen.hide()
 	how_to_play_screen.hide()
+	how_to_play_screen_two.hide()
 	$BackgroundMusic.stop()
 	
 func show_gameplay():
@@ -56,6 +57,8 @@ func show_gameplay():
 	game_over_screen.hide()
 	last_level_screen.hide()
 	recipe_book_screen.hide()
+	how_to_play_screen.hide()
+	how_to_play_screen_two.hide()
 	$BackgroundMusic.play()
 
 func show_level_complete(level : int, new_recipe : Array[Item], optional : String):

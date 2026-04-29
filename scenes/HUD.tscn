@@ -302,7 +302,7 @@ theme_override_font_sizes/font_size = 32
 text = "
 * Game Description
 Born on an island filled with starving cats, you've decided to open a restaurant so you dont become their next meal.
-These cats are HANGRY and impatient. Theres only one solution... SUSHI!!!!!
+                      These cats are HANGRY and impatient. Theres only one solution... SUSHI!!!!!
 
 
 "
@@ -406,6 +406,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rvumk")
 text = "Page 2"
 
 [node name="HowToPlayScreen2" type="Control" parent="ScreenManager" unique_id=2095212888]
+visible = false
 anchors_preset = 0
 offset_right = 926.0
 offset_bottom = 858.0
