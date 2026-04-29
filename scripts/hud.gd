@@ -26,8 +26,6 @@ signal reset_level # reset level back to first
 @onready var text_timer = $ScreenManager/GameplayScreen/textTimer
 @onready var timer_label = $ScreenManager/GameplayScreen/TimerLabel
 
-
-
 # Nodes in LevelComplete Screen
 @onready var level_title = $ScreenManager/LevelCompleteScreen/TitleText
 # optional text in case we want to speed up cat spawn timers or something!
@@ -38,7 +36,7 @@ signal reset_level # reset level back to first
 # Nodes in GameOver Screen
 @onready var game_text = $ScreenManager/GameOverScreen/GameText
 
-#Nodes in Recipe Book Screen 
+# Nodes in Recipe Book Screen 
 @onready var recipe_container = $ScreenManager/RecipeBookScreen/RecipeBookPanel/RecipeBookScroll/RecipeBookContainer
 @export var recipe_book_slot : PackedScene
 
@@ -101,13 +99,8 @@ func show_last_level():
 
 func show_recipe_book(recipe_list : Array[Item]):
 	recipe_book_screen.show()
-	
 
-#func show_text(text):
-	#$TitleText.text = text
-	#$TitleText.show()
-	
-	
+
 # Update score
 func update_score(score):
 	score_label.text = "Score: " + str(score)
@@ -125,11 +118,12 @@ func update_progressbar(time_left : float):
 		progress_bar.modulate = Color.YELLOW
 	else:
 		progress_bar.modulate = Color.GREEN
-		
+
 # Update Timer label
 func update_timer_label(time):
 	timer_label.text = "Time Left: " + str(time)
-	
+
+# Flash the Start! message on the screen at beginning of the round
 func quick_show_text(text : String):
 	quick_label.text = text
 	quick_label.show()
@@ -146,7 +140,7 @@ func display_unlocked_recipe(level : int, new_recipe : Array[Item]):
 	food_unlocked.item = new_recipe[3]
 	print("food_unlocked.item: ", food_unlocked.item)
 
-
+# Updates the recipe book display with obtain_recipe_book(true or false) from Game used as it's param
 func update_recipe_book(recipe_book : Array[Item]):
 	#each recipe in the aray has 3 ingredients then a product, so taking up four indexes
 	var recipe_count = recipe_book.size() / 4
@@ -217,7 +211,6 @@ func _on_recipe_book_button3_pressed() -> void:
 func _on_close_recipe_button_pressed() -> void:
 	recipe_book_screen.hide() 
 
-
 func _on_how_to_play_button_pressed() -> void:
 	home_screen.hide()
 	how_to_play_screen_two.hide()
@@ -227,7 +220,6 @@ func _on_how_to_play_button_pressed() -> void:
 func _on_home_button4_pressed() -> void:
 	how_to_play_screen.hide()
 	home_screen.show()
-
 
 func _on_page_two_button_pressed() -> void:
 	how_to_play_screen.hide()

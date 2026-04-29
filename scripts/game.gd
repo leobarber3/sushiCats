@@ -8,8 +8,7 @@ extends Node
 @onready var ingredient_board = $"../UI/IngredientBoard"
 @onready var cooking_board = $"../UI/CookingBoard"
 @export var ingredient_list : Array[Item]
-#@export var game_timer : Timer
-#@export var game_progress : ProgressBar
+
 #variable level to keep track of how far to index through the recipe array
 @export var level : int = 1
 @export var score : int = 0
@@ -44,13 +43,13 @@ func spawn_cat():
 	# No empty slots for cats to spawn in
 	print("no empty slots to spawn cats in")
 
+# Call this function to clear cats and timers that spawn more cats
 func clear_cats():
 	for slot in customer_slots.get_children():
 		for cat in slot.get_children():
 			cat.queue_free()
 
-
-
+# Called when cats orders are completed or when cat wait_timer ends
 func on_order_complete(happy : bool):
 	if happy:
 		score += 10
@@ -66,10 +65,7 @@ func on_order_complete(happy : bool):
 			spawn_timer.stop()
 			level_complete()
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
+# Obtain new recipe for passing to next level display
 func obtain_new_recipe():
 	# test function for obtaining most recently added recipe
 	var unlocked_recipe : Array[Item] = []
@@ -102,8 +98,8 @@ func obtain_recipe_book(is_next_level : bool):
 		recipe_book.append(recipe_list[i].ingredients[2])
 		recipe_book.append(recipe_list[i].product)
 	return recipe_book
-	
 
+# Update allowed recipes for the player.
 func update_cooking_recipes():
 	var unlocked_recipes : Array[Recipe] = []
 	var unlocked_foods = food_list.slice(0, min(level, food_list.size()))
@@ -113,6 +109,7 @@ func update_cooking_recipes():
 				unlocked_recipes.append(recipe)
 	cooking_board.unlocked_recipes = unlocked_recipes
 
+# On function call or HUD emitting start_game emit signal, run start_game function
 func start_game():
 	score = 0
 	hud.update_score(score)
@@ -139,19 +136,20 @@ func start_game():
 	
 	# Create a new timer to spawn more cats sequentially
 	spawn_timer = Timer.new()
-	spawn_timer.wait_time = 8.0 # spawn a cat every 10 seconds
+	spawn_timer.wait_time = 8.0 # spawn a cat every 8 seconds
 	# Connect the spawn_timers timeout() signal to cat
-	# so a cat will spawn each 15 second timeout
+	# so a cat will spawn each _8_ second timeout
 	spawn_timer.timeout.connect(spawn_cat)
 	add_child(spawn_timer)
 	spawn_timer.start()
-	
 
+# On function call or HUD emitting game_over signal, run game_over function
 func game_over(reason : String):
 	game_timer.stop()
 	clear_cats()
 	hud.show_gameover(reason)
-	
+
+# On function call or HUD emitting level_complete signal, run level_complete function
 func level_complete():
 	game_timer.stop()
 	clear_cats()
@@ -167,10 +165,12 @@ func level_complete():
 		
 	level += 1
 
+# On HUD emitted try_again signal, run try_again function
 func try_again():
 	score = 0
 	start_game()
 
+# On HUD emitted reset_level signal, run reset_level function
 func reset_level():
 	score = 0
 	level = 1
@@ -189,7 +189,6 @@ func get_available_ingredients() -> Array[Item]:
 					if ingredient not in available:
 						available.append(ingredient)
 	return available
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -199,7 +198,6 @@ func _process(delta: float) -> void:
 	hud.update_progressbar(game_timer.time_left)
 	hud.update_timer_label(int(game_timer.time_left))
 	return
-
 
 # Game timer times out : game over
 func _on_game_timer_timeout() -> void:

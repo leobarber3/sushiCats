@@ -9,7 +9,6 @@ extends Panel
 # unlocked recipes for cooking (updated by start_game)
 @export var unlocked_recipes : Array[Recipe] = []
 
-
 # Function to check if ingredient selection matches recipes!
 func check_recipe():
 	# loop through recipes in array and check for a match
@@ -28,7 +27,6 @@ func check_recipe():
 		if recipe_match:
 			return recipe
 	return null
-		
 
 # Cook button! Connected pressed() signal
 func _on_cook_pressed() -> void:
@@ -43,7 +41,6 @@ func _on_cook_pressed() -> void:
 		print("you made a mess: (no matching recipe)")
 		# empty the slots regardless for now : need to indicate to player that they made trash later
 		empty_slots()
-		
 
 # function to empty slots
 func empty_slots():
@@ -53,12 +50,3 @@ func empty_slots():
 # function to empy product
 func empty_product():
 	product_slot.item = null
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

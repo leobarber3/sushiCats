@@ -33,13 +33,12 @@ func setup(food : Item):
 	wait_timer.start()
 	# play animation
 	cat.play("idle")
-	
+
 func _can_drop_data(_at_position, data):
 	# Can drop food items here for the customer
 	if "item" in data:
 		return is_instance_of(data.item, Item)
 	return false
-
 
 func _drop_data(_at_position, data):
 	if data.item == wanted_food:
@@ -48,7 +47,7 @@ func _drop_data(_at_position, data):
 	else:
 		# Unhappy customer!
 		leave(false)
-	
+
 # Function to run when customer leaves
 func leave(happy : bool):
 	wait_timer.stop()
@@ -70,18 +69,10 @@ func leave(happy : bool):
 	await get_tree().create_timer(1.5).timeout
 	queue_free()
 
-
 # Connected to Timer timeout()
 func _on_wait_timer_timeout() -> void:
 	# function is called when timer runs out, meaning customer never got food:
 	leave(false)
-	
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -96,7 +87,6 @@ func _process(delta: float) -> void:
 		wait_progress.modulate = Color.YELLOW
 	else:
 		wait_progress.modulate = Color.GREEN
-
 
 func _on_score_text_timer_timeout() -> void:
 	score_text.text=""
