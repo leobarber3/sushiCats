@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caj72kfjum4fx"
-path="res://.godot/imported/catch red fish-Sheet.png-e211ef3010f84e5d554d7d50be14609a.ctex"
+uid="uid://dwucktuy20yxc"
+path="res://.godot/imported/gameplay_page_two.png-84976648a299a5f5b84b54aecfb3ad8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Fishing Game Pack/catch red fish-Sheet.png"
-dest_files=["res://.godot/imported/catch red fish-Sheet.png-e211ef3010f84e5d554d7d50be14609a.ctex"]
+source_file="res://assets/Icons/gameplay_page_two.png"
+dest_files=["res://.godot/imported/gameplay_page_two.png-84976648a299a5f5b84b54aecfb3ad8e.ctex"]
 
 [params]
 

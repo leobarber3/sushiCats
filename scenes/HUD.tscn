@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://btqqnn5flmpox" path="res://assets/Icons/home.png" id="5_k4w17"]
 [ext_resource type="Texture2D" uid="uid://b0x3h3u188aj0" path="res://assets/Icons/onigiriCook.png" id="5_meimr"]
 [ext_resource type="PackedScene" uid="uid://b6oblbqwo7e7y" path="res://scenes/unlocked_slot.tscn" id="5_nysna"]
-[ext_resource type="Texture2D" uid="uid://b6idwtapwqg68" path="res://assets/Icons/gameplay1.png" id="6_cf6ij"]
 [ext_resource type="Texture2D" uid="uid://g2dbkcjv75jc" path="res://assets/Icons/close.png" id="6_twldb"]
+[ext_resource type="Texture2D" uid="uid://dwucktuy20yxc" path="res://assets/Icons/gameplay_page_two.png" id="7_meimr"]
 [ext_resource type="Texture2D" uid="uid://dk1d3hs3v81ag" path="res://assets/Icons/UIBook.png" id="8_8cuoo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_467v5"]
@@ -263,6 +263,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HowToPlayScreen" type="Control" parent="ScreenManager" unique_id=876507751]
+visible = false
 anchors_preset = 0
 offset_right = 926.0
 offset_bottom = 858.0
@@ -338,11 +339,10 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 32
-text = "Each level involves the same steps 
-and you begin with one starter recipe: onigiri
+text = "Each cat will request a specific food and will only be so patient!
+Each level involves the same steps and you begin with one starter recipe: onigiri
 To cook onigiri you need to place ingredients into the cooking
 slots in the proper order, left to right: rice first, then seaweed, then rice.
-All Recipes are order dependent!!!
 After pressing cook, you can drag the cooked food to the customer requesting it.
 Each cat will display their order above their head and leave either:
          * Happy: +10 points                  or     * Unhappy: -5 points"
@@ -359,7 +359,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
-text = "Welcome to Sushi Cats"
+text = "Welcome to Sushi Cats!"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -381,9 +381,9 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 32
-text = "Each cat will request a specific food and will only be so patient!
-Give enough cats their food within the 60 second time limit to
-reach 50 points and you can live to see another day with the cats."
+text = "In level 1, the cats will only request onigiri, but as the game
+progreses the cats will crave more variety in their food.
+See more gameplay info on page 2!"
 metadata/_edit_use_anchors_ = true
 
 [node name="HomeButton" type="Button" parent="ScreenManager/HowToPlayScreen" unique_id=1247055201]
@@ -416,7 +416,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rvumk")
 text = "Page 2"
 
 [node name="HowToPlayScreen2" type="Control" parent="ScreenManager" unique_id=2095212888]
-visible = false
 anchors_preset = 0
 offset_right = 926.0
 offset_bottom = 858.0
@@ -439,18 +438,17 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
-text = "Welcome to Sushi Cats"
+text = "Sushi Cats"
 horizontal_alignment = 1
 
 [node name="HowToPlayTitle" type="Label" parent="ScreenManager/HowToPlayScreen2/ColorRect" unique_id=561690780]
 layout_mode = 0
-offset_left = 11.0
 offset_top = 60.0
 offset_right = 1281.0
 offset_bottom = 152.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 58
 text = "Gameplay!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -464,24 +462,27 @@ offset_bottom = 662.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 32
-text = "* 60 seconds per round Shown on progress bar
-* Recipes are slot specific
-* Unlock new Recipes at the end of a level
-* All unlocked ingredients on the left
-* Drag and drop ingredients into the correct ordering
-* Don't give customers them the wrong order
-* Don't let them run out of patience
+text = "TO WIN : SCORE 50 POINTS WITHIN THE TIME LIMIT
+Level 1 looks like this ------------------------------->
+* 60 seconds per round, displayed at the top
+* Each food is created using a different recipe
+* Unlock new Recipes on level completion
+* All unlocked ingredients are on the left
+* Drag and drop ingredients onto the cooking board
+ with the corect ordering
+* Don't give customers them the wrong order!
+* Don't let them run out of patience!
 * Don't let your score go into the negatives!
 * Check the recipe book at any time during the level
-or inbetween levels"
+ or in-between levels if you get stuck"
 
 [node name="TextureRect" type="TextureRect" parent="ScreenManager/HowToPlayScreen2/ColorRect" unique_id=2040142066]
 layout_mode = 0
-offset_left = 662.0
-offset_top = 174.0
-offset_right = 1176.0
-offset_bottom = 499.0
-texture = ExtResource("6_cf6ij")
+offset_left = 618.0
+offset_top = 153.0
+offset_right = 1258.0
+offset_bottom = 572.0
+texture = ExtResource("7_meimr")
 expand_mode = 1
 
 [node name="HomeButton" type="Button" parent="ScreenManager/HowToPlayScreen2" unique_id=911156954]
