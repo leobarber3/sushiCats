@@ -382,8 +382,6 @@ theme_override_font_sizes/font_size = 32
 text = "Each cat will request a specific food and will only be so patient!
 Give enough cats their food within the 60 second time limit to
 reach 50 points and you can live to see another day with the cats."
-horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="HomeButton" type="Button" parent="ScreenManager/HowToPlayScreen" unique_id=1247055201]
