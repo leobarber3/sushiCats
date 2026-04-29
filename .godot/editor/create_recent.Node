@@ -1,11 +1,11 @@
+Panel
+HBoxContainer
 Label
 TextureRect
 Timer
 ColorRect
 Button
 Control
-HBoxContainer
-Panel
 VBoxContainer
 ScrollContainer
 ProgressBar
