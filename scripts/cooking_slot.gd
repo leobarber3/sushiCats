@@ -35,7 +35,6 @@ func _get_drag_data(_at_position):
 		var preview_image = TextureRect.new()
 		preview_image.texture = item.image
 		
-		
 		# Prevent image having big minimum size
 		preview_image.custom_minimum_size = Vector2(32,32)
 		preview_image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
@@ -44,8 +43,6 @@ func _get_drag_data(_at_position):
 		preview_image.size = Vector2(48, 48)
 		preview_image.position = -Vector2(24, 24)
 		
-		
-		
 		# Add texture to a control node and display control at mouse
 		var preview = Control.new()
 		preview.size = Vector2(48,48)
@@ -53,11 +50,10 @@ func _get_drag_data(_at_position):
 		preview.z_index = 5
 		preview.add_child(preview_image)
 		set_drag_preview(preview)
-		
-		return {"item" : item}
+		var dragged_item = item
+		item = null
+		return {"item" : dragged_item}
 	return null
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
