@@ -197,6 +197,7 @@ func _process(delta: float) -> void:
 		clear_cats()
 		return
 	hud.update_progressbar(game_timer.time_left)
+	hud.update_timer_label(int(game_timer.time_left))
 	return
 
 

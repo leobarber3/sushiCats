@@ -24,6 +24,9 @@ signal reset_level # reset level back to first
 @onready var progress_bar = $ScreenManager/GameplayScreen/ProgressBar
 @onready var quick_label = $ScreenManager/GameplayScreen/QuickLabel
 @onready var text_timer = $ScreenManager/GameplayScreen/textTimer
+@onready var timer_label = $ScreenManager/GameplayScreen/TimerLabel
+
+
 
 # Nodes in LevelComplete Screen
 @onready var level_title = $ScreenManager/LevelCompleteScreen/TitleText
@@ -122,7 +125,11 @@ func update_progressbar(time_left : float):
 		progress_bar.modulate = Color.YELLOW
 	else:
 		progress_bar.modulate = Color.GREEN
-
+		
+# Update Timer label
+func update_timer_label(time):
+	timer_label.text = "Time Left: " + str(time)
+	
 func quick_show_text(text : String):
 	quick_label.text = text
 	quick_label.show()

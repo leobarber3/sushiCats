@@ -1,1 +1,3 @@
 res://scenes/HUD.tscn
+res://scripts/hud.gd
+res://scripts/game.gd
