@@ -1,12 +1,12 @@
-Panel
 HBoxContainer
+Panel
+VBoxContainer
 Label
 TextureRect
 Timer
 ColorRect
 Button
 Control
-VBoxContainer
 ScrollContainer
 ProgressBar
 AudioStreamPlayer2D
