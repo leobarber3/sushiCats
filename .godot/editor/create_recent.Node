@@ -1,12 +1,13 @@
-TextureRect
+RichTextLabel
+HBoxContainer
+Panel
+VBoxContainer
 Label
+TextureRect
 Timer
 ColorRect
 Button
 Control
-HBoxContainer
-Panel
-VBoxContainer
 ScrollContainer
 ProgressBar
 AudioStreamPlayer2D

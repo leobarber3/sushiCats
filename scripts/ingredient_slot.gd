@@ -12,10 +12,9 @@ extends Panel
 		
 		$Image.texture = value.image
 
-
 # Note: 
 # _can_drop_data, _drop_data, and _get_drag_data are built-in functions responsible for drag & drop of any control nodes
-func _can_drop_data(_at_position, data):
+func _can_drop_data(_at_position, _data):
 	# do not let anyone drop data in ingredient_slot
 	return false
 
@@ -26,7 +25,6 @@ func _get_drag_data(_at_position):
 		var preview_image = TextureRect.new()
 		preview_image.texture = item.image
 		
-		
 		# Prevent image having big minimum size
 		preview_image.custom_minimum_size = Vector2(32,32)
 		preview_image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
@@ -35,7 +33,6 @@ func _get_drag_data(_at_position):
 		preview_image.size = Vector2(48, 48)
 		preview_image.position = -Vector2(24, 24)
 		
-		
 		# Add texture to a control node and display control at mouse
 		var preview = Control.new()
 		preview.size = Vector2(48,48)
@@ -43,18 +40,6 @@ func _get_drag_data(_at_position):
 		preview.z_index = 5
 		preview.add_child(preview_image)
 		set_drag_preview(preview)
-		
 		return {"item" : item}
 	
 	return null
-
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

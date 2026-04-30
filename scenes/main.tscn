@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://ch6ikbc0khygy" path="res://Resources/Food/Sushi2.tres" id="11_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://b4elh84wwwcsn" path="res://scenes/HUD.tscn" id="11_ya4ey"]
 [ext_resource type="Resource" uid="uid://cfdxqce6345mu" path="res://Resources/Food/Sushi3.tres" id="12_trceg"]
+[ext_resource type="Resource" uid="uid://cr5xqs7lhpv62" path="res://Resources/Food/Sushi4.tres" id="15_jbj1t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6xl0"]
 texture = ExtResource("5_tbgi4")
@@ -1000,7 +1001,7 @@ ingredient_slot_scene = ExtResource("6_jkv2x")
 [node name="Game" type="Node" parent="." unique_id=851654230]
 script = ExtResource("6_tefeu")
 cat_scene = ExtResource("7_o6xl0")
-food_list = Array[ExtResource("7_tipki")]([ExtResource("8_85g3d"), ExtResource("10_choun"), ExtResource("11_eb6dy"), ExtResource("12_trceg")])
+food_list = Array[ExtResource("7_tipki")]([ExtResource("8_85g3d"), ExtResource("10_choun"), ExtResource("11_eb6dy"), ExtResource("12_trceg"), ExtResource("15_jbj1t")])
 
 [node name="GameTimer" type="Timer" parent="Game" unique_id=1754236206]
 wait_time = 60.0

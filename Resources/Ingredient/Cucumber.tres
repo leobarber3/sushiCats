@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dh57v2c80atmv"]
+
+[ext_resource type="Texture2D" uid="uid://bkdrniq3lo8ib" path="res://assets/Foodimg/cucumber.png" id="1_qg31u"]
+[ext_resource type="Script" uid="uid://dvf4ehm1g74kb" path="res://scripts/Item.gd" id="2_al77c"]
+
+[resource]
+script = ExtResource("2_al77c")
+name = "Cucumber"
+image = ExtResource("1_qg31u")
+metadata/_custom_type_script = "uid://dvf4ehm1g74kb"

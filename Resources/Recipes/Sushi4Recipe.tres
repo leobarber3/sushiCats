@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://dqne1sxmh65qa"]
+
+[ext_resource type="Texture2D" uid="uid://fthnfjo05ifn" path="res://assets/Foodimg/CucumberRoll.png" id="1_48huj"]
+[ext_resource type="Script" uid="uid://dvf4ehm1g74kb" path="res://scripts/Item.gd" id="2_sxd6v"]
+[ext_resource type="Resource" uid="uid://dopepnh6tqvn3" path="res://Resources/Ingredient/Seaweed.tres" id="3_ykivw"]
+[ext_resource type="Resource" uid="uid://b7va4s1bsoqgf" path="res://Resources/Ingredient/Rice.tres" id="4_kgyq4"]
+[ext_resource type="Resource" uid="uid://dh57v2c80atmv" path="res://Resources/Ingredient/Cucumber.tres" id="5_rk4ts"]
+[ext_resource type="Resource" uid="uid://cr5xqs7lhpv62" path="res://Resources/Food/Sushi4.tres" id="6_0lwtb"]
+[ext_resource type="Script" uid="uid://d2dfpajh5rait" path="res://scripts/Recipe.gd" id="7_wohdy"]
+
+[resource]
+script = ExtResource("7_wohdy")
+name = "Sushi"
+image = ExtResource("1_48huj")
+ingredients = Dictionary[int, ExtResource("2_sxd6v")]({
+0: ExtResource("3_ykivw"),
+1: ExtResource("4_kgyq4"),
+2: ExtResource("5_rk4ts")
+})
+product = ExtResource("6_0lwtb")
+metadata/_custom_type_script = "uid://d2dfpajh5rait"

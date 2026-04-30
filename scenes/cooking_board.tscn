@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://buh8hwxvilkbi" path="res://Resources/Recipes/Sushi1Recipe.tres" id="4_f3iwk"]
 [ext_resource type="Resource" uid="uid://dbmf3etlw6igu" path="res://Resources/Recipes/Sushi2Recipe.tres" id="5_s3h0k"]
 [ext_resource type="Resource" uid="uid://b3kxg0nuwo1s0" path="res://Resources/Recipes/Sushi3Recipe.tres" id="6_b2xcf"]
+[ext_resource type="Resource" uid="uid://dqne1sxmh65qa" path="res://Resources/Recipes/Sushi4Recipe.tres" id="7_w0pyb"]
 [ext_resource type="FontFile" uid="uid://dcogmc7hjr77y" path="res://assets/fonts/mago1.ttf" id="8_cqage"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqage"]
@@ -121,7 +122,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cqage")
 script = ExtResource("1_lr0fj")
-recipes = Array[ExtResource("2_t5677")]([ExtResource("3_f3iwk"), ExtResource("4_f3iwk"), ExtResource("5_s3h0k"), ExtResource("6_b2xcf")])
+recipes = Array[ExtResource("2_t5677")]([ExtResource("3_f3iwk"), ExtResource("4_f3iwk"), ExtResource("5_s3h0k"), ExtResource("6_b2xcf"), ExtResource("7_w0pyb")])
 product_slot = NodePath("product_slot")
 
 [node name="CookingIngredients" type="HBoxContainer" parent="." unique_id=1431684348]

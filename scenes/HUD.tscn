@@ -6,10 +6,17 @@
 [ext_resource type="FontFile" uid="uid://dcogmc7hjr77y" path="res://assets/fonts/mago1.ttf" id="3_7hsmw"]
 [ext_resource type="PackedScene" uid="uid://jl613d5wvwld" path="res://scenes/recipe_book_slots.tscn" id="4_f6qnu"]
 [ext_resource type="Texture2D" uid="uid://btqqnn5flmpox" path="res://assets/Icons/home.png" id="5_k4w17"]
+[ext_resource type="Texture2D" uid="uid://b0x3h3u188aj0" path="res://assets/Icons/onigiriCook.png" id="5_meimr"]
 [ext_resource type="PackedScene" uid="uid://b6oblbqwo7e7y" path="res://scenes/unlocked_slot.tscn" id="5_nysna"]
-[ext_resource type="Texture2D" uid="uid://b6idwtapwqg68" path="res://assets/Icons/gameplay1.png" id="6_cf6ij"]
 [ext_resource type="Texture2D" uid="uid://g2dbkcjv75jc" path="res://assets/Icons/close.png" id="6_twldb"]
+[ext_resource type="Texture2D" uid="uid://dwucktuy20yxc" path="res://assets/Icons/gameplay_page_two.png" id="7_meimr"]
 [ext_resource type="Texture2D" uid="uid://dk1d3hs3v81ag" path="res://assets/Icons/UIBook.png" id="8_8cuoo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_467v5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ljw04"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_natmc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twldb"]
 
@@ -267,73 +274,117 @@ offset_right = 1280.0
 offset_bottom = 718.0
 color = Color(0.76862746, 1, 1, 1)
 
-[node name="TitleLabel" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=1933568793]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -640.0
-offset_right = 640.0
-offset_bottom = 153.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_7hsmw")
-theme_override_font_sizes/font_size = 64
-text = "Welcome to Sushi Cats"
-horizontal_alignment = 1
+[node name="TitlePanel" type="Panel" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=987599382]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 90.0
+offset_right = 1254.0
+offset_bottom = 614.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_467v5")
 
-[node name="GameDescription" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=690193807]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -632.0
-offset_top = -273.0
-offset_right = 628.0
-offset_bottom = 11.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="ScreenManager/HowToPlayScreen/ColorRect/TitlePanel" unique_id=201096398]
+layout_mode = 0
+offset_right = 1243.0
+offset_bottom = 264.0
+
+[node name="GameDescription" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect/TitlePanel/VBoxContainer" unique_id=690193807]
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 32
-text = "* Game Description
-Born on an island filled with starving cats, you've decided to open a restaurantso you dont become their next meal.
-These cats are HANGRY and impatient. Theres only one solution... SUSHI!!!!!
+text = "* Game Description * 
+Born on an island filled with starving cats, you've decided to open a restaurant so you dont become their next meal.
+These cats are HANGRY and impatient. Theres only one solution... SUSHI!!!!!"
+metadata/_edit_use_anchors_ = true
 
-
-"
-
-[node name="HowToPlayTitle" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=1439861644]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 198.0
-offset_right = 1281.0
-offset_bottom = 249.0
+[node name="HowToPlayTitle" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect/TitlePanel/VBoxContainer" unique_id=1439861644]
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 58
 text = "How to play!"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="HowToPlayText" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=1502581332]
-layout_mode = 0
-offset_left = 60.0
-offset_top = 281.0
-offset_right = 1168.0
-offset_bottom = 662.0
+[node name="HowToPlayText" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect/TitlePanel/VBoxContainer" unique_id=1502581332]
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 32
-text = "* 60 seconds per round
-* Recipes are slot specific
-* Unlock new Recipes
-* don't give them the wrong recipe
-* don't let them run out of patience
-* get score >= 50 to advance to next level
-"
+text = "* The game begins when you press play! You will have 60 seconds each level to satisfy your cat customers,
+or it's game over for you. The progress bar at the very top indicates how much time you have left before you lose.
+As you appease the cats, you will learn new recipes from them in order to further satiate them."
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="ScreenManager/HowToPlayScreen/ColorRect/TitlePanel/VBoxContainer" unique_id=1322026302]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ljw04")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScreenManager/HowToPlayScreen/ColorRect/TitlePanel/VBoxContainer/Panel" unique_id=1165670445]
+layout_mode = 0
+offset_right = 1232.0
+offset_bottom = 201.0
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="ScreenManager/HowToPlayScreen/ColorRect/TitlePanel/VBoxContainer/Panel/HBoxContainer" unique_id=1992980687]
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 2
+texture = ExtResource("5_meimr")
+expand_mode = 1
+
+[node name="HowToPlayText2" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect/TitlePanel/VBoxContainer/Panel/HBoxContainer" unique_id=736835872]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+text = "Each cat will request a specific food and will only be so patient!
+Each level involves the same steps and you begin with one starter recipe: onigiri
+To cook onigiri you need to place ingredients into the cooking
+slots in the proper order, left to right: rice first, then seaweed, then rice.
+After pressing cook, you can drag the cooked food to the customer requesting it.
+Each cat will display their order above their head and leave either:
+         * Happy: +10 points                  or     * Unhappy: -5 points"
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleLabel" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=1933568793]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30390626
+anchor_top = 0.027855154
+anchor_right = 0.69609374
+anchor_bottom = 0.14206128
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+text = "Welcome to Sushi Cats!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="ScreenManager/HowToPlayScreen/ColorRect" unique_id=977348404]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 536.0
+offset_right = 821.0
+offset_bottom = 690.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_natmc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScreenManager/HowToPlayScreen/ColorRect/Panel" unique_id=1327138210]
+layout_mode = 0
+offset_right = 792.0
+offset_bottom = 153.0
+
+[node name="HowToPlayText3" type="Label" parent="ScreenManager/HowToPlayScreen/ColorRect/Panel/HBoxContainer" unique_id=853317010]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 32
+text = "In level 1, the cats will only request onigiri, but as the game
+progreses the cats will crave more variety in their food.
+See more gameplay info on page 2!"
+metadata/_edit_use_anchors_ = true
 
 [node name="HomeButton" type="Button" parent="ScreenManager/HowToPlayScreen" unique_id=1247055201]
 layout_mode = 0
@@ -388,18 +439,17 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 64
-text = "Welcome to Sushi Cats"
+text = "Sushi Cats"
 horizontal_alignment = 1
 
 [node name="HowToPlayTitle" type="Label" parent="ScreenManager/HowToPlayScreen2/ColorRect" unique_id=561690780]
 layout_mode = 0
-offset_left = 11.0
 offset_top = 60.0
 offset_right = 1281.0
 offset_bottom = 152.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 58
 text = "Gameplay!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -407,26 +457,33 @@ vertical_alignment = 1
 [node name="HowToPlayText" type="Label" parent="ScreenManager/HowToPlayScreen2/ColorRect" unique_id=1598671513]
 layout_mode = 0
 offset_left = 60.0
-offset_top = 281.0
-offset_right = 444.0
+offset_top = 181.0
+offset_right = 578.0
 offset_bottom = 662.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7hsmw")
 theme_override_font_sizes/font_size = 32
-text = "* 60 seconds per round
-* Recipes are slot specific
-* Unlock new Recipes
-* don't give them the wrong recipe
-* don't let them run out of patience
-"
+text = "TO WIN : SCORE 50 POINTS WITHIN THE TIME LIMIT
+Level 1 looks like this ------------------------------->
+* 60 seconds per round, displayed at the top
+* Each food is created using a different recipe
+* Unlock new Recipes on level completion
+* All unlocked ingredients are on the left
+* Drag and drop ingredients onto the cooking board
+ with the corect ordering
+* Don't give customers them the wrong order!
+* Don't let them run out of patience!
+* Don't let your score go into the negatives!
+* Check the recipe book at any time during the level
+ or in-between levels if you get stuck"
 
 [node name="TextureRect" type="TextureRect" parent="ScreenManager/HowToPlayScreen2/ColorRect" unique_id=2040142066]
 layout_mode = 0
-offset_left = 393.0
-offset_top = 169.0
-offset_right = 907.0
-offset_bottom = 494.0
-texture = ExtResource("6_cf6ij")
+offset_left = 618.0
+offset_top = 153.0
+offset_right = 1258.0
+offset_bottom = 572.0
+texture = ExtResource("7_meimr")
 expand_mode = 1
 
 [node name="HomeButton" type="Button" parent="ScreenManager/HowToPlayScreen2" unique_id=911156954]
@@ -544,6 +601,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="HomeScreen" type="Control" parent="ScreenManager" unique_id=487187303]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -639,6 +697,26 @@ text = "Score: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TimerLabel" type="Label" parent="ScreenManager/GameplayScreen" unique_id=1944702987]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1.0
+offset_top = -77.0
+offset_right = 263.0
+offset_bottom = 129.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7hsmw")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_8cuoo")
+text = "  Time Left: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="LevelLabel" type="Label" parent="ScreenManager/GameplayScreen" unique_id=1619717552]
 z_index = 1
 layout_mode = 1
@@ -662,7 +740,7 @@ vertical_alignment = 1
 [node name="ProgressBar" type="ProgressBar" parent="ScreenManager/GameplayScreen" unique_id=498929407]
 layout_mode = 0
 offset_right = 1280.0
-offset_bottom = 36.0
+offset_bottom = 57.0
 max_value = 60.0
 show_percentage = false
 
@@ -891,7 +969,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="GameOverScreen" type="Control" parent="ScreenManager" unique_id=1190245051]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
