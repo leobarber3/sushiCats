@@ -95,7 +95,7 @@ func show_level_complete(level : int, new_recipe : Array[Item], optional : Strin
 	level_title.text = "Level " + str(level) + " complete!"
 	# Hide the next level button if it's the last level, display if not
 	optional_text.text = optional
-	display_unlocked_recipe(level, new_recipe)
+	display_unlocked_recipe(new_recipe)
 	#update_recipe_book(recipe_book)
 	home_screen.hide()
 	gameplay_screen.hide()
@@ -105,11 +105,6 @@ func show_level_complete(level : int, new_recipe : Array[Item], optional : Strin
 	recipe_book_screen.hide()
 	$BackgroundMusic.stop()
 
-# Make the recipe book screen visible, connected to recipe book button
-func show_recipe_book(recipe_list : Array[Item]):
-	# console says recipe_list isnt used so can delete from param??
-	recipe_book_screen.show()
-
 # Flash the Start! message on the screen at beginning of the round
 func quick_show_text(text : String):
 	quick_label.text = text
@@ -117,8 +112,7 @@ func quick_show_text(text : String):
 	text_timer.start()
 
 # Displayed unlocked recipe between levels
-func display_unlocked_recipe(level : int, new_recipe : Array[Item]):
-	#level param not being used??
+func display_unlocked_recipe(new_recipe : Array[Item]):
 	var ingredient = 0
 	# Three slots
 	for slot in unlocked_ingredients_container.get_children():
@@ -153,8 +147,9 @@ func update_timer_label(time):
 
 # Updates the recipe book display with obtain_recipe_book(true or false) from Game used as it's param
 func update_recipe_book(recipe_book : Array[Item]):
-	#each recipe in the aray has 3 ingredients then a product, so taking up four indexes
-	var recipe_count = recipe_book.size() / 4
+	# each recipe in the aray has 3 ingredients then a product, so taking up four indexes
+	# Cast as int to avoid Integer Divison warning
+	var recipe_count = int(recipe_book.size() / 4.0)
 	for recipe_slot in recipe_container.get_children():
 		recipe_slot.queue_free()
 	for i in range(0, recipe_count):

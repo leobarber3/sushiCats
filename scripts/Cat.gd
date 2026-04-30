@@ -77,7 +77,7 @@ func _on_wait_timer_timeout() -> void:
 	leave(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if wait_timer.is_stopped():
 		return
 	# update the progress bar

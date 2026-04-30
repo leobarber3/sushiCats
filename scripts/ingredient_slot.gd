@@ -14,7 +14,7 @@ extends Panel
 
 # Note: 
 # _can_drop_data, _drop_data, and _get_drag_data are built-in functions responsible for drag & drop of any control nodes
-func _can_drop_data(_at_position, data):
+func _can_drop_data(_at_position, _data):
 	# do not let anyone drop data in ingredient_slot
 	return false
 
