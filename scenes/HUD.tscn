@@ -601,7 +601,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="HomeScreen" type="Control" parent="ScreenManager" unique_id=487187303]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -969,6 +968,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="GameOverScreen" type="Control" parent="ScreenManager" unique_id=1190245051]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
