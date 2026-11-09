@@ -24,11 +24,14 @@ mono_crash.*.json
 # Uncomment if your project does not version PCK files as runtime dependencies.
 *.pck
 
-#OS ignores
+# OS ignores
 # Windows
 Thumbs.db
 # Mac OS
 .DS_Store
 
-#VS COde
+#VS Code
 .vscode/
+
+# Export preset ignore
+export_presets.cfg
