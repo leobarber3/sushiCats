@@ -5,6 +5,7 @@ Built with Godot (v.4.6) and GDScript
 
 Play an early access version of SushiCats here:
 https://sushicatsgames.itch.io/sushicats
+
 Links to Assets used and name of specific resource used or description of its use in the project. 
 
 Audio:
