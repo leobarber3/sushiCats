@@ -52,8 +52,7 @@ Recipe Book
 https://niflet.itch.io/book-ui-2d-game
 
 HUD background 
-https://gametothebones.itch.io/fish/download/eyJleHBpcmVzIjoxNzc2ODc0Nzc0LCJpZC
-I6MTA0Mjc3OH0%3d%2eE%2fBgmJDE216eQqpZXFnNR%2bieLGg%3d
+https://gametothebones.itch.io/fish/download/eyJleHBpcmVzIjoxNzc2ODc0Nzc0LCJpZCI6MTA0Mjc3OH0%3d%2eE%2fBgmJDE216eQqpZXFnNR%2bieLGg%3d
 
 Pen pal kitchen - (tileset)
 https://torneberge.itch.io/pen-pal-kitchen-2d
