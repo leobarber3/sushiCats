@@ -1,13 +1,18 @@
-Capstone Project, SushiCats. Powered by Amanda Carr and Leo Barber
-Links to Assets used for CapstoneProject, and name of specific resource used or description of its use in the project. 
+SushiCats. Powered by Leo Barber and Amanda Carr.
+
+Restaurant simulation game where you need to keep your hungry cat customers satisfied by feeding them sushi!
+Built with Godot (v.4.6) and GDScript
+
+Play an early access version of SushiCats here:
+https://sushicatsgames.itch.io/sushicats
+Links to Assets used and name of specific resource used or description of its use in the project. 
 
 Audio:
-
 Disappear.wav
 Collect_2.wav
 https://ci.itch.io/arcade-sound-effects-pack
 
-Background Music
+Background Music:
 https://noobgodtheonly.itch.io/brainless-music-jam-noob-god-submission
 
 
@@ -17,21 +22,16 @@ Used magofont1: free commercial use without attribution required.
 https://nimblebeastscollective.itch.io/magosfonts
 Click https://creativecommons.org/publicdomain/zero/1.0/ for details.  
 
-
-
-
 Art used:
 Sprites - food!: 
 https://apps.apple.com/us/app/sprite-catalog/id1560692872
 https://www.spritecatalog.com/peopleandanimals/
 > Fish.png
 
-
-
 Food:
 https://2yeet.itch.io/foodassets
 > Free use for commercial and non-commercial, no attribution required.
-> Rice & seaweed & cucumber in foodIMg
+> Rice & seaweed & cucumber in foodImg
 
 Free use.
 
